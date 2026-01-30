@@ -5,8 +5,15 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6vvs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uwxwb"]
+radius = 6.6666665
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uwxwb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uwxwb"]
+radius = 0.3333335
+height = 2.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0hb6c"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1365664806]
 material = SubResource("ShaderMaterial_q6vvs")
@@ -14,11 +21,24 @@ scale = Vector2(3, 3)
 script = ExtResource("1_uwxwb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=530049375]
+z_index = 1
 scale = Vector2(0.05, 0.05)
 shape = SubResource("CircleShape2D_uwxwb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=250598858]
 modulate = Color(0.781833, 0.16099358, 0.29196212, 1)
+scale = Vector2(0.5, 0.5)
 texture = SubResource("PlaceholderTexture2D_uwxwb")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=65087918]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1127667497]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1451176735]
+position = Vector2(0, -1.3333334)
+shape = SubResource("CapsuleShape2D_uwxwb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1166244320]
+position = Vector2(0, -1.3333334)
+scale = Vector2(0.5, 2)
+texture = SubResource("PlaceholderTexture2D_0hb6c")
