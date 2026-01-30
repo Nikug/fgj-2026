@@ -10,6 +10,7 @@ func _ready():
 	audio_player.stop()
 
 func _input(event):
+	# this is for debugging reasons and can be removed later.
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		var mouse_pos = get_global_mouse_position()
 		var texture = sprite_frames.get_frame_texture(animation, frame)
