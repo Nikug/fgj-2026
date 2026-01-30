@@ -14,13 +14,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
   if timer > limit:
-    timer = 0
-    generate_new_polygon_shape()
+	timer = 0
+	generate_new_polygon_shape()
   else:
-    timer += delta
+	timer += delta
 
 func generate_new_polygon_shape() -> void:
   var new_polygon: PackedVector2Array = PackedVector2Array()
   for i in range(0, collision_polygon.polygon.size()):
-    new_polygon.append(collision_polygon.polygon[i] + Vector2(randf() * 100, randf() * 100))
+	new_polygon.append(collision_polygon.polygon[i] + Vector2(randf() * 100, randf() * 100))
   collision_polygon.polygon = new_polygon
