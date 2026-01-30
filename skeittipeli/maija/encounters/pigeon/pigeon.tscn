@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://yomkdu8eouxt" path="res://maija/encounters/pigeon/Peigeon Spritesheet.png" id="1_cvlji"]
 [ext_resource type="Script" uid="uid://c5lxmspc2wj8k" path="res://maija/encounters/pigeon/pigeon.gd" id="2_l5blv"]
+[ext_resource type="AudioStream" uid="uid://ccih7h1glkvso" path="res://maija/encounters/pigeon/pigeon_call.wav" id="3_l5blv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nhpuc"]
 atlas = ExtResource("1_cvlji")
@@ -176,3 +177,6 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_m1it6")
 animation = &"eat"
 script = ExtResource("2_l5blv")
+
+[node name="PigeonCall" type="AudioStreamPlayer2D" parent="." unique_id=1306348833]
+stream = ExtResource("3_l5blv")
