@@ -11,7 +11,7 @@ func _process(delta):
 
 
 func _on_start_game_button_pressed():
-	get_tree().change_scene_to_file("res://main2.tscn")
+	get_tree().change_scene_to_file("res://vilperi/Cutscene.tscn")
 
 
 func _on_exit_game_button_pressed():
