@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://c2fjoyh7ciue5"]
 
+[ext_resource type="Script" uid="uid://cin57pn3hf5af" path="res://main_2.gd" id="1_8ce7h"]
 [ext_resource type="PackedScene" uid="uid://cak7l80atj4ok" path="res://ground_but_more.tscn" id="1_dmrlw"]
 [ext_resource type="PackedScene" path="res://HUD.tscn" id="2_dmrlw"]
 
 [node name="Main2" type="Node2D" unique_id=955015153]
+script = ExtResource("1_8ce7h")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2140406174]
 
@@ -12,3 +14,7 @@
 [node name="GroundButMore" parent="world" unique_id=1891045757 instance=ExtResource("1_dmrlw")]
 
 [node name="Hud" parent="." unique_id=122304504 instance=ExtResource("2_dmrlw")]
+
+[node name="ScoreTimer" type="Timer" parent="." unique_id=1667938202]
+
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]

@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed : float = 200.0
 @export var jump_velocity : float = -150.0
 @export var double_jump_velocity : float = -100
+@export var rotation_speed : float = 50
 @export var world_speed : float  = 200
 
 @onready var animated_sprite : Sprite2D = $Sprite2D
@@ -39,6 +40,9 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 		
 	direction = Input.get_vector("left", "right", "up", "down")
+	if direction.x != 0:
+		rotate(direction.x * rotation_speed)
+
 	
 	velocity.x = -world_speed
 
