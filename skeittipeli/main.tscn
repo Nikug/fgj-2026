@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cfo7l5r2cmf5j"]
 
 [ext_resource type="Script" uid="uid://bfslm88qnjtny" path="res://maija/menu.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://dl61e0wbor8lb" path="res://maija/Untitled design.png" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://b0psjkcred744" path="res://maija/Untitled design(1).png" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://dptlrjhie1c0l" path="res://maija/Untitled design(2).png" id="4_7mycd"]
 
 [node name="MainMenu" type="Control" unique_id=1003690342]
 layout_mode = 3
@@ -13,15 +16,30 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
 
+[node name="UntitledDesign" type="Sprite2D" parent="." unique_id=747547486]
+position = Vector2(230, -8)
+scale = Vector2(0.6574074, 0.6574074)
+texture = ExtResource("2_1bvp3")
+
+[node name="UntitledDesign(1)" type="Sprite2D" parent="." unique_id=1862279987]
+position = Vector2(-346, -87.99999)
+scale = Vector2(0.47222224, 0.47222224)
+texture = ExtResource("3_lquwl")
+
+[node name="UntitledDesign(2)" type="Sprite2D" parent="." unique_id=1347505374]
+position = Vector2(-361, 316)
+scale = Vector2(0.45000002, 0.45000002)
+texture = ExtResource("4_7mycd")
+
 [node name="Control" type="VBoxContainer" parent="." unique_id=1729900925]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.0
+offset_left = -59.0
 offset_top = -50.5
-offset_right = 23.0
+offset_right = 59.0
 offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
