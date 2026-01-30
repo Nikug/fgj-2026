@@ -1,26 +1,27 @@
 extends AnimatedSprite2D
 
 @onready var audio_player = $PigeonCall
+var time_until_next_sound = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	play('annoy')
-	# Preload audio to avoid delay on first play
-	audio_player.play()
-	audio_player.stop()
+	play('idle')
+	# Set initial random interval
+	time_until_next_sound = randf_range(5.0, 10.0)
+	# Connect to audio finished signal
+	audio_player.finished.connect(_on_sound_finished)
+
+func _on_sound_finished():
+	play('idle')
 
 func _input(event):
-	# this is for debugging reasons and can be removed later.
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		var mouse_pos = get_global_mouse_position()
-		var texture = sprite_frames.get_frame_texture(animation, frame)
-		if texture:
-			var texture_size = texture.get_size()
-			var rect = Rect2(global_position - texture_size / 2, texture_size)
-			if rect.has_point(mouse_pos):
-				audio_player.stop()
-				audio_player.play()
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	time_until_next_sound -= delta
+	if time_until_next_sound <= 0:
+		play('annoy')
+		audio_player.play()
+		# Set next random interval
+		time_until_next_sound = randf_range(5.0, 10.0)
