@@ -32,6 +32,7 @@ func generate_segment(start_point: Vector2, end_point: Vector2) -> PackedVector2
     var x: float = i * segment_width / resolution
     var y: float = fast_noise_lite.get_noise_2d(i, 0) * noise_strength
     new_segment.append(Vector2(x, y))
+
   new_segment.append(Vector2(segment_width, end_point.y))
   new_segment.append(Vector2(segment_width, segment_height))
   new_segment.append(Vector2(start_point.x, segment_height))
