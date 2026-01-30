@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cfo7l5r2cmf5j"]
 
-[ext_resource type="Script" uid="uid://bfslm88qnjtny" path="res://maija/menu.gd" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://dy1lpye8q7wp" path="res://maija/Untitled design(3).png" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://bfslm88qnjtny" path="res://maija/menu/menu.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://dy1lpye8q7wp" path="res://maija/menu/Untitled design(3).png" id="2_0xm2m"]
 
 [node name="MainMenu" type="Control" unique_id=1003690342]
 layout_mode = 3
