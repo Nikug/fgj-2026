@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0psjkcred744"
-path="res://.godot/imported/Untitled design(1).png-5440053fab10e626c18bc1d62eff700d.ctex"
+uid="uid://dy1lpye8q7wp"
+path="res://.godot/imported/Untitled design(3).png-8f225cdf19a8cfab5ba85549147bc0b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://maija/Untitled design(1).png"
-dest_files=["res://.godot/imported/Untitled design(1).png-5440053fab10e626c18bc1d62eff700d.ctex"]
+source_file="res://maija/menu/Untitled design(3).png"
+dest_files=["res://.godot/imported/Untitled design(3).png-8f225cdf19a8cfab5ba85549147bc0b1.ctex"]
 
 [params]
 
