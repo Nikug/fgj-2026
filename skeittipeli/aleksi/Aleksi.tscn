@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bu3dxawk63b2g"]
+
+[ext_resource type="PackedScene" uid="uid://dfl2phnrimpu5" path="res://aleksi/Pelaaja.tscn" id="1_p2b40"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_80jc1"]
+
+[node name="Aleksi" type="Node2D" unique_id=1709037900]
+
+[node name="CharacterBody2D" parent="." unique_id=1365664806 instance=ExtResource("1_p2b40")]
+modulate = Color(1, 0.23137255, 0.56078434, 1)
+position = Vector2(189, 53)
+scale = Vector2(100, 100)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=453492022]
+position = Vector2(190, 580)
+disable_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=135268243]
+position = Vector2(0, -2)
+scale = Vector2(40, 1)
+shape = SubResource("WorldBoundaryShape2D_80jc1")
+debug_color = Color(0.68996674, 0.40747347, 0.74644554, 0.41960785)

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dfl2phnrimpu5"]
+
+[ext_resource type="Script" uid="uid://basjt46bxstk8" path="res://aleksi/ukkeli.gd" id="1_uwxwb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q6vvs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uwxwb"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uwxwb"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1365664806]
+material = SubResource("ShaderMaterial_q6vvs")
+scale = Vector2(3, 3)
+script = ExtResource("1_uwxwb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=530049375]
+scale = Vector2(0.05, 0.05)
+shape = SubResource("CircleShape2D_uwxwb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=250598858]
+modulate = Color(0.781833, 0.16099358, 0.29196212, 1)
+texture = SubResource("PlaceholderTexture2D_uwxwb")
