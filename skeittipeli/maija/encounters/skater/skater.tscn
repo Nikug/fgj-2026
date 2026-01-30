@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://bqoggvmsweobj"]
+
+[ext_resource type="Texture2D" uid="uid://c71c2ebtygum1" path="res://maija/encounters/skater/skater.png" id="1_iwoni"]
+[ext_resource type="Script" uid="uid://ebafol8635lb" path="res://maija/encounters/skater/skater.gd" id="2_2xhej"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0widp"]
+atlas = ExtResource("1_iwoni")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eb4s0"]
+atlas = ExtResource("1_iwoni")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_id4w7"]
+atlas = ExtResource("1_iwoni")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj4jn"]
+atlas = ExtResource("1_iwoni")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwwdy"]
+atlas = ExtResource("1_iwoni")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5223"]
+atlas = ExtResource("1_iwoni")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wv08"]
+atlas = ExtResource("1_iwoni")
+region = Rect2(384, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iraj"]
+atlas = ExtResource("1_iwoni")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yh8u3"]
+atlas = ExtResource("1_iwoni")
+region = Rect2(512, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddsli"]
+atlas = ExtResource("1_iwoni")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npli7"]
+atlas = ExtResource("1_iwoni")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfewa"]
+atlas = ExtResource("1_iwoni")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nx172"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0widp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb4s0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_id4w7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj4jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwwdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5223")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wv08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iraj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yh8u3")
+}],
+"loop": true,
+"name": &"kick",
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddsli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npli7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfewa")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 10.0
+}]
+
+[node name="Skater" type="AnimatedSprite2D" unique_id=1249804418]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_nx172")
+animation = &"kick"
+frame_progress = 0.35510945
+script = ExtResource("2_2xhej")

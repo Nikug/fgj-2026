@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://by5dp3hbhh0rh"]
+[gd_scene format=3 uid="uid://c2fjoyh7ciue5"]
 
 [ext_resource type="Script" uid="uid://cin57pn3hf5af" path="res://main_2.gd" id="1_8ce7h"]
-[ext_resource type="PackedScene" uid="uid://dilx11xyss0bg" path="res://ground.tscn" id="1_oex3p"]
-[ext_resource type="PackedScene" uid="uid://bc5mgw3foeonk" path="res://HUD.tscn" id="2_dmrlw"]
+[ext_resource type="PackedScene" uid="uid://cak7l80atj4ok" path="res://ground_but_more.tscn" id="1_dmrlw"]
+[ext_resource type="PackedScene" path="res://HUD.tscn" id="2_dmrlw"]
 
 [node name="Main2" type="Node2D" unique_id=955015153]
 script = ExtResource("1_8ce7h")
@@ -11,7 +11,7 @@ script = ExtResource("1_8ce7h")
 
 [node name="world" type="Node2D" parent="." unique_id=305966094]
 
-[node name="Ground" parent="world" unique_id=197143632 instance=ExtResource("1_oex3p")]
+[node name="GroundButMore" parent="world" unique_id=1891045757 instance=ExtResource("1_dmrlw")]
 
 [node name="Hud" parent="." unique_id=122304504 instance=ExtResource("2_dmrlw")]
 

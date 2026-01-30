@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cak7l80atj4ok"]
+
+[ext_resource type="Script" uid="uid://cjpasb3p1e3a7" path="res://ground_but_more.gd" id="1_2n15p"]
+
+[node name="GroundButMore" type="Node2D" unique_id=1891045757]
+script = ExtResource("1_2n15p")

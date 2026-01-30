@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bfslm88qnjtny" path="res://maija/menu/menu.gd" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://dy1lpye8q7wp" path="res://maija/menu/Untitled design(3).png" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bqoggvmsweobj" path="res://maija/encounters/skater/skater.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://djcw08pmciowj" path="res://maija/encounters/duck/duck.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://px57bwxu11fh" path="res://maija/encounters/pigeon/pigeon.tscn" id="4_lquwl"]
 
 [node name="MainMenu" type="Control" unique_id=1003690342]
 layout_mode = 3
@@ -47,6 +50,18 @@ text = "💩💩💩💩💩"
 [node name="ExitGameButton" type="Button" parent="Control" unique_id=330000245]
 layout_mode = 2
 text = "Exit"
+
+[node name="Skater" parent="." unique_id=1249804418 instance=ExtResource("3_1bvp3")]
+position = Vector2(-412, 210)
+scale = Vector2(3.15625, 3.15625)
+
+[node name="Pigeon" parent="." unique_id=1640569677 instance=ExtResource("4_lquwl")]
+position = Vector2(-235, 241)
+scale = Vector2(4.53125, 4.53125)
+
+[node name="Duck" parent="." unique_id=719617349 instance=ExtResource("3_h2yge")]
+position = Vector2(389, 203)
+scale = Vector2(6.78125, 6.78125)
 
 [connection signal="pressed" from="Control/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="Control/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
