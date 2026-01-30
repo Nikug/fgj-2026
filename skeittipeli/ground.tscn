@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://dilx11xyss0bg"]
 
+[ext_resource type="Script" uid="uid://dhw4c8cbdp8nh" path="res://ground.gd" id="1_yh8r4"]
+
 [node name="Ground" type="Node2D" unique_id=197143632]
+script = ExtResource("1_yh8r4")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1887169291]
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=2002471731]
+color = Color(1, 0.45490196, 1, 1)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1722971670]
-polygon = PackedVector2Array(251, 241, 483, 390, 944, 414, 915, 579, 209, 528)
+[node name="StaticBody2D" type="StaticBody2D" parent="Polygon2D" unique_id=1887169291]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Polygon2D/StaticBody2D" unique_id=1722971670]
+polygon = PackedVector2Array(251, 241, 483, 390, 944, 414, 939, 599, 209, 528)
