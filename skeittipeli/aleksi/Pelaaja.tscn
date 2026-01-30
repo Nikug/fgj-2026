@@ -20,3 +20,5 @@ shape = SubResource("CircleShape2D_uwxwb")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=250598858]
 modulate = Color(0.781833, 0.16099358, 0.29196212, 1)
 texture = SubResource("PlaceholderTexture2D_uwxwb")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=65087918]
