@@ -1,11 +1,11 @@
 extends Node2D
 
-@export var resolution: int = 100
+@export var resolution: int = 50
 @export var segment_width: float = 200.0
 @export var segment_height: float = 200.0
 @export var noise_strength: float = 50.0
 
-@onready var collision_polygon: CollisionPolygon2D = $Polygon2D/StaticBody2D/CollisionPolygon2D
+@onready var collision_polygon: CollisionPolygon2D = $StaticBody2D/CollisionPolygon2D
 @onready var polygon: Polygon2D = $Polygon2D
 @onready var fast_noise_lite: FastNoiseLite = FastNoiseLite.new()
 
@@ -25,7 +25,7 @@ func generate_segment() -> PackedVector2Array:
 
   for i in range(1, resolution):
     var x: float = i * segment_width / resolution
-    var y: float = fast_noise_lite.get_noise_2d(i, 0) * noise_strength
+    var y: float = fast_noise_lite.get_noise_2d(x, 0) * noise_strength
     new_segment.append(Vector2(x, y))
 
   new_segment.append(Vector2(segment_width, 0))
@@ -36,3 +36,9 @@ func generate_segment() -> PackedVector2Array:
 
 func get_width() -> float:
   return segment_width
+
+func get_center() -> Vector2:
+  return Vector2(segment_width / 2, segment_height / 2)
+
+func get_top_right_corner() -> Vector2:
+  return Vector2(segment_width, 0)

@@ -8,5 +8,6 @@ anchors_preset = 0
 script = ExtResource("1_hkn5j")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1729301352]
+custom_minimum_size = Vector2(1152, 648)
 layout_mode = 1
 stretch_mode = 3
