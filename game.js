@@ -62,9 +62,9 @@ class Player {
         if (this.inventory.includes('Silver Sword')) weapon = '⚔️';
         else if (this.inventory.includes('Golden Dagger')) weapon = '🗡️';
         else if (this.inventory.includes('Rusty Dagger')) weapon = '🔪';
-        
+
         const hasAmulet = this.inventory.includes('Ancient Amulet') ? '💎' : '  ';
-        
+
         console.log(`
     ╔═══════════════════════════════════════╗
     ║      ${weapon}  ${this.name.toUpperCase()}  ${hasAmulet}              ║
@@ -207,7 +207,7 @@ async function firstChamber(player) {
 async function treasureRoom(player) {
     player.roomsExplored++;
     await printSlow("\nThe blue light grows brighter as you walk down the tunnel.");
-    
+
     // Animated treasure room
     console.log(`
     ╔═════════════════════════════════════════════════╗
@@ -458,7 +458,7 @@ async function monsterEncounter(player) {
 async function undergroundLake(player) {
     player.roomsExplored++;
     await printSlow("\nYou follow the sound of dripping water...");
-    
+
     // Animated lake
     console.log(`
     ╔═══════════════════════════════════════════════════╗
