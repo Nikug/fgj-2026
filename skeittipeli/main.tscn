@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cfo7l5r2cmf5j"]
 
+[ext_resource type="Script" uid="uid://bfslm88qnjtny" path="res://maija/menu.gd" id="1_ig7tw"]
+
 [node name="MainMenu" type="Control" unique_id=1003690342]
 layout_mode = 3
 anchors_preset = 8
@@ -9,6 +11,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ig7tw")
 
 [node name="Control" type="VBoxContainer" parent="." unique_id=1729900925]
 layout_mode = 1
@@ -25,6 +28,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 metadata/_edit_use_anchors_ = true
+metadata/aaa = PackedFloat64Array()
 
 [node name="StartGameButton" type="Button" parent="Control" unique_id=914168498]
 layout_mode = 2
@@ -32,8 +36,10 @@ text = "Start"
 
 [node name="OtherButton" type="Button" parent="Control" unique_id=834858]
 layout_mode = 2
-text = "???"
+text = "💩💩💩💩💩"
 
 [node name="ExitGameButton" type="Button" parent="Control" unique_id=330000245]
 layout_mode = 2
 text = "Exit"
+
+[connection signal="pressed" from="Control/StartGameButton" to="." method="_on_start_game_button_pressed"]
