@@ -83,7 +83,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"kick",
-"speed": 5.0
+"speed": 18.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -97,11 +97,12 @@ animations = [{
 }],
 "loop": true,
 "name": &"slide",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Skater" type="AnimatedSprite2D" unique_id=1249804418]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_nx172")
-animation = &"slide"
+animation = &"kick"
+frame_progress = 0.35510945
 script = ExtResource("2_2xhej")
