@@ -5,6 +5,8 @@
 
 [node name="Main2" type="Node2D" unique_id=955015153]
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2140406174]
+
 [node name="world" type="Node2D" parent="." unique_id=305966094]
 
 [node name="Ground" parent="world" unique_id=197143632 instance=ExtResource("1_oex3p")]
