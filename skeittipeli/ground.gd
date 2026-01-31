@@ -43,7 +43,6 @@ func generate_segment(previous_height: float) -> Array:
   return [new_segment, previous_height, left_height]
 
 func get_width() -> float:
-<< << << < HEAD
     return segment_width
 
 
@@ -53,14 +52,3 @@ func get_center() -> Vector2:
 
 func get_top_right_corner() -> Vector2:
     return Vector2(segment_width, 0)
-== == == =
-  return segment_width
-
-
-func get_center() -> Vector2:
-  return Vector2(segment_width / 2, segment_height / 2)
-
-
-func get_top_right_corner() -> Vector2:
-  return Vector2(segment_width, 0)
->> >> >> > 0b02db3754ef44a2c30e7be42b2b8106f2b31429

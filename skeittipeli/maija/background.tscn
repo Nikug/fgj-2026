@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b1fcg8p8uqk2s"]
+[gd_scene format=3 uid="uid://cbl45dc4304xk"]
 
 [ext_resource type="Texture2D" uid="uid://c1143hfa45vs7" path="res://maija/stuff/tets.png" id="1_rwo2v"]
 
@@ -31,6 +31,7 @@ texture_repeat = 2
 repeat_size = Vector2(2048, 0)
 autoscroll = Vector2(60, 0)
 repeat_times = 10
+ignore_camera_scroll = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Parallax2D" unique_id=581463779]
 texture_filter = 1
