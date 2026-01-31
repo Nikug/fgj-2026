@@ -6,6 +6,7 @@ var time_until_next = 0.0
 func _ready():
 	play("wiggle")
 	time_until_next = randf_range(5.0, 10.0)
+	animation_finished.connect(_on_animation_finished)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,3 +16,7 @@ func _process(delta):
 		play('fall')
 		# Set next random interval
 		time_until_next = randf_range(5.0, 10.0)
+
+func _on_animation_finished():
+	if animation == "fall":
+		play("wiggle")

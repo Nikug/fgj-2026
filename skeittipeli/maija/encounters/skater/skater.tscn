@@ -92,7 +92,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lqonh")
 }],
-"loop": true,
+"loop": false,
 "name": &"fall",
 "speed": 8.0
 }, {
@@ -158,5 +158,6 @@ animations = [{
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_nx172")
 animation = &"fall"
-frame_progress = 0.80864495
+frame = 3
+frame_progress = 1.0
 script = ExtResource("2_2xhej")
