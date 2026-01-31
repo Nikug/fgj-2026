@@ -54,6 +54,8 @@ func _ready():
     plague_mask_sprite.visible = true
     hockey_mask_sprite.visible = false
     ghost_mask_sprite.visible = false
+    rotation_multiplier = 3
+    rotation_correction_speed = 3
     $JumpCooldown.wait_time = rng.randf_range(1.0, 3.0)
   elif mask.selectedMask == 1:
     #_print("hockey")
@@ -63,8 +65,8 @@ func _ready():
     air_speed_limit = 150
     rotation_limit = 200
     max_movement_speed = 2500
-    rotation_multiplier = 2
-    rotation_correction_speed = 2
+    rotation_multiplier = 4
+    rotation_correction_speed = 4
     min_left_velocity = -400
     plague_mask_sprite.visible = false
     hockey_mask_sprite.visible = true
@@ -78,8 +80,8 @@ func _ready():
     air_speed_limit = 50
     rotation_limit = 500
     max_movement_speed = 1500
-    rotation_multiplier = 6
-    rotation_correction_speed = 5
+    rotation_multiplier = 2
+    rotation_correction_speed = 2
     min_left_velocity = -100
     plague_mask_sprite.visible = false
     hockey_mask_sprite.visible = false
