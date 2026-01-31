@@ -13,6 +13,7 @@ extends Node2D
 @onready var collision_polygon: CollisionPolygon2D = $StaticBody2D/CollisionPolygon2D
 @onready var polygon: Polygon2D = $Polygon2D
 
+@onready var grass: Node2D = $grass
 @onready var tree: PackedScene = preload("res://natur/tree.tscn")
 @onready var spruce: PackedScene = preload("res://natur/spruce.tscn")
 @onready var rock: PackedScene = preload("res://natur/rock.tscn")
@@ -20,11 +21,12 @@ extends Node2D
 
 var main: Node2D
 
-
-
 func set_segment(segment: PackedVector2Array) -> void:
   polygon.polygon = segment
   collision_polygon.polygon = segment
+  var grass_segment = segment.slice(0, segment.size() - 2)
+  grass_segment.reverse()
+  grass.draw_grass(grass_segment)
 
 
 func generate_segment(previous_height: float, fast_noise_lite, perlin_noise, prev_x) -> Array:
