@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://berd8jnx622yk" path="res://maija/stuff/plague_mask_skate.png" id="8_xhpit"]
 [ext_resource type="Texture2D" uid="uid://4wekh1re55uc" path="res://maija/stuff/hockey_mask_fall.png" id="9_jjmc6"]
 [ext_resource type="Texture2D" uid="uid://cdpvw2lbyuu31" path="res://maija/stuff/hockey_mask_skate.png" id="11_fha01"]
+[ext_resource type="Texture2D" uid="uid://4756hjuo1ja6" path="res://maija/stuff/ghost_mask_fall.png" id="12_jjmc6"]
+[ext_resource type="Texture2D" uid="uid://1mle541gi0hq" path="res://maija/stuff/ghost_mask_skate.png" id="12_xhpit"]
+[ext_resource type="Texture2D" uid="uid://doeytccw747s" path="res://maija/stuff/ghost_mask_jump.png" id="13_fha01"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6vvs"]
 
@@ -254,7 +257,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ds6m4")
 }],
-"loop": true,
+"loop": false,
 "name": &"fall",
 "speed": 8.0
 }, {
@@ -281,6 +284,94 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h4vlh")
+}],
+"loop": true,
+"name": &"skate",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uea7"]
+atlas = ExtResource("12_jjmc6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12ai6"]
+atlas = ExtResource("12_jjmc6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsv0c"]
+atlas = ExtResource("12_jjmc6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe2iu"]
+atlas = ExtResource("12_jjmc6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsfco"]
+atlas = ExtResource("13_fha01")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_au4qx"]
+atlas = ExtResource("13_fha01")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4iakr"]
+atlas = ExtResource("13_fha01")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwc82"]
+atlas = ExtResource("13_fha01")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oljo2"]
+atlas = ExtResource("12_xhpit")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m4xp"]
+atlas = ExtResource("12_xhpit")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3uea7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uea7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12ai6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsv0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe2iu")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsfco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_au4qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4iakr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwc82")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oljo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m4xp")
 }],
 "loop": true,
 "name": &"skate",
@@ -327,12 +418,19 @@ visible = false
 texture_filter = 1
 position = Vector2(-1, 2)
 sprite_frames = SubResource("SpriteFrames_duqdd")
-animation = &"skate"
+animation = &"fall"
 
 [node name="hockey_mask" type="AnimatedSprite2D" parent="Area2D" unique_id=1292978360]
+visible = false
 texture_filter = 1
 position = Vector2(-1, 2)
 sprite_frames = SubResource("SpriteFrames_hxqoi")
+animation = &"skate"
+
+[node name="ghost_mask" type="AnimatedSprite2D" parent="Area2D" unique_id=1384865819]
+texture_filter = 1
+position = Vector2(-1, 2)
+sprite_frames = SubResource("SpriteFrames_3uea7")
 animation = &"skate"
 
 [connection signal="player_fell" from="Area2D" to="." method="_on_area_2d_player_fell"]

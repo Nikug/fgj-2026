@@ -19,6 +19,7 @@ signal fell
 @onready var animated_sprite_2: AnimatedSprite2D = $Area2D/skater
 @onready var plague_mask_sprite: AnimatedSprite2D = $Area2D/plague_mask
 @onready var hockey_mask_sprite: AnimatedSprite2D = $Area2D/hockey_mask
+@onready var ghost_mask_sprite: AnimatedSprite2D = $Area2D/ghost_mask
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -49,6 +50,7 @@ func _ready():
     print("plague")
     plague_mask_sprite.visible = true
     hockey_mask_sprite.visible = false
+    ghost_mask_sprite.visible = false
   elif mask.selectedMask == 1:
     print("hockey")
     ground_accel = 100
@@ -62,6 +64,7 @@ func _ready():
     min_left_velocity = -400
     plague_mask_sprite.visible = false
     hockey_mask_sprite.visible = true
+    ghost_mask_sprite.visible = false
   elif mask.selectedMask == 2:
     print("ghost")
     ground_accel = 10
@@ -73,6 +76,9 @@ func _ready():
     rotation_multiplier = 6
     rotation_correction_speed = 5
     min_left_velocity = -100
+    plague_mask_sprite.visible = false
+    hockey_mask_sprite.visible = false
+    ghost_mask_sprite.visible = true
 
 
 func _physics_process(delta: float):
@@ -172,11 +178,13 @@ func play_skate_animation():
     animated_sprite_2.play("skate")
     plague_mask_sprite.play("skate")
     hockey_mask_sprite.play("skate")
+    ghost_mask_sprite.play("skate")
 
 func play_fall_animation():
     animated_sprite_2.play("fall")
     plague_mask_sprite.play("fall")
     hockey_mask_sprite.play("fall")
+    ghost_mask_sprite.play("fall")
 
 func play_jump_animation():
     if (isDead):
@@ -184,3 +192,4 @@ func play_jump_animation():
     animated_sprite_2.play("jump")
     plague_mask_sprite.play("jump")
     hockey_mask_sprite.play("jump")
+    ghost_mask_sprite.play("jump")
