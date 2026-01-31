@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cp4qpldxgun0j" path="res://maija/stuff/die_fixed.png" id="2_ovfpu"]
 [ext_resource type="Texture2D" uid="uid://br6yahqkej85r" path="res://maija/stuff/idle_fixed.png" id="2_qpc01"]
 [ext_resource type="AudioStream" uid="uid://ccih7h1glkvso" path="res://maija/encounters/pigeon/pigeon_call.wav" id="3_l5blv"]
+[ext_resource type="AudioStream" uid="uid://5wrvwad4ojic" path="res://maija/encounters/pigeon/egg_fall.wav" id="6_ovfpu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ovfpu"]
 atlas = ExtResource("1_nhpuc")
@@ -107,6 +108,11 @@ script = ExtResource("2_l5blv")
 
 [node name="PigeonCall" type="AudioStreamPlayer2D" parent="." unique_id=1306348833]
 stream = ExtResource("3_l5blv")
+volume_db = 4.86
+
+[node name="PigeonDie" type="AudioStreamPlayer2D" parent="." unique_id=1051630996]
+stream = ExtResource("6_ovfpu")
+volume_db = -2.916
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1931621492]
 
