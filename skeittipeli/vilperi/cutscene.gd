@@ -21,6 +21,9 @@ func _ready():
 	load_image()
 
 func _process(delta):
+	if Input.is_action_just_pressed("enter") or Input.is_action_just_pressed("click"):
+		get_tree().change_scene_to_file("res://main2.tscn")
+
 	time_elapsed += delta
 	
 	match state:
