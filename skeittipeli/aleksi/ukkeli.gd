@@ -29,20 +29,43 @@ var was_in_air: bool = false
 var isDead: bool = false
 var total_rotation: float = 0.0
 
+var ground_accel: float = 30
+var ground_friction: float = 0.8
+var air_accel: float = 30
+var ground_speed_limit: float = 80
+var air_speed_limit: float = 80
+var rotation_limit: float = 300
+var max_movement_speed: float = 2000
+var current_movement_speed: float = 0.0
+
 
 func _ready():
   animated_sprite_2.play("skate")
   animated_sprite_2.animation_finished.connect(_on_animation_finished)
-
-var current_movement_speed: float = 0.0
-
-const GROUND_ACCEL: float = 30
-const GROUND_FRICTION: float = 0.8
-const AIR_ACCEL: float = 30
-const GROUND_SPEED_LIMIT: float = 80
-const AIR_SPEED_LIMIT: float = 80
-const ROTATION_LIMIT: float = 300
-const MAX_MOVEMENT_SPEED: float = 2000
+  if mask.selectedMask == 0:
+    print("plague")
+  elif mask.selectedMask == 1:
+    print("hockey")
+    ground_accel = 100
+    air_accel = 100
+    ground_speed_limit = 150
+    air_speed_limit = 150
+    rotation_limit = 200
+    max_movement_speed = 2500
+    rotation_multiplier = 2
+    rotation_correction_speed = 2
+    min_left_velocity = -400
+  elif mask.selectedMask == 2:
+    print("ghost")
+    ground_accel = 10
+    air_accel = 10
+    ground_speed_limit = 50
+    air_speed_limit = 50
+    rotation_limit = 500
+    max_movement_speed = 1500
+    rotation_multiplier = 6
+    rotation_correction_speed = 5
+    min_left_velocity = -100
 
 
 func _physics_process(delta: float):
@@ -75,9 +98,9 @@ func _physics_process(delta: float):
       else:
         current_rotation_speed += rotation_multiplier * rotation
 
-  current_rotation_speed = min(ROTATION_LIMIT, current_rotation_speed * delta)
-  var strafe_accel := GROUND_ACCEL if is_on_floor() else AIR_ACCEL
-  var speed_limit := GROUND_SPEED_LIMIT if is_on_floor() else AIR_SPEED_LIMIT
+  current_rotation_speed = min(rotation_limit, current_rotation_speed * delta)
+  var strafe_accel := ground_accel if is_on_floor() else air_accel
+  var speed_limit := ground_speed_limit if is_on_floor() else air_speed_limit
 
   var accel := strafe_accel * delta
   accel = max(0, min(accel, speed_limit - velocity.length()))
@@ -102,7 +125,7 @@ func _physics_process(delta: float):
         #jump()
     else:
           velocity.x -= 600
-  velocity.x = max(-MAX_MOVEMENT_SPEED, velocity.x) if velocity.x < 0 else min(MAX_MOVEMENT_SPEED, velocity.x)
+  velocity.x = max(-max_movement_speed, velocity.x) if velocity.x < 0 else min(max_movement_speed, velocity.x)
   update_facing_direction()
 
 func update_facing_direction():
