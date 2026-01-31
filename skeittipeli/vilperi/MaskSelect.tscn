@@ -1,47 +1,61 @@
 [gd_scene format=3 uid="uid://cn54bc7uawq6g"]
 
-[ext_resource type="Script" uid="uid://dx4q3j5s8enq2" path="res://vilperi/rotate_mask.gd" id="1_76r5c"]
 [ext_resource type="Material" uid="uid://dbh16s23gyd51" path="res://vilperi/GreenMaskMaterial.tres" id="2_6ldvh"]
 [ext_resource type="Script" uid="uid://cb0qco0d6djkn" path="res://vilperi/select_mask.gd" id="2_wdep1"]
 [ext_resource type="Material" uid="uid://didqm1gqt5rg4" path="res://vilperi/RedMaskMaterial.tres" id="3_ive5y"]
 [ext_resource type="Material" uid="uid://bsppthvnnosy8" path="res://vilperi/BlueMaskMaterial.tres" id="4_iyejq"]
+[ext_resource type="Material" uid="uid://d7rwpjjacw3i" path="res://vilperi/Wood.tres" id="6_igvdf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_76r5c"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_iyejq"]
 
 [node name="MaskSelect" type="Node3D" unique_id=477699177]
 
 [node name="Mask 1" type="Node3D" parent="." unique_id=1255594539]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5814202, 0)
-script = ExtResource("1_76r5c")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2298045, 2.9623845, -0.9376731)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Mask 1" unique_id=1294310257]
-transform = Transform3D(0.93184966, -0.36284465, 0, 0.36284465, 0.93184966, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1.4538801, -0.28369564, 0, 0.5661134, 0.7285809, 0, 0, 0, 1.9015429, 0, 0, 0)
 mesh = SubResource("BoxMesh_76r5c")
 surface_material_override/0 = ExtResource("2_6ldvh")
 
 [node name="Mask 2" type="Node3D" parent="." unique_id=1177450355]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5814202, 0)
-script = ExtResource("1_76r5c")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005620122, 3.0398118, -0.9376731)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Mask 2" unique_id=379419515]
-transform = Transform3D(0.93184966, -0.36284465, 0, 0.36284465, 0.93184966, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1.4538801, -0.28369564, 0, 0.5661134, 0.7285809, 0, 0, 0, 1.9015429, 0, 0, 0)
 mesh = SubResource("BoxMesh_76r5c")
 surface_material_override/0 = ExtResource("3_ive5y")
 
 [node name="Mask 3" type="Node3D" parent="." unique_id=543760744]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5814202, 0)
-script = ExtResource("1_76r5c")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.867508, 3.0603673, -0.9376731)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Mask 3" unique_id=1118756013]
-transform = Transform3D(0.93184966, -0.36284465, 0, 0.36284465, 0.93184966, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1.4538801, -0.28369564, 0, 0.5661134, 0.7285809, 0, 0, 0, 1.9015429, 0, 0, 0)
 mesh = SubResource("BoxMesh_76r5c")
 surface_material_override/0 = ExtResource("4_iyejq")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=2016843645]
-transform = Transform3D(1, 0, 0, 0, 0.9260156, 0.37748525, 0, -0.37748525, 0.9260156, 0, 1.266406, 1.5808713)
+[node name="Camera" type="Camera3D" parent="." unique_id=2016843645]
+transform = Transform3D(1, 0, 0, 0, 0.8103588, 0.585934, 0, -0.585934, 0.8103588, 0, 5.171834, 1.7523639)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=687525317]
-transform = Transform3D(1, 0, 0, 0, -0.025252182, 0.9996811, 0, -0.9996811, -0.025252182, 0, 3.7100582, 0)
+[node name="SpotlightMask2" type="SpotLight3D" parent="." unique_id=687525317]
+transform = Transform3D(1, 0, 0, 0, -0.025252182, 0.9996811, 0, -0.9996811, -0.025252182, -0.19647932, 6.8043227, -1.0981385)
+light_energy = 8.444
+light_indirect_energy = 1.222
+light_size = 0.03
+
+[node name="SpotlightMask3" type="SpotLight3D" parent="." unique_id=328011646]
+transform = Transform3D(1, 0, 0, 0, -0.025252182, 0.9996811, 0, -0.9996811, -0.025252182, 4.817897, 6.8043227, -1.0981385)
+light_energy = 8.444
+light_indirect_energy = 1.222
+light_size = 0.03
+
+[node name="SpotlightMask1" type="SpotLight3D" parent="." unique_id=661049464]
+transform = Transform3D(1, 0, 0, 0, -0.025252182, 0.9996811, 0, -0.9996811, -0.025252182, -5.355647, 6.8043227, -1.0981385)
+light_energy = 8.444
+light_indirect_energy = 1.222
+light_size = 0.03
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=335783894]
 script = ExtResource("2_wdep1")
@@ -66,3 +80,11 @@ offset_top = 506.0
 offset_right = 631.0
 offset_bottom = 581.0
 text = "Start"
+
+[node name="Shelf 1" type="Node3D" parent="." unique_id=1192007267]
+transform = Transform3D(1.0871412, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39926863, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Shelf 1" unique_id=1779155820]
+transform = Transform3D(15.643604, 0, 0, 0, 0.5125991, 0, 0, 0, 4.0276265, 0, 1.5425675, -1.4775739)
+mesh = SubResource("BoxMesh_iyejq")
+surface_material_override/0 = ExtResource("6_igvdf")
