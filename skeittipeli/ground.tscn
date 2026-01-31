@@ -5,6 +5,11 @@
 
 [node name="Ground" type="Node2D" unique_id=197143632]
 script = ExtResource("1_yh8r4")
+resolution = 30
+segment_width = 700.0
+segment_height = 300.0
+noise_strength = 3.0
+decline_rate = 0.5
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=2002471731]
 texture_filter = 1
