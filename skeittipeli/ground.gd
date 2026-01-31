@@ -13,42 +13,42 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	fast_noise_lite.set_seed(randi())
-	fast_noise_lite.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
-	fast_noise_lite.fractal_ping_pong_strength = 0.9
+    fast_noise_lite.set_seed(randi())
+    fast_noise_lite.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
+    fast_noise_lite.fractal_ping_pong_strength = 0.9
 
 
 func set_segment(segment: PackedVector2Array) -> void:
-	polygon.polygon = segment
-	collision_polygon.polygon = segment
+    polygon.polygon = segment
+    collision_polygon.polygon = segment
 
 
 func generate_segment() -> Array:
-	var new_segment: PackedVector2Array = PackedVector2Array()
-	new_segment.append(Vector2.ZERO)
+    var new_segment: PackedVector2Array = PackedVector2Array()
+    new_segment.append(Vector2.ZERO)
 
-	var end_height: float = 0.0
-	for i in range(1, resolution):
-		var x: float = i * segment_width / resolution
-		var y: float = fast_noise_lite.get_noise_2d(x, 0) * noise_strength
-		var decline: float = i * segment_height / resolution * decline_rate
-		end_height = y + decline
-		new_segment.append(Vector2(x, end_height))
+    var end_height: float = 0.0
+    for i in range(1, resolution):
+        var x: float = i * segment_width / resolution
+        var y: float = fast_noise_lite.get_noise_2d(x, 0) * noise_strength
+        var decline: float = i * segment_height / resolution * decline_rate
+        end_height = y + decline
+        new_segment.append(Vector2(x, end_height))
 
-	new_segment.append(Vector2(segment_width, end_height))
-	new_segment.append(Vector2(segment_width, end_height + segment_height))
-	new_segment.append(Vector2(0, end_height + segment_height))
+    new_segment.append(Vector2(segment_width, end_height))
+    new_segment.append(Vector2(segment_width, end_height + segment_height))
+    new_segment.append(Vector2(0, end_height + segment_height))
 
-	return [new_segment, end_height]
+    return [new_segment, end_height]
 
 
 func get_width() -> float:
-	return segment_width
+    return segment_width
 
 
 func get_center() -> Vector2:
-	return Vector2(segment_width / 2, segment_height / 2)
+    return Vector2(segment_width / 2, segment_height / 2)
 
 
 func get_top_right_corner() -> Vector2:
-	return Vector2(segment_width, 0)
+    return Vector2(segment_width, 0)
