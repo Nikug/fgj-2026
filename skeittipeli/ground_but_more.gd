@@ -19,9 +19,27 @@ var noisiness: float = 1.0
 var previous_height: float = 0.0
 # can touch now again
 
+@onready var fast_noise_lite: FastNoiseLite = FastNoiseLite.new()
+@onready var perlin_noise: FastNoiseLite = FastNoiseLite.new()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
   current_index = initial_segments
+
+
+  fast_noise_lite.set_seed(randi())
+  fast_noise_lite.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
+  fast_noise_lite.fractal_octaves = 1
+  fast_noise_lite.frequency = 0.00005
+  fast_noise_lite.fractal_type = FastNoiseLite.FRACTAL_PING_PONG
+  fast_noise_lite.fractal_ping_pong_strength = 20
+
+  perlin_noise.set_seed(randi())
+  perlin_noise.noise_type = FastNoiseLite.TYPE_PERLIN
+  perlin_noise.frequency = 0.001
+  perlin_noise.fractal_octaves = 1
+  perlin_noise.fractal_type = FastNoiseLite.FRACTAL_PING_PONG
+
 
   # Initial map
   for i in range(0, initial_segments):
@@ -53,7 +71,7 @@ func _add_segment() -> void:
     slope += min(slope_increase, max_slope)
     noisiness += noise_increase
 
-    var arr = ground.generate_segment(previous_height)
+    var arr = ground.generate_segment(previous_height, fast_noise_lite, perlin_noise, start.x)
     var segment = arr[0]
     # var right_height = arr[1]
     var left_height = arr[2]

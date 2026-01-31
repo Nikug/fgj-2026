@@ -39,17 +39,18 @@ func _ready():
 
 var current_movement_speed: float = 0.0
 
-const GROUND_ACCEL: float = 30
+const GROUND_ACCEL: float = 100
 const GROUND_FRICTION: float = 0.8
-const AIR_ACCEL: float = 30
-const GROUND_SPEED_LIMIT: float = 80
-const AIR_SPEED_LIMIT: float = 80
-const ROTATION_LIMIT: float = 300
-const MAX_MOVEMENT_SPEED: float = 2000
+const AIR_ACCEL: float = 100
+const GROUND_SPEED_LIMIT: float = 900
+const AIR_SPEED_LIMIT: float = 900
+const ROTATION_LIMIT: float = 30
+const MAX_MOVEMENT_SPEED: float = 800
 
 
 func _physics_process(delta: float):
   # Add the gravity.
+      
   if not is_on_floor():
     velocity.y += gravity * delta
     was_in_air = true
@@ -60,9 +61,6 @@ func _physics_process(delta: float):
     land()
 
 
-  # Always apply minimum leftward velocity
-  if velocity.x > min_left_velocity:
-    velocity.x = min(velocity.x, min_left_velocity)
 
 
   # Get the input direction and handle the movement/deceleration.
@@ -103,9 +101,14 @@ func _physics_process(delta: float):
           play_jump_animation()
         # Normal jump from floor
         #jump()
+    elif is_on_wall():
+        velocity += get_wall_normal().rotated(-0.75*PI) * 400        
     else:
-          velocity.x -= 600
-  velocity.x = max(-MAX_MOVEMENT_SPEED, velocity.x) if velocity.x < 0 else min(MAX_MOVEMENT_SPEED, velocity.x)
+        velocity.x -= 600
+
+  # Always apply minimum leftward velocity
+  velocity.x = min(min_left_velocity, max(-MAX_MOVEMENT_SPEED, velocity.x))
+
   update_facing_direction()
 
 func update_facing_direction():
