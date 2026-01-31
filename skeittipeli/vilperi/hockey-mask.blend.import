@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bbcirll4ysga4"
-path="res://.godot/imported/hockey-mask.blend-5e433adbf5c5e0a674735ab5a2b5666e.scn"
+valid=false
 
 [deps]
 
 source_file="res://vilperi/hockey-mask.blend"
-dest_files=["res://.godot/imported/hockey-mask.blend-5e433adbf5c5e0a674735ab5a2b5666e.scn"]
 
 [params]
 

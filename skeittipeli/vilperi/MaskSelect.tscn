@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cn54bc7uawq6g"]
 
 [ext_resource type="PackedScene" uid="uid://kn1f2aa51bhd" path="res://vilperi/interiorpack/SmallBookShelf1.glb" id="1_iyejq"]
-[ext_resource type="PackedScene" uid="uid://bbcirll4ysga4" path="res://vilperi/hockey-mask.blend" id="2_iyejq"]
 [ext_resource type="Script" uid="uid://cb0qco0d6djkn" path="res://vilperi/select_mask.gd" id="2_wdep1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyejq"]
@@ -17,20 +16,11 @@ transform = Transform3D(13.897388, 0, 0, 0, 10.569618, 0, 0, 0, 9.638941, 0, 10.
 [node name="Mask 1" type="Node3D" parent="." unique_id=1255594539]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2298045, 20.789064, -0.9376731)
 
-[node name="hockey-mask" parent="Mask 1" unique_id=1554034132 instance=ExtResource("2_iyejq")]
-transform = Transform3D(-0.9969171, -0.042040445, -0.06624516, 0, 0.8443277, -0.5358268, 0.07845902, -0.53417486, -0.8417252, 0, 0.8835621, 0.4480797)
-
 [node name="Mask 2" type="Node3D" parent="." unique_id=1177450355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005620122, 20.866491, -0.9376731)
 
-[node name="hockey-mask" parent="Mask 2" unique_id=413626338 instance=ExtResource("2_iyejq")]
-transform = Transform3D(-0.99691737, -0.042040452, -0.06624516, 0, 0.84432787, -0.5358268, 0.07845904, -0.534175, -0.8417252, 0, 0.884, 0.448)
-
 [node name="Mask 3" type="Node3D" parent="." unique_id=543760744]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.867508, 20.887047, -0.9376731)
-
-[node name="hockey-mask" parent="Mask 3" unique_id=13995381 instance=ExtResource("2_iyejq")]
-transform = Transform3D(-0.99691737, -0.042040456, -0.06624516, 0, 0.8443279, -0.5358268, 0.07845904, -0.53417504, -0.8417252, 0, 0.884, 0.448)
 
 [node name="SpotlightMask2" type="SpotLight3D" parent="." unique_id=687525317]
 transform = Transform3D(1, 0, 0, 0, 0.58118606, 0.8137708, 0, -0.8137708, 0.58118606, -0.19647932, 27.531326, 3.7514782)
