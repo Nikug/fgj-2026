@@ -23,14 +23,14 @@ func _ready() -> void:
   fast_noise_lite.set_seed(randi())
   fast_noise_lite.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
   fast_noise_lite.fractal_octaves = 1
-  fast_noise_lite.frequency = 2
+  fast_noise_lite.frequency = 0.1
   fast_noise_lite.fractal_type = FastNoiseLite.FRACTAL_PING_PONG
   fast_noise_lite.fractal_ping_pong_strength = 0.9
 
   perlin_noise.set_seed(randi())
   perlin_noise.noise_type = FastNoiseLite.TYPE_PERLIN
-  perlin_noise.frequency = 8
-  perlin_noise.fractal_octaves = 0
+  perlin_noise.frequency = 0.02
+  perlin_noise.fractal_octaves = 1
   perlin_noise.fractal_type = FastNoiseLite.FRACTAL_PING_PONG
 
 func set_segment(segment: PackedVector2Array) -> void:
@@ -46,7 +46,7 @@ func generate_segment(previous_height: float) -> Array:
 
   for i in range(1, resolution):
     var x: float = -i * segment_width / resolution
-    var y: float = (fast_noise_lite.get_noise_2d(x, 0) + perlin_noise.get_noise_2d(x, 0) * 10) * noise_strength
+    var y: float = (perlin_noise.get_noise_1d(x) + fast_noise_lite.get_noise_1d(x)) * noise_strength
     left_height += y + decline_rate
     new_segment.append(Vector2(x, left_height))
     if (randf() < foliage_chance):
