@@ -145,6 +145,8 @@ func _physics_process(delta: float):
 
   # Always apply minimum leftward velocity
   velocity.x = min(min_left_velocity, max(-max_movement_speed, velocity.x))
+  # Unless dead
+  if isDead: velocity = Vector2.ZERO
 
   update_facing_direction()
 
@@ -178,6 +180,10 @@ func _on_animation_finished():
 func _on_area_2d_player_fell():
   isDead = true
   fell.emit()
+  velocity = Vector2.ZERO
+  rotation = 0.0
+  position.y += 32
+  
 
 func play_skate_animation():
     if (isDead):
