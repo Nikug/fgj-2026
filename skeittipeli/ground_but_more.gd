@@ -3,6 +3,7 @@ extends Node2D
 @export var start_point: Vector2 = Vector2(0, 0)
 @export var noise_increase: float = 0.2
 @export var slope_increase: float = 0.01
+@export var max_slope: float = 10.0
 
 @onready var ground_scene: PackedScene = preload("res://ground.tscn")
 
@@ -47,7 +48,7 @@ func _add_segment() -> void:
 
     ground.noise_strength = noisiness
     ground.decline_rate = slope
-    slope += slope_increase
+    slope += min(slope_increase, max_slope)
     noisiness += noise_increase
 
     var arr = ground.generate_segment(previous_height)
