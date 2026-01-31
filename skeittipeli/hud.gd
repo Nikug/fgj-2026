@@ -9,7 +9,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
     if Input.is_action_just_pressed("ui_cancel"):
-        get_tree().change_scene_to_file("res://main.tscn")
+        get_tree().change_scene_to_file("res://vilperi/MaskSelect.tscn")
 
 
 func show_message(text):
@@ -24,11 +24,11 @@ func show_game_over():
     show_message("Game Over")
     await $MessageTimer.timeout
 
-    get_tree().change_scene_to_file("res://main.tscn")
+    get_tree().change_scene_to_file("res://vilperi/MaskSelect.tscn")
 
 func update_score(score):
     $ScoreLabel.text = str(score)
 
 
 func _on_button_pressed():
-    get_tree().change_scene_to_file("res://main.tscn")
+    get_tree().change_scene_to_file("res://vilperi/MaskSelect.tscn")

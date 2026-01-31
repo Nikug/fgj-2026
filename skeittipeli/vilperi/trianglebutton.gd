@@ -1,36 +1,21 @@
-extends TextureButton
+extends Button
 
-@export var triangle_color: Color = Color.WHITE
-@export var triangle_size: int = 32
-@export var pointing_left: bool = false
+@export var direction: String = "left" # "left" or "right"
 
 func _ready():
-    texture_normal = create_triangle_texture(triangle_color, pointing_left)
-    custom_minimum_size = Vector2(triangle_size, triangle_size)
+    self.flat = true
+    self.text = ""
 
-func create_triangle_texture(color: Color, left: bool) -> ImageTexture:
-    var image = Image.create(triangle_size, triangle_size, false, Image.FORMAT_RGBA8)
-    image.fill(Color.TRANSPARENT)
-    
+func _draw():
     var points = []
-    if left:
-        # Left-pointing triangle
-        points = [Vector2(triangle_size - 4, 4), Vector2(triangle_size - 4, triangle_size - 4), Vector2(4, triangle_size / 2)]
+    var w = size.x
+    var h = size.y
+    if direction == "left":
+        points = [Vector2(w, 0), Vector2(0, h / 2), Vector2(w, h)]
     else:
-        # Right-pointing triangle
-        points = [Vector2(4, 4), Vector2(4, triangle_size - 4), Vector2(triangle_size - 4, triangle_size / 2)]
-    
-    # Draw filled triangle
-    for y in range(triangle_size):
-        for x in range(triangle_size):
-            if point_in_triangle(Vector2(x, y), points[0], points[1], points[2]):
-                image.set_pixel(x, y, color)
-    
-    return ImageTexture.create_from_image(image)
-
-func point_in_triangle(p: Vector2, a: Vector2, b: Vector2, c: Vector2) -> bool:
-    var area = abs((b.x - a.x) * (c.y - a.y) - (c.x - a.x) * (b.y - a.y))
-    var area1 = abs((p.x - b.x) * (c.y - b.y) - (c.x - b.x) * (p.y - b.y))
-    var area2 = abs((a.x - p.x) * (c.y - p.y) - (c.x - p.x) * (a.y - p.y))
-    var area3 = abs((a.x - b.x) * (p.y - b.y) - (b.x - p.x) * (a.y - b.y))
-    return abs(area - (area1 + area2 + area3)) < 1.0
+        points = [Vector2(0, 0), Vector2(w, h / 2), Vector2(0, h)]
+    # Gold fill
+    draw_polygon(points, [Color(0.573, 0.518, 0.18, 0.392)])
+    # Silver outline
+    points.append(points[0]) # Close the triangle
+    draw_polyline(points, Color(0.451, 0.451, 0.451, 0.396), 4.0)
