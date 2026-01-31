@@ -40,7 +40,7 @@ polygon = PackedVector2Array(300, 0, -300, 0, -442, 560, 395, 566)
 polygon = PackedVector2Array(-300, 0, 300, 0, 300, 400, -300, 400)
 
 [node name="GroundButMore" parent="world" unique_id=1891045757 instance=ExtResource("1_dmrlw")]
-start_point = Vector2(-300, 0)
+start_point = Vector2(-1000, 0)
 
 [node name="Hud" parent="." unique_id=122304504 instance=ExtResource("2_dmrlw")]
 

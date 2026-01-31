@@ -10,7 +10,7 @@ func _ready() -> void:
   var slope: float = 1.0
   var previous_height: float = 0.0
 
-  for i in range(0, 10):
+  for i in range(0, 100):
     var ground: Node2D = ground_scene.instantiate();
     add_child(ground)
 

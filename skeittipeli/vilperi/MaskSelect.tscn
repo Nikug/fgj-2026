@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://cn54bc7uawq6g"]
+[gd_scene format=3 uid="uid://dtbskwn3u6n7e"]
 
-[ext_resource type="Material" uid="uid://dbh16s23gyd51" path="res://vilperi/GreenMaskMaterial.tres" id="2_6ldvh"]
+[ext_resource type="Material" path="res://vilperi/GreenMaskMaterial.tres" id="2_6ldvh"]
 [ext_resource type="Script" uid="uid://cb0qco0d6djkn" path="res://vilperi/select_mask.gd" id="2_wdep1"]
-[ext_resource type="Material" uid="uid://didqm1gqt5rg4" path="res://vilperi/RedMaskMaterial.tres" id="3_ive5y"]
-[ext_resource type="Material" uid="uid://bsppthvnnosy8" path="res://vilperi/BlueMaskMaterial.tres" id="4_iyejq"]
+[ext_resource type="Material" path="res://vilperi/RedMaskMaterial.tres" id="3_ive5y"]
+[ext_resource type="Material" path="res://vilperi/BlueMaskMaterial.tres" id="4_iyejq"]
 [ext_resource type="Material" uid="uid://d7rwpjjacw3i" path="res://vilperi/Wood.tres" id="6_igvdf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_76r5c"]
