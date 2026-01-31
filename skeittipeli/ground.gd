@@ -32,7 +32,6 @@ func generate_segment(previous_height: float) -> Array:
   for i in range(1, resolution):
     var x: float = -i * segment_width / resolution
     var y: float = fast_noise_lite.get_noise_2d(x, 0) * noise_strength
-    print("noise: ", y)
     left_height += y + decline_rate
     new_segment.append(Vector2(x, left_height))
 

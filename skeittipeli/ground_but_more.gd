@@ -1,8 +1,8 @@
 extends Node2D
 
 @export var start_point: Vector2 = Vector2(0, 0)
-@export var noise_increase: float = 1.0
-@export var slope_increase: float = 0.5
+@export var noise_increase: float = 0.2
+@export var slope_increase: float = 0.01
 
 @onready var ground_scene: PackedScene = preload("res://ground.tscn")
 
