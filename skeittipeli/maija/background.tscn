@@ -27,11 +27,12 @@ animations = [{
 [node name="Background" type="Node2D" unique_id=279925762]
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=821386847]
-repeat_size = Vector2(1024, 0)
+repeat_size = Vector2(2048, 0)
 autoscroll = Vector2(-60, 0)
-repeat_times = 2
+repeat_times = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Parallax2D" unique_id=581463779]
 texture_filter = 1
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_6gfh6")
-frame_progress = 0.9082185
+frame_progress = 0.9377983
