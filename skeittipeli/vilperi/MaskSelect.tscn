@@ -1,10 +1,11 @@
-[gd_scene format=3 uid="uid://cn54bc7uawq6g"]
+[gd_scene format=3 uid="uid://d1hvu5rpc4je3"]
 
 [ext_resource type="PackedScene" uid="uid://kn1f2aa51bhd" path="res://vilperi/interiorpack/SmallBookShelf1.glb" id="1_iyejq"]
 [ext_resource type="PackedScene" uid="uid://drcmsnia5meyg" path="res://vilperi/hockey-recalc.glb" id="2_6ldvh"]
 [ext_resource type="Script" uid="uid://cb0qco0d6djkn" path="res://vilperi/select_mask.gd" id="2_wdep1"]
 [ext_resource type="PackedScene" uid="uid://hvhi65w3st55" path="res://vilperi/plague-fixed.glb" id="3_iyejq"]
 [ext_resource type="Script" uid="uid://botmcfj7in7o3" path="res://vilperi/trianglebutton.gd" id="4_ive5y"]
+[ext_resource type="AudioStream" uid="uid://wgpjh665b133" path="res://sounds/masks on.wav" id="6_igvdf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyejq"]
 albedo_color = Color(0.50490326, 0.48678517, 0.29832342, 1)
@@ -104,3 +105,8 @@ light_energy = 0.5
 light_indirect_energy = 0.5
 light_volumetric_fog_energy = 0.5
 omni_range = 102.933
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=77762406]
+stream = ExtResource("6_igvdf")
+volume_db = -10.0
+autoplay = true
