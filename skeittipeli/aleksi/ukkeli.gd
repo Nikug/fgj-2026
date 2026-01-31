@@ -22,7 +22,7 @@ var death_script
 var current_rotation_speed: float = 0.0
 
 func _ready():
-	animated_sprite_2.play("default")
+	animated_sprite_2.play("skate")
 
 func _physics_process(delta):
 	# Add the gravity.

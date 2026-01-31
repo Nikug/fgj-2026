@@ -132,6 +132,8 @@ position = Vector2(0, -1.3333334)
 shape = SubResource("CapsuleShape2D_uwxwb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=859234429]
+texture_filter = 1
+texture_repeat = 2
 sprite_frames = SubResource("SpriteFrames_x5vps")
 animation = &"skate"
 frame = 11
