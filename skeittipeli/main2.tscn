@@ -3,15 +3,37 @@
 [ext_resource type="Script" uid="uid://cin57pn3hf5af" path="res://main_2.gd" id="1_8ce7h"]
 [ext_resource type="PackedScene" uid="uid://cak7l80atj4ok" path="res://ground_but_more.tscn" id="1_dmrlw"]
 [ext_resource type="PackedScene" path="res://HUD.tscn" id="2_dmrlw"]
+[ext_resource type="Script" uid="uid://bm0158ukpqke6" path="res://start_area.gd" id="2_elgsa"]
+[ext_resource type="PackedScene" uid="uid://dfl2phnrimpu5" path="res://aleksi/Pelaaja.tscn" id="2_sck4r"]
+[ext_resource type="Texture2D" uid="uid://cjd3etjlwy1kk" path="res://images/cobblestone_3.png" id="3_3yxjw"]
 
 [node name="Main2" type="Node2D" unique_id=955015153]
 script = ExtResource("1_8ce7h")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2140406174]
 
+[node name="Pelaaja" parent="." unique_id=1365664806 instance=ExtResource("2_sck4r")]
+position = Vector2(2, -140)
+
 [node name="world" type="Node2D" parent="." unique_id=305966094]
 
+[node name="StartArea" type="Node2D" parent="world" unique_id=1457151587]
+script = ExtResource("2_elgsa")
+
+[node name="Polygon2D" type="Polygon2D" parent="world/StartArea" unique_id=590803097]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("3_3yxjw")
+texture_scale = Vector2(4, 4)
+polygon = PackedVector2Array(300, 0, -300, 0, -442, 560, 395, 566)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="world/StartArea/Polygon2D" unique_id=1212927705]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world/StartArea/Polygon2D/StaticBody2D" unique_id=475658082]
+polygon = PackedVector2Array(-300, 0, 300, 0, 300, 400, -300, 400)
+
 [node name="GroundButMore" parent="world" unique_id=1891045757 instance=ExtResource("1_dmrlw")]
+start_point = Vector2(-300, 0)
 
 [node name="Hud" parent="." unique_id=122304504 instance=ExtResource("2_dmrlw")]
 
