@@ -41,44 +41,52 @@ var air_speed_limit: float = 80
 var rotation_limit: float = 300
 var max_movement_speed: float = 2000
 var current_movement_speed: float = 0.0
+var default_jump_cooldown: float = 1.0
+
+var rng = RandomNumberGenerator.new()
 
 
 func _ready():
   play_skate_animation()
   animated_sprite_2.animation_finished.connect(_on_animation_finished)
   if mask.selectedMask == 0:
-    print("plague")
+    #_print("plague")
     plague_mask_sprite.visible = true
     hockey_mask_sprite.visible = false
     ghost_mask_sprite.visible = false
+    rotation_multiplier = 3
+    rotation_correction_speed = 3
+    $JumpCooldown.wait_time = rng.randf_range(1.0, 3.0)
   elif mask.selectedMask == 1:
-    print("hockey")
+    #_print("hockey")
     ground_accel = 100
     air_accel = 100
     ground_speed_limit = 150
     air_speed_limit = 150
     rotation_limit = 200
     max_movement_speed = 2500
-    rotation_multiplier = 2
-    rotation_correction_speed = 2
+    rotation_multiplier = 4
+    rotation_correction_speed = 4
     min_left_velocity = -400
     plague_mask_sprite.visible = false
     hockey_mask_sprite.visible = true
     ghost_mask_sprite.visible = false
+    $JumpCooldown.wait_time = 1
   elif mask.selectedMask == 2:
-    print("ghost")
+    #_print("ghost")
     ground_accel = 10
     air_accel = 10
     ground_speed_limit = 50
     air_speed_limit = 50
     rotation_limit = 500
     max_movement_speed = 1500
-    rotation_multiplier = 6
-    rotation_correction_speed = 5
+    rotation_multiplier = 2
+    rotation_correction_speed = 2
     min_left_velocity = -100
     plague_mask_sprite.visible = false
     hockey_mask_sprite.visible = false
     ghost_mask_sprite.visible = true
+    $JumpCooldown.wait_time = 3.0
 
 
 func _physics_process(delta: float):
@@ -125,7 +133,8 @@ func _physics_process(delta: float):
       var slide_direction := get_last_slide_collision().get_normal()
       velocity = velocity.slide(slide_direction)
     # Handle Jump.
-  if Input.is_action_just_pressed("jump"):
+  if Input.is_action_just_pressed("jump") and $JumpCooldown.is_stopped():
+    $JumpCooldown.start()
     if collided:
           velocity += get_last_slide_collision().get_normal().rotated(deg_to_rad(-90)) * 200
           play_jump_animation()
@@ -138,6 +147,8 @@ func _physics_process(delta: float):
 
   # Always apply minimum leftward velocity
   velocity.x = min(min_left_velocity, max(-max_movement_speed, velocity.x))
+  # Unless dead
+  if isDead: velocity = Vector2.ZERO
 
   update_facing_direction()
 
@@ -171,6 +182,10 @@ func _on_animation_finished():
 func _on_area_2d_player_fell():
   isDead = true
   fell.emit()
+  velocity = Vector2.ZERO
+  rotation = 0.0
+  position.y += 32
+  
 
 func play_skate_animation():
     if (isDead):
@@ -193,3 +208,7 @@ func play_jump_animation():
     plague_mask_sprite.play("jump")
     hockey_mask_sprite.play("jump")
     ghost_mask_sprite.play("jump")
+
+
+func _on_jump_cooldown_timeout():
+    $JumpCooldown.stop()

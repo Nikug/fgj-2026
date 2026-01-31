@@ -19,15 +19,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7bt82"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0nsd"]
 atlas = ExtResource("3_p0nsd")
 region = Rect2(0, 0, 256, 256)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_axdj1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_t0nfn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7bt82")
+"texture": SubResource("AtlasTexture_p0nsd")
 }],
 "loop": true,
 "name": &"default",
@@ -43,6 +43,21 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t0nfn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bt82"]
+atlas = ExtResource("3_p0nsd")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_axdj1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bt82")
 }],
 "loop": true,
 "name": &"default",
@@ -65,18 +80,15 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_6gfh6")
 frame_progress = 0.14993058
 
-[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=1814880505]
-repeat_size = Vector2(1200, 0)
-autoscroll = Vector2(30, 0)
+[node name="Parallax2D5" type="Parallax2D" parent="." unique_id=1466077330]
+repeat_size = Vector2(800, 0)
+autoscroll = Vector2(4, 0)
 repeat_times = 10
-follow_viewport = false
-ignore_camera_scroll = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Parallax2D4" unique_id=1632220146]
-texture_filter = 1
-position = Vector2(80, -308)
-scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_axdj1")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Parallax2D5" unique_id=1247249368]
+position = Vector2(417, -208.00003)
+scale = Vector2(0.98046875, 0.98046875)
+sprite_frames = SubResource("SpriteFrames_t0nfn")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1398768022]
 repeat_size = Vector2(2048, 0)
@@ -91,6 +103,20 @@ texture_filter = 1
 position = Vector2(0, -197)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_7bt82")
+
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=1814880505]
+scroll_offset = Vector2(-49, -37)
+repeat_size = Vector2(1200, 0)
+autoscroll = Vector2(30, 0)
+repeat_times = 10
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Parallax2D4" unique_id=1632220146]
+texture_filter = 1
+position = Vector2(62, -353)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_axdj1")
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1754541799]
 scroll_offset = Vector2(3, -77)
