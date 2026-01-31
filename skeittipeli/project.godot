@@ -25,6 +25,10 @@ window/stretch/aspect="keep_width"
 
 project/assembly_name="Skeittipeli"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 jump={

@@ -5,8 +5,8 @@ signal full_rotation
 @export var speed: float = 200.0
 @export var jump_velocity: float = -150.0
 @export var double_jump_velocity: float = -100
-@export var rotation_correction_speed: float = 2
-@export var rotation_multiplier: float = 3
+@export var rotation_correction_speed: float = 3
+@export var rotation_multiplier: float = 4
 @export var world_speed: float = 200
 @export var death: GDScript
 @export var movement_speed: float = 200
@@ -33,12 +33,13 @@ func _ready():
 
 var current_movement_speed: float = 0.0
 
-const GROUND_ACCEL: float = 10
+const GROUND_ACCEL: float = 30
 const GROUND_FRICTION: float = 0.8
-const AIR_ACCEL: float = 10
+const AIR_ACCEL: float = 30
 const GROUND_SPEED_LIMIT: float = 80
 const AIR_SPEED_LIMIT: float = 80
 const ROTATION_LIMIT: float = 500
+const MAX_MOVEMENT_SPEED: float = 2000
 
 
 func _physics_process(delta: float):
@@ -90,6 +91,7 @@ func _physics_process(delta: float):
         #jump()
       else:
           velocity.x -= 600
+  velocity.x = max(-MAX_MOVEMENT_SPEED, velocity.x) if velocity.x <0 else min(MAX_MOVEMENT_SPEED, velocity.x)
   update_facing_direction()
 
 func update_facing_direction():

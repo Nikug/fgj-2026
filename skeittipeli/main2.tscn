@@ -1,19 +1,22 @@
 [gd_scene format=3 uid="uid://c2fjoyh7ciue5"]
 
 [ext_resource type="Script" uid="uid://cin57pn3hf5af" path="res://main_2.gd" id="1_8ce7h"]
-[ext_resource type="PackedScene" path="res://ground_but_more.tscn" id="1_dmrlw"]
-[ext_resource type="Script" path="res://main_camera.gd" id="2_1mhn8"]
-[ext_resource type="PackedScene" uid="uid://bc5mgw3foeonk" path="res://HUD.tscn" id="2_dmrlw"]
+[ext_resource type="PackedScene" uid="uid://cak7l80atj4ok" path="res://ground_but_more.tscn" id="1_dmrlw"]
+[ext_resource type="Script" uid="uid://4xvkb7seu1nb" path="res://main_camera.gd" id="2_1mhn8"]
+[ext_resource type="PackedScene" path="res://HUD.tscn" id="2_dmrlw"]
+[ext_resource type="Script" uid="uid://bm0158ukpqke6" path="res://start_area.gd" id="2_elgsa"]
 [ext_resource type="Script" path="res://start_area.gd" id="2_elgsa"]
 [ext_resource type="PackedScene" uid="uid://dfl2phnrimpu5" path="res://aleksi/Pelaaja.tscn" id="2_sck4r"]
 [ext_resource type="PackedScene" uid="uid://cbl45dc4304xk" path="res://maija/background.tscn" id="3_0rof8"]
 [ext_resource type="Texture2D" uid="uid://cjd3etjlwy1kk" path="res://images/cobblestone_3.png" id="3_3yxjw"]
+[ext_resource type="Texture2D" uid="uid://dedorybw7swvj" path="res://maija/stuff/mask_1.png" id="9_w8cd7"]
 
 [node name="Main2" type="Node2D" unique_id=955015153]
 script = ExtResource("1_8ce7h")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2140406174]
 script = ExtResource("2_1mhn8")
+follow_speed = 30.0
 
 [node name="Background" parent="Camera2D" unique_id=279925762 instance=ExtResource("3_0rof8")]
 
@@ -41,6 +44,16 @@ polygon = PackedVector2Array(-300, 0, 300, 0, 300, 400, -300, 400)
 
 [node name="GroundButMore" parent="world" unique_id=1891045757 instance=ExtResource("1_dmrlw")]
 position = Vector2(-1000, 0)
+
+[node name="Node2D" type="CanvasLayer" parent="." unique_id=840934202]
+
+[node name="TextureRect" type="TextureRect" parent="Node2D" unique_id=1513830537]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_w8cd7")
 
 [node name="Hud" parent="." unique_id=122304504 instance=ExtResource("2_dmrlw")]
 

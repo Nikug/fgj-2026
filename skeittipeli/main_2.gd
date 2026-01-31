@@ -17,7 +17,7 @@ func new_game():
     $Hud.show_message("Time to skate")
     $ScoreTimer.start()
     $Pelaaja.position = $StartPosition.position
-    $Pelaaja.rotation = 0
+    $Pelaaja.rotation = 0.001
     $Pelaaja.velocity = Vector2.ZERO
     $Pelaaja.current_rotation_speed = 0
 
