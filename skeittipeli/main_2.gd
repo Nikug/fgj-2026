@@ -22,6 +22,7 @@ func new_game():
     $Pelaaja.current_rotation_speed = 0
 
 func end_game():
+    $ScoreTimer.stop()
     $Hud.show_game_over()
 
 func _on_score_timer_timeout():
@@ -36,3 +37,7 @@ func _on_pelaaja_full_rotation():
 func _on_pigeon_destroyed():
     score += 10
     $Hud.update_score(score)
+
+
+func _on_pelaaja_fell():
+    end_game()

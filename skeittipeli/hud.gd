@@ -21,7 +21,7 @@ func _on_message_timer_timeout():
     $Message.hide()
 
 func show_game_over():
-    show_message("Game Over")
+    show_message("You fell!")
     await $MessageTimer.timeout
 
     get_tree().change_scene_to_file("res://vilperi/MaskSelect.tscn")

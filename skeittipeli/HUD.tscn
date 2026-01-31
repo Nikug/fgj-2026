@@ -40,7 +40,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="MessageTimer" type="Timer" parent="." unique_id=1798304391]
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
 
 [node name="Button" type="Button" parent="." unique_id=507465357]

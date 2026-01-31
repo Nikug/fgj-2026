@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 signal full_rotation
+signal fell
 
 @export var speed: float = 200.0
 @export var jump_velocity: float = -150.0
@@ -23,7 +24,7 @@ var has_double_jumped: bool = false
 var animation_locked: bool = false
 var direction: Vector2 = Vector2.ZERO
 var was_in_air: bool = false
-var death_script
+var isDead: bool = false
 var total_rotation: float = 0.0
 
 
@@ -57,13 +58,14 @@ func _physics_process(delta: float):
   # As good practice, you should replace UI actions with custom gameplay actions.
 
   direction = Input.get_vector("left", "right", "up", "down")
-  if direction.x != 0:
-    current_rotation_speed += direction.x * rotation_correction_speed
-  else:
-    if rotation < 0:
-      current_rotation_speed -= rotation_multiplier * abs(rotation)
+  if not isDead:
+    if direction.x != 0:
+      current_rotation_speed += direction.x * rotation_correction_speed
     else:
-      current_rotation_speed += rotation_multiplier * rotation
+      if rotation < 0:
+        current_rotation_speed -= rotation_multiplier * abs(rotation)
+      else:
+        current_rotation_speed += rotation_multiplier * rotation
 
   current_rotation_speed = min(ROTATION_LIMIT, current_rotation_speed * delta)
   var strafe_accel := GROUND_ACCEL if is_on_floor() else AIR_ACCEL
@@ -117,3 +119,8 @@ func land():
 func _on_animation_finished():
   if animated_sprite_2.animation == "fall":
     animated_sprite_2.play("skate")
+
+
+func _on_area_2d_player_fell():
+  isDead = true
+  fell.emit()
