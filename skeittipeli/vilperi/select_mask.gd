@@ -55,6 +55,8 @@ func _process(_delta: float) -> void:
 		_on_prev_pressed()
 	if Input.is_action_just_pressed("right"):
 		_on_next_pressed()
+	if Input.is_action_just_pressed("ui_accept"):
+		get_tree().change_scene_to_file("res://vilperi/cutscene.tscn")
 		
 func _physics_process(delta: float) -> void:
 	if is_moving_camera:

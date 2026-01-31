@@ -7,10 +7,10 @@ var images = [
 ]
 
 var current_image_index = 0
-var fade_duration = 1.0  # Duration of fade transition in seconds
-var hold_duration = 0.5  # Duration to hold each image in seconds
+var fade_duration = 1.0 # Duration of fade transition in seconds
+var hold_duration = 0.5 # Duration to hold each image in seconds
 var time_elapsed = 0.0
-var state = "fade_in"  # States: "fade_in", "hold", "fade_out"
+var state = "fade_in" # States: "fade_in", "hold", "fade_out"
 var is_finished = false
 
 @onready var image_rect = $TextureRect
@@ -21,13 +21,12 @@ func _ready():
 	load_image()
 
 func _process(delta):
-	if Input.is_action_just_pressed("enter") or Input.is_action_just_pressed("click"):
-		get_tree().change_scene_to_file("res://main2.tscn")
+    if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("click"):
+        get_tree().change_scene_to_file("res://main2.tscn")
 
 	time_elapsed += delta
 	
 	match state:
-		
 		# Fade picture in
 		"fade_in":
 			if time_elapsed >= fade_duration:
@@ -46,7 +45,6 @@ func _process(delta):
 		
 		# Fade picture out
 		"fade_out":
-			
 			# Fade out complete
 			if time_elapsed >= fade_duration:
 				show_next_image_or_transition()
