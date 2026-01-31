@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://4xvkb7seu1nb" path="res://main_camera.gd" id="2_1mhn8"]
 [ext_resource type="PackedScene" path="res://HUD.tscn" id="2_dmrlw"]
 [ext_resource type="Script" uid="uid://bm0158ukpqke6" path="res://start_area.gd" id="2_elgsa"]
+[ext_resource type="Script" path="res://start_area.gd" id="2_elgsa"]
 [ext_resource type="PackedScene" uid="uid://dfl2phnrimpu5" path="res://aleksi/Pelaaja.tscn" id="2_sck4r"]
 [ext_resource type="PackedScene" uid="uid://cbl45dc4304xk" path="res://maija/background.tscn" id="3_0rof8"]
 [ext_resource type="Texture2D" uid="uid://cjd3etjlwy1kk" path="res://images/cobblestone_3.png" id="3_3yxjw"]
@@ -44,13 +45,6 @@ polygon = PackedVector2Array(-300, 0, 300, 0, 300, 400, -300, 400)
 [node name="GroundButMore" parent="world" unique_id=1891045757 instance=ExtResource("1_dmrlw")]
 position = Vector2(-1000, 0)
 
-[node name="Hud" parent="." unique_id=122304504 instance=ExtResource("2_dmrlw")]
-
-[node name="ScoreTimer" type="Timer" parent="." unique_id=1667938202]
-
-[node name="StartPosition" type="Marker2D" parent="." unique_id=868371806]
-position = Vector2(0, -100)
-
 [node name="Node2D" type="CanvasLayer" parent="." unique_id=840934202]
 
 [node name="TextureRect" type="TextureRect" parent="Node2D" unique_id=1513830537]
@@ -60,6 +54,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_w8cd7")
+
+[node name="Hud" parent="." unique_id=122304504 instance=ExtResource("2_dmrlw")]
+
+[node name="ScoreTimer" type="Timer" parent="." unique_id=1667938202]
+
+[node name="StartPosition" type="Marker2D" parent="." unique_id=868371806]
+position = Vector2(0, -100)
 
 [connection signal="full_rotation" from="Pelaaja" to="." method="_on_pelaaja_full_rotation"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
