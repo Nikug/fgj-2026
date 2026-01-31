@@ -20,11 +20,11 @@ func _ready() -> void:
     slope += 0.5
     var arr = ground.generate_segment()
     var segment = arr[0]
-    var start_height = arr[1]
-    var end_height = arr[2]
-    ground.position.y -= end_height
+    var left_height = arr[1]
+    var right_height = arr[2]
+    ground.position.y -= right_height
 
     ground.set_segment(segment)
     var width = ground.get_width()
     start.x -= width
-    start.y += start_height
+    start.y += left_height

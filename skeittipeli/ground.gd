@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var resolution: int = 50
-@export var segment_width: float = 200.0
+@export var segment_width: float = 500.0
 @export var segment_height: float = 500.0
 @export var noise_strength: float = 50.0
 @export var decline_rate: float = 2.0
@@ -16,6 +16,7 @@ func _ready() -> void:
     fast_noise_lite.set_seed(randi())
     fast_noise_lite.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
     fast_noise_lite.fractal_ping_pong_strength = 0.9
+    fast_noise_lite.frequency = 0.004
 
 
 func set_segment(segment: PackedVector2Array) -> void:
@@ -27,26 +28,25 @@ func generate_segment() -> Array:
     var new_segment: PackedVector2Array = PackedVector2Array()
 
     var decline: float = decline_rate * resolution
-    var start_height: float = decline
-    var end_height: float = 0.0
+    var left_height: float = decline
+    var right_height: float = 0.0
 
-    new_segment.append(Vector2(0, start_height))
+    new_segment.append(Vector2(0, left_height))
 
     for i in range(1, resolution):
         var x: float = i * segment_width / resolution
         var y: float = fast_noise_lite.get_noise_2d(x, 0) * noise_strength
         decline -= decline_rate
-        end_height = y + decline
-        new_segment.append(Vector2(x, end_height))
+        right_height = y + decline
+        new_segment.append(Vector2(x, right_height))
 
     # Last point in the generated line
-    new_segment.append(Vector2(segment_width, end_height))
+    new_segment.append(Vector2(segment_width, right_height))
     # Points to create bottom of the shape
     new_segment.append(Vector2(segment_width, segment_height))
-    new_segment.append(Vector2(0, segment_height + start_height))
+    new_segment.append(Vector2(0, segment_height + left_height))
 
-    return [new_segment, start_height, end_height]
-
+    return [new_segment, left_height, right_height]
 
 func get_width() -> float:
     return segment_width
