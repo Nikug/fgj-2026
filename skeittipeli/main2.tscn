@@ -49,4 +49,5 @@ position = Vector2(-1000, 0)
 [node name="StartPosition" type="Marker2D" parent="." unique_id=868371806]
 position = Vector2(0, -100)
 
+[connection signal="full_rotation" from="Pelaaja" to="." method="_on_pelaaja_full_rotation"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
