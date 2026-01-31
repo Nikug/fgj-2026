@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://kn1f2aa51bhd" path="res://vilperi/interiorpack/SmallBookShelf1.glb" id="1_iyejq"]
 [ext_resource type="PackedScene" uid="uid://drcmsnia5meyg" path="res://vilperi/hockey-recalc.glb" id="2_6ldvh"]
 [ext_resource type="Script" uid="uid://cb0qco0d6djkn" path="res://vilperi/select_mask.gd" id="2_wdep1"]
+[ext_resource type="PackedScene" uid="uid://hvhi65w3st55" path="res://vilperi/plague-fixed.glb" id="3_iyejq"]
 [ext_resource type="Script" uid="uid://botmcfj7in7o3" path="res://vilperi/trianglebutton.gd" id="4_ive5y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyejq"]
@@ -15,17 +16,17 @@ albedo_color = Color(0.50490326, 0.48678517, 0.29832342, 1)
 [node name="SmallBookShelf12" parent="." unique_id=238512810 instance=ExtResource("1_iyejq")]
 transform = Transform3D(13.897388, 0, 0, 0, 10.569618, 0, 0, 0, 9.638941, 0, 10.58124, -0.88230705)
 
-[node name="Mask 1" type="Node3D" parent="." unique_id=1255594539]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2298045, 20.789064, -0.9376731)
+[node name="Mask 2" type="Node3D" parent="." unique_id=1255594539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03115654, 20.789064, -0.9376731)
 
-[node name="hockey-recalc" parent="Mask 1" unique_id=437278958 instance=ExtResource("2_6ldvh")]
+[node name="hockey-recalc" parent="Mask 2" unique_id=437278958 instance=ExtResource("2_6ldvh")]
 transform = Transform3D(-1, 7.5497894e-08, 1.3076618e-07, 0, 0.8660253, -0.49999997, -1.509958e-07, -0.49999997, -0.8660253, 0, 0.83177567, 0.3554201)
 
-[node name="Mask 2" type="Node3D" parent="." unique_id=1177450355]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005620122, 20.866491, -0.9376731)
+[node name="Mask 1" type="Node3D" parent="." unique_id=1177450355]
+transform = Transform3D(0.45330316, 0.31815118, -1.9217958, 1.8540112e-09, 1.9731445, 0.326652, 1.9479526, -0.07403615, 0.4472162, -5.7974186, 20.915531, -0.24693775)
 
-[node name="hockey-recalc" parent="Mask 2" unique_id=1169989328 instance=ExtResource("2_6ldvh")]
-transform = Transform3D(-1, 7.5497894e-08, 1.3076618e-07, 0, 0.8660253, -0.49999997, -1.509958e-07, -0.49999997, -0.8660253, 0, 0.83177567, 0.3554201)
+[node name="plague-fixed" parent="Mask 1" unique_id=115821933 instance=ExtResource("3_iyejq")]
+transform = Transform3D(0.577692, 0.24293013, -0.4972492, -0.26382986, 0.7527567, 0.061246604, 0.48648283, 0.11975941, 0.6236924, -0.35097545, 0.030479431, 0.26291132)
 
 [node name="Mask 3" type="Node3D" parent="." unique_id=543760744]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.867508, 20.887047, -0.9376731)
