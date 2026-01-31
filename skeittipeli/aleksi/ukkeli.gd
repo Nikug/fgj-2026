@@ -143,8 +143,6 @@ func _physics_process(delta: float):
     else:
         velocity.x -= 600
 
-  print($JumpCooldown.is_stopped())
-
   # Always apply minimum leftward velocity
   velocity.x = min(min_left_velocity, max(-max_movement_speed, velocity.x))
 
