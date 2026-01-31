@@ -13,7 +13,7 @@ signal pigeon_destroyed
 func _ready():
   play('idle')
   # Set initial random interval
-  time_until_next_sound = randf_range(5.0, 10.0)
+  time_until_next_sound = randf_range(1.0, 5.0)
   # Connect to audio finished signal
   pigeon_call_audio_player.finished.connect(_on_sound_finished)
   self.connect("pigeon_destroyed", main._on_pigeon_destroyed)
