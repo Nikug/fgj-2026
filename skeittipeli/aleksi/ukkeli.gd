@@ -25,8 +25,8 @@ var death_script
 
 
 func _ready():
-	animated_sprite_2.play("skate")
-	animated_sprite_2.animation_finished.connect(_on_animation_finished)
+  animated_sprite_2.play("skate")
+  animated_sprite_2.animation_finished.connect(_on_animation_finished)
 
 var current_movement_speed : float = 0.0
 
@@ -38,76 +38,76 @@ const AIR_SPEED_LIMIT : float = 80
 
 
 func _physics_process(delta: float):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
-		was_in_air = true
-	else:
-		has_double_jumped = false
-		was_in_air = false
-	
-
-		
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-		
-	direction = Input.get_vector("left", "right", "up", "down")
-	if direction.x != 0:
-		current_rotation_speed += direction.x * rotation_correction_speed
-	else:
-		if rotation < 0:
-			current_rotation_speed -= rotation_multiplier * abs(rotation)
-		else:
-			current_rotation_speed += rotation_multiplier * rotation
-	var strafe_accel := GROUND_ACCEL if is_on_floor() else AIR_ACCEL
-	var speed_limit := GROUND_SPEED_LIMIT if is_on_floor() else AIR_SPEED_LIMIT
-
-	var accel := strafe_accel * delta
-	accel = max(0, min(accel, speed_limit - velocity.length()))
-
-			
-	
-	rotation += current_rotation_speed
-	
+  # Add the gravity.
+  if not is_on_floor():
+    velocity.y += gravity * delta
+    was_in_air = true
+  else:
+    has_double_jumped = false
+    was_in_air = false
 
 
-	var collided := move_and_slide()
-	if collided :
-		var  slide_direction := get_last_slide_collision().get_normal()
-		velocity = velocity.slide(slide_direction)
-	# Handle Jump.
-	if Input.is_action_just_pressed("jump"):
-		if collided:
-			velocity += get_last_slide_collision().get_normal().rotated(deg_to_rad(-90)) * 200
-			print(velocity)
-			# Normal jump from floor
-			#jump()
-		else:
-			velocity.x -= 600
 
-	update_facing_direction()
-		
+
+  # Get the input direction and handle the movement/deceleration.
+  # As good practice, you should replace UI actions with custom gameplay actions.
+
+  direction = Input.get_vector("left", "right", "up", "down")
+  if direction.x != 0:
+    current_rotation_speed += direction.x * rotation_correction_speed
+  else:
+    if rotation < 0:
+      current_rotation_speed -= rotation_multiplier * abs(rotation)
+    else:
+      current_rotation_speed += rotation_multiplier * rotation
+  var strafe_accel := GROUND_ACCEL if is_on_floor() else AIR_ACCEL
+  var speed_limit := GROUND_SPEED_LIMIT if is_on_floor() else AIR_SPEED_LIMIT
+
+  var accel := strafe_accel * delta
+  accel = max(0, min(accel, speed_limit - velocity.length()))
+
+
+
+  rotation += current_rotation_speed
+
+
+
+  var collided := move_and_slide()
+  if collided :
+    var  slide_direction := get_last_slide_collision().get_normal()
+    velocity = velocity.slide(slide_direction)
+  # Handle Jump.
+  if Input.is_action_just_pressed("jump"):
+    if collided:
+      velocity += get_last_slide_collision().get_normal().rotated(deg_to_rad(-90)) * 200
+      print(velocity)
+      # Normal jump from floor
+      #jump()
+    else:
+      velocity.x -= 600
+
+  update_facing_direction()
+
 func update_facing_direction():
-	if direction.x > 0:
-		animated_sprite.flip_h = false
-	elif direction.x < 0:
-		animated_sprite.flip_h = true
-		
+  if direction.x > 0:
+    animated_sprite.flip_h = false
+  elif direction.x < 0:
+    animated_sprite.flip_h = true
+
 func jump():
-	velocity.y = jump_velocity
-	animation_locked = true
-	
+  velocity.y = jump_velocity
+  animation_locked = true
+
 func double_jump():
-	animated_sprite_2.play("fall")
-	
-	velocity.y = double_jump_velocity
-	animation_locked = true
-	has_double_jumped = true
+  animated_sprite_2.play("fall")
+
+  velocity.y = double_jump_velocity
+  animation_locked = true
+  has_double_jumped = true
 
 func land():
-	animation_locked = true
+  animation_locked = true
 
 func _on_animation_finished():
-	if animated_sprite_2.animation == "fall":
-		animated_sprite_2.play("skate")
+  if animated_sprite_2.animation == "fall":
+    animated_sprite_2.play("skate")

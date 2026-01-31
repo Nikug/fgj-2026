@@ -17,7 +17,7 @@ texture_repeat = 2
 color = Color(1, 0.45490196, 1, 1)
 texture = ExtResource("2_t7tip")
 texture_scale = Vector2(4, 4)
-polygon = PackedVector2Array(468, 139, 108.42285, 127.65021, 114.98926, 462.54144, 449.87988, 495.37396)
+polygon = PackedVector2Array(516, 110, 108.42285, 127.65021, 114.98926, 462.54144, 449.87988, 495.37396)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1887169291]
 
