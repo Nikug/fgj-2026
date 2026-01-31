@@ -74,6 +74,8 @@ animations = [{
 [node name="Pelaaja" type="CharacterBody2D" unique_id=1365664806]
 material = SubResource("ShaderMaterial_q6vvs")
 scale = Vector2(3, 3)
+floor_stop_on_slope = false
+floor_max_angle = 0.0
 script = ExtResource("1_uwxwb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=530049375]

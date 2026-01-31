@@ -7,6 +7,8 @@ extends CharacterBody2D
 @export var rotation_multiplier: float = 0.002
 @export var world_speed: float = 200
 @export var death: GDScript
+@export var movement_speed : float  = 200
+@export var maxmovement_speed : float  = 200
 
 @onready var animated_sprite: Sprite2D = $Sprite2D
 @onready var player_collider: CollisionShape2D = $Area2D/CollisionShape2D
@@ -25,7 +27,16 @@ func _ready():
 	animated_sprite_2.play("skate")
 	animated_sprite_2.animation_finished.connect(_on_animation_finished)
 
-func _physics_process(delta):
+var current_movement_speed : float = 0.0
+
+const GROUND_ACCEL: float = 10
+const GROUND_FRICTION: float  =0.8
+const AIR_ACCEL: float = 10
+const GROUND_SPEED_LIMIT : float = 50
+const AIR_SPEED_LIMIT : float = 80
+
+
+func _physics_process(delta: float):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -56,6 +67,12 @@ func _physics_process(delta):
 			current_rotation_speed -= rotation_multiplier * abs(rotation)
 		else:
 			current_rotation_speed += rotation_multiplier * rotation
+	var strafe_accel := GROUND_ACCEL if is_on_floor() else AIR_ACCEL
+	var speed_limit := GROUND_SPEED_LIMIT if is_on_floor() else AIR_SPEED_LIMIT
+
+	var accel := strafe_accel * delta
+	accel = max(0, min(accel, speed_limit - velocity.length()))
+
 			
 	
 	rotation += current_rotation_speed
@@ -63,9 +80,13 @@ func _physics_process(delta):
 	velocity.x = - world_speed
 
 
-	move_and_slide()
+	var collided := move_and_slide()
+	if collided :
+		var  slide_direction := get_last_slide_collision().get_normal()
+		velocity = velocity.slide(slide_direction)
+
 	update_facing_direction()
-	
+		
 func update_facing_direction():
 	if direction.x > 0:
 		animated_sprite.flip_h = false
