@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cin57pn3hf5af" path="res://main_2.gd" id="1_8ce7h"]
 [ext_resource type="PackedScene" path="res://ground_but_more.tscn" id="1_dmrlw"]
-[ext_resource type="Script" path="res://main_camera.gd" id="2_1mhn8"]
-[ext_resource type="PackedScene" uid="uid://bc5mgw3foeonk" path="res://HUD.tscn" id="2_dmrlw"]
+[ext_resource type="Script" uid="uid://4xvkb7seu1nb" path="res://main_camera.gd" id="2_1mhn8"]
+[ext_resource type="PackedScene" path="res://HUD.tscn" id="2_dmrlw"]
 [ext_resource type="Script" path="res://start_area.gd" id="2_elgsa"]
 [ext_resource type="PackedScene" uid="uid://dfl2phnrimpu5" path="res://aleksi/Pelaaja.tscn" id="2_sck4r"]
+[ext_resource type="PackedScene" uid="uid://b1fcg8p8uqk2s" path="res://maija/background.tscn" id="3_0rof8"]
 [ext_resource type="Texture2D" uid="uid://cjd3etjlwy1kk" path="res://images/cobblestone_3.png" id="3_3yxjw"]
 
 [node name="Main2" type="Node2D" unique_id=955015153]
@@ -13,6 +14,8 @@ script = ExtResource("1_8ce7h")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2140406174]
 script = ExtResource("2_1mhn8")
+
+[node name="Background" parent="Camera2D" unique_id=279925762 instance=ExtResource("3_0rof8")]
 
 [node name="Pelaaja" parent="." unique_id=1365664806 instance=ExtResource("2_sck4r")]
 position = Vector2(2, -140)
@@ -37,7 +40,7 @@ polygon = PackedVector2Array(300, 0, -300, 0, -442, 560, 395, 566)
 polygon = PackedVector2Array(-300, 0, 300, 0, 300, 400, -300, 400)
 
 [node name="GroundButMore" parent="world" unique_id=1891045757 instance=ExtResource("1_dmrlw")]
-start_point = Vector2(-300, 0)
+start_point = Vector2(-1000, 0)
 
 [node name="Hud" parent="." unique_id=122304504 instance=ExtResource("2_dmrlw")]
 

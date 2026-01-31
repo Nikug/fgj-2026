@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b1fcg8p8uqk2s"]
+
+[ext_resource type="Texture2D" uid="uid://c1143hfa45vs7" path="res://maija/stuff/tets.png" id="1_rwo2v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc507"]
+atlas = ExtResource("1_rwo2v")
+region = Rect2(0, 0, 1024, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0nsd"]
+atlas = ExtResource("1_rwo2v")
+region = Rect2(1024, 0, 1024, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6gfh6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc507")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0nsd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Background" type="Node2D" unique_id=279925762]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=821386847]
+repeat_size = Vector2(2048, 0)
+autoscroll = Vector2(60, 0)
+repeat_times = 10
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Parallax2D" unique_id=581463779]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_6gfh6")
+frame_progress = 0.6896829

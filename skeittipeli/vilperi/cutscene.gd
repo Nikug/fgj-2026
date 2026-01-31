@@ -3,7 +3,7 @@ extends Control
 # Image sequence for the cutscene
 var images = [
     "res://vilperi/coffee.jpg",
-	"res://vilperi/Skateboard.jpg"
+    "res://vilperi/Skateboard.jpg"
 ]
 
 var current_image_index = 0

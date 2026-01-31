@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cn54bc7uawq6g"]
+[gd_scene format=3 uid="uid://dtbskwn3u6n7e"]
 
 [ext_resource type="PackedScene" uid="uid://kn1f2aa51bhd" path="res://vilperi/interiorpack/SmallBookShelf1.glb" id="1_iyejq"]
 [ext_resource type="Material" uid="uid://dbh16s23gyd51" path="res://vilperi/GreenMaskMaterial.tres" id="2_6ldvh"]
