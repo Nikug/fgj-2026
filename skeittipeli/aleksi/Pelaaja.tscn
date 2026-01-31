@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://basjt46bxstk8" path="res://aleksi/ukkeli.gd" id="1_uwxwb"]
 [ext_resource type="Script" path="res://aleksi/ukkeli_keho.gd" id="2_0hb6c"]
-[ext_resource type="PackedScene" uid="uid://b1fcg8p8uqk2s" path="res://maija/background.tscn" id="2_3qvlx"]
 [ext_resource type="Texture2D" uid="uid://cu3j24k3p1ol0" path="res://maija/stuff/Sprite-0001-Sheet.png" id="3_c7nej"]
 [ext_resource type="Texture2D" uid="uid://crinur22nsvca" path="res://maija/stuff/Sprite-0002-Sheet.png" id="3_p07sf"]
 
@@ -90,11 +89,6 @@ shape = SubResource("CircleShape2D_uwxwb")
 modulate = Color(0.781833, 0.16099358, 0.29196212, 1)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("PlaceholderTexture2D_uwxwb")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=65087918]
-
-[node name="Background" parent="Camera2D" unique_id=279925762 instance=ExtResource("2_3qvlx")]
-position = Vector2(242.16394, 142.63937)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1127667497]
 position = Vector2(1, -17.333334)
