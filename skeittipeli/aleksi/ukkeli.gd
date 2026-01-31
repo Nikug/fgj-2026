@@ -50,13 +50,13 @@ func _ready():
   play_skate_animation()
   animated_sprite_2.animation_finished.connect(_on_animation_finished)
   if mask.selectedMask == 0:
-    print("plague")
+    #_print("plague")
     plague_mask_sprite.visible = true
     hockey_mask_sprite.visible = false
     ghost_mask_sprite.visible = false
     $JumpCooldown.wait_time = rng.randf_range(1.0, 3.0)
   elif mask.selectedMask == 1:
-    print("hockey")
+    #_print("hockey")
     ground_accel = 100
     air_accel = 100
     ground_speed_limit = 150
@@ -71,7 +71,7 @@ func _ready():
     ghost_mask_sprite.visible = false
     $JumpCooldown.wait_time = 1
   elif mask.selectedMask == 2:
-    print("ghost")
+    #_print("ghost")
     ground_accel = 10
     air_accel = 10
     ground_speed_limit = 50
