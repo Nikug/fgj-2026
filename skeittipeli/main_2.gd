@@ -16,6 +16,9 @@ func new_game():
 	$Hud.show_message("Time to skate")
 	$ScoreTimer.start()
 
+func end_game():
+	$Hud.show_game_over()
+
 func _on_score_timer_timeout():
 	score += 1
 	$Hud.update_score(score)
