@@ -45,6 +45,8 @@ var default_jump_cooldown: float = 1.0
 
 var rng = RandomNumberGenerator.new()
 
+var levitationYPos
+
 
 func _ready():
   play_skate_animation()
@@ -100,6 +102,9 @@ func _physics_process(delta: float):
     total_rotation = 0.0
     land()
 
+  if mask.selectedMask == 2 and not $JumpCooldown.is_stopped() and $JumpCooldown.time_left > $JumpCooldown.wait_time / 2:
+    position.y = levitationYPos
+
 
   # Get the input direction and handle the movement/deceleration.
   # As good practice, you should replace UI actions with custom gameplay actions.
@@ -135,6 +140,8 @@ func _physics_process(delta: float):
     # Handle Jump.
   if Input.is_action_just_pressed("jump") and $JumpCooldown.is_stopped():
     $JumpCooldown.start()
+    if mask.selectedMask == 2:
+      levitationYPos = position.y - 100
     if collided:
           velocity += get_last_slide_collision().get_normal().rotated(deg_to_rad(-90)) * 200
           play_jump_animation()
