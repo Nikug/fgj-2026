@@ -32,3 +32,7 @@ func _on_score_timer_timeout():
 func _on_pelaaja_full_rotation():
     score += 10
     $Hud.update_score(score)
+
+func _on_pigeon_destroyed():
+    score += 10
+    $Hud.update_score(score)

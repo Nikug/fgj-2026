@@ -6,6 +6,7 @@ extends Node2D
 @export var max_slope: float = 10.0
 
 @onready var ground_scene: PackedScene = preload("res://ground.tscn")
+@onready var main: Node2D = $"/root/Main2"
 
 var initial_segments: int = 2
 var current_index: int = 0
@@ -40,6 +41,7 @@ func _process(_delta: float) -> void:
 
 func _add_segment() -> void:
     var ground: Node2D = ground_scene.instantiate();
+    ground.main = main
     add_child(ground)
     segment_width = ground.get_width()
 

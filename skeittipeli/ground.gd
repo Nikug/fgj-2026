@@ -19,6 +19,8 @@ extends Node2D
 @onready var rock: PackedScene = preload("res://natur/rock.tscn")
 @onready var pulu: PackedScene = preload("res://maija/encounters/pigeon/pigeon.tscn")
 
+var main: Node2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -69,6 +71,7 @@ func generate_segment(previous_height: float) -> Array:
 
 func _generate_pigeon(new_position: Vector2) -> void:
   var pigeon = pulu.instantiate()
+  pigeon.main = main
   pigeon.position = new_position
   add_child(pigeon)
 
