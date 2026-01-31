@@ -8,13 +8,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("r"):
+		new_game()
 
 func new_game():
 	score = 0
 	$Hud.update_score(score)
 	$Hud.show_message("Time to skate")
 	$ScoreTimer.start()
+	$Pelaaja.position = $StartPosition.position
 
 func end_game():
 	$Hud.show_game_over()
