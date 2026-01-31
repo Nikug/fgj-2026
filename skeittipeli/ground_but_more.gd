@@ -30,9 +30,9 @@ func _ready() -> void:
   fast_noise_lite.set_seed(randi())
   fast_noise_lite.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
   fast_noise_lite.fractal_octaves = 1
-  fast_noise_lite.frequency = 0.00005
+  fast_noise_lite.frequency = 0.00009
   fast_noise_lite.fractal_type = FastNoiseLite.FRACTAL_PING_PONG
-  fast_noise_lite.fractal_ping_pong_strength = 9
+  fast_noise_lite.fractal_ping_pong_strength = 11
   perlin_noise.set_seed(randi())
   perlin_noise.noise_type = FastNoiseLite.TYPE_PERLIN
   perlin_noise.frequency = 0.00018
