@@ -51,6 +51,7 @@ func _physics_process(delta: float):
     has_double_jumped = false
     was_in_air = false
     total_rotation = 0.0
+    land()
 
 
   # Get the input direction and handle the movement/deceleration.
@@ -87,11 +88,12 @@ func _physics_process(delta: float):
   if Input.is_action_just_pressed("jump"):
       if collided:
           velocity += get_last_slide_collision().get_normal().rotated(deg_to_rad(-90)) * 200
+          animated_sprite_2.play("jump")
         # Normal jump from floor
         #jump()
       else:
           velocity.x -= 600
-  velocity.x = max(-MAX_MOVEMENT_SPEED, velocity.x) if velocity.x <0 else min(MAX_MOVEMENT_SPEED, velocity.x)
+  velocity.x = max(-MAX_MOVEMENT_SPEED, velocity.x) if velocity.x < 0 else min(MAX_MOVEMENT_SPEED, velocity.x)
   update_facing_direction()
 
 func update_facing_direction():
@@ -103,6 +105,7 @@ func update_facing_direction():
 func jump():
   velocity.y = jump_velocity
   animation_locked = true
+  animated_sprite_2.play("jump")
 
 func double_jump():
   animated_sprite_2.play("fall")
@@ -113,6 +116,7 @@ func double_jump():
 
 func land():
   animation_locked = true
+  animated_sprite_2.play("skate")
 
 func _on_animation_finished():
   if animated_sprite_2.animation == "fall":

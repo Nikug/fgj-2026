@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://2wtpx6vrkc3x" path="res://aleksi/ukkeli_keho.gd" id="2_0hb6c"]
 [ext_resource type="Texture2D" uid="uid://cu3j24k3p1ol0" path="res://maija/stuff/Sprite-0001-Sheet.png" id="3_c7nej"]
 [ext_resource type="Texture2D" uid="uid://crinur22nsvca" path="res://maija/stuff/Sprite-0002-Sheet.png" id="3_p07sf"]
+[ext_resource type="Texture2D" uid="uid://6krh1p4ijonc" path="res://maija/stuff/jump.png" id="4_3qvlx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6vvs"]
 
@@ -32,6 +33,22 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("3_p07sf")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_t25oh"]
+atlas = ExtResource("4_3qvlx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbff6"]
+atlas = ExtResource("4_3qvlx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhpit"]
+atlas = ExtResource("4_3qvlx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjmc6"]
+atlas = ExtResource("4_3qvlx")
+region = Rect2(96, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_p07sf"]
 atlas = ExtResource("3_c7nej")
 region = Rect2(0, 0, 32, 32)
@@ -57,6 +74,23 @@ animations = [{
 }],
 "loop": false,
 "name": &"fall",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t25oh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbff6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhpit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjmc6")
+}],
+"loop": false,
+"name": &"jump",
 "speed": 8.0
 }, {
 "frames": [{
@@ -104,6 +138,6 @@ texture_filter = 1
 texture_repeat = 2
 position = Vector2(-1, 2.0000002)
 sprite_frames = SubResource("SpriteFrames_e4c05")
-animation = &"fall"
+animation = &"jump"
 frame = 3
-frame_progress = 0.36112726
+frame_progress = 1.0
