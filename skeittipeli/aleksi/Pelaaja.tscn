@@ -16,7 +16,7 @@ height = 2.0
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0hb6c"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1365664806]
+[node name="Pelaaja" type="CharacterBody2D" unique_id=1365664806]
 material = SubResource("ShaderMaterial_q6vvs")
 scale = Vector2(3, 3)
 script = ExtResource("1_uwxwb")

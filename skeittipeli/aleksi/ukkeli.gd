@@ -3,8 +3,8 @@ extends CharacterBody2D
 @export var speed : float = 200.0
 @export var jump_velocity : float = -150.0
 @export var double_jump_velocity : float = -100
-@export var rotation_correction_speed : float = 0.01
-@export var rotation_multiplier : float = 0.000005 
+@export var rotation_correction_speed : float = 0.002
+@export var rotation_multiplier : float = 0.002 
 @export var world_speed : float  = 200
 @export var death : GDScript
 
@@ -47,13 +47,14 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 		
 	direction = Input.get_vector("left", "right", "up", "down")
+	print(rotation)
 	if direction.x != 0:
 		current_rotation_speed += direction.x * rotation_correction_speed
 	else:
 		if rotation < 0:
-			current_rotation_speed -= rotation_multiplier
+			current_rotation_speed -= rotation_multiplier * abs(rotation)
 		else:
-			current_rotation_speed += rotation_multiplier
+			current_rotation_speed += rotation_multiplier * rotation
 			
 	
 	rotation += current_rotation_speed

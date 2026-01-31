@@ -10,7 +10,7 @@ b = Vector2(-500, 0)
 
 [node name="Aleksi" type="Node2D" unique_id=1709037900]
 
-[node name="CharacterBody2D" parent="." unique_id=1365664806 instance=ExtResource("1_p2b40")]
+[node name="Pelaaja" parent="." unique_id=1365664806 instance=ExtResource("1_p2b40")]
 modulate = Color(1, 0.23137255, 0.56078434, 1)
 position = Vector2(189, 53)
 scale = Vector2(100, 100)
@@ -31,3 +31,5 @@ debug_color = Color(0.3912148, 0.6104286, 0, 0.41960785)
 position = Vector2(1.1309814, -3.836763)
 scale = Vector2(1000, 2)
 texture = SubResource("PlaceholderTexture2D_p2b40")
+
+[node name="Pelaaja2" parent="." unique_id=1764612125 instance=ExtResource("1_p2b40")]
