@@ -1,10 +1,12 @@
 extends Node2D
 
+@export var start_point: Vector2 = Vector2(0, 0)
+
 @onready var ground_scene: PackedScene = preload("res://ground.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-  var start = Vector2(0, 0)
+  var start = start_point
   var slope: float = 1.0
 
   for i in range(0, 10):
