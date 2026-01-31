@@ -5,8 +5,10 @@ extends CharacterBody2D
 @export var double_jump_velocity : float = -100
 @export var rotation_speed : float = 50
 @export var world_speed : float  = 200
+@export var death : GDScript
 
 @onready var animated_sprite : Sprite2D = $Sprite2D
+@onready var player_collider : CollisionShape2D = $Area2D/CollisionShape2D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -14,6 +16,9 @@ var has_double_jumped : bool = false
 var animation_locked : bool = false
 var direction : Vector2 = Vector2.ZERO
 var was_in_air : bool = false
+var death_script
+
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -22,9 +27,9 @@ func _physics_process(delta):
 		was_in_air = true
 	else:
 		has_double_jumped = false
-		
-			
 		was_in_air = false
+	
+
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump"):

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dfl2phnrimpu5"]
 
 [ext_resource type="Script" uid="uid://basjt46bxstk8" path="res://aleksi/ukkeli.gd" id="1_uwxwb"]
+[ext_resource type="Script" uid="uid://2wtpx6vrkc3x" path="res://aleksi/ukkeli_keho.gd" id="2_0hb6c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6vvs"]
 
@@ -33,6 +34,7 @@ texture = SubResource("PlaceholderTexture2D_uwxwb")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=65087918]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1127667497]
+script = ExtResource("2_0hb6c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1451176735]
 position = Vector2(0, -1.3333334)
