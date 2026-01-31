@@ -99,6 +99,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_m1it6")
 animation = &"die"
 frame_progress = 0.9357644
+offset = Vector2(0, -15.21)
 script = ExtResource("2_l5blv")
 
 [node name="PigeonCall" type="AudioStreamPlayer2D" parent="." unique_id=1306348833]

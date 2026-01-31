@@ -11,3 +11,4 @@ z_index = 1
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_l8hla")
+offset = Vector2(0, -55.98)

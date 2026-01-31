@@ -7,6 +7,7 @@ extends Node2D
 @export var decline_rate: float = 2.0
 
 @export var foliage_chance: float = 0.02
+@export var pigeon_chance: float = 0.01
 
 @onready var collision_polygon: CollisionPolygon2D = $StaticBody2D/CollisionPolygon2D
 @onready var polygon: Polygon2D = $Polygon2D
@@ -16,6 +17,7 @@ extends Node2D
 @onready var tree: PackedScene = preload("res://natur/tree.tscn")
 @onready var spruce: PackedScene = preload("res://natur/spruce.tscn")
 @onready var rock: PackedScene = preload("res://natur/rock.tscn")
+@onready var pulu: PackedScene = preload("res://maija/encounters/pigeon/pigeon.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -49,9 +51,14 @@ func generate_segment(previous_height: float) -> Array:
     var y: float = (perlin_noise.get_noise_1d(x) + fast_noise_lite.get_noise_1d(x)) * noise_strength
     left_height += y + decline_rate
     new_segment.append(Vector2(x, left_height))
+
     if (randf() < foliage_chance):
       var new_position = Vector2(x, left_height)
       _generate_foliage(new_position)
+
+    if (randf() < pigeon_chance):
+      var new_position = Vector2(x, left_height)
+      _generate_pigeon(new_position)
 
   # Last point in the generated line
   new_segment.append(Vector2(-segment_width, left_height))
@@ -59,6 +66,11 @@ func generate_segment(previous_height: float) -> Array:
   new_segment.append(Vector2(-segment_width, left_height + segment_height))
   new_segment.append(Vector2(0, segment_height + left_height))
   return [new_segment, previous_height, left_height]
+
+func _generate_pigeon(new_position: Vector2) -> void:
+  var pigeon = pulu.instantiate()
+  pigeon.position = new_position
+  add_child(pigeon)
 
 func _generate_foliage(new_position: Vector2) -> void:
   var foliage_scale = randf() * 2.0 + 1.0
