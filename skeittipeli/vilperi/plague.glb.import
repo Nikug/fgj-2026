@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bhgjachcceh5f"
-path="res://.godot/imported/mannequinhead.glb-fcebd18c1d9fe9d068f316141d480ec0.scn"
+uid="uid://hvhi65w3st55"
+path="res://.godot/imported/plague.glb-704ef6f0201f2b215f4c0e5fa553d5d5.scn"
 
 [deps]
 
-source_file="res://vilperi/mannequinhead.glb"
-dest_files=["res://.godot/imported/mannequinhead.glb-fcebd18c1d9fe9d068f316141d480ec0.scn"]
+source_file="res://vilperi/plague.glb"
+dest_files=["res://.godot/imported/plague.glb-704ef6f0201f2b215f4c0e5fa553d5d5.scn"]
 
 [params]
 

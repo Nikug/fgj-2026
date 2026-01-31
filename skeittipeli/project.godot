@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Skeittipeli"
-run/main_scene="uid://cn54bc7uawq6g"
+run/main_scene="uid://d1hvu5rpc4je3"
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=60
 config/icon="res://icon.svg"

@@ -20,6 +20,7 @@ signal fell
 @onready var plague_mask_sprite: AnimatedSprite2D = $Area2D/plague_mask
 @onready var hockey_mask_sprite: AnimatedSprite2D = $Area2D/hockey_mask
 @onready var ghost_mask_sprite: AnimatedSprite2D = $Area2D/ghost_mask
+@onready var particles: CPUParticles2D = $CPUParticles2D
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -45,8 +46,11 @@ var default_jump_cooldown: float = 1.0
 
 var rng = RandomNumberGenerator.new()
 
+var levitationYPos
+
 
 func _ready():
+  particles.emitting = false
   play_skate_animation()
   animated_sprite_2.animation_finished.connect(_on_animation_finished)
   if mask.selectedMask == 0:
@@ -88,6 +92,14 @@ func _ready():
     ghost_mask_sprite.visible = true
     $JumpCooldown.wait_time = 3.0
 
+func _process(_delta: float):
+  if isDead:
+    particles.emitting = false
+    return
+  if is_on_floor() and not particles.emitting:
+    particles.emitting = true
+  else:
+    particles.emitting = false
 
 func _physics_process(delta: float):
   # Add the gravity.
@@ -99,6 +111,9 @@ func _physics_process(delta: float):
     was_in_air = false
     total_rotation = 0.0
     land()
+
+  if mask.selectedMask == 2 and not $JumpCooldown.is_stopped() and $JumpCooldown.time_left > $JumpCooldown.wait_time / 2:
+    position.y = levitationYPos
 
 
   # Get the input direction and handle the movement/deceleration.
@@ -135,6 +150,8 @@ func _physics_process(delta: float):
     # Handle Jump.
   if Input.is_action_just_pressed("jump") and $JumpCooldown.is_stopped():
     $JumpCooldown.start()
+    if mask.selectedMask == 2:
+      levitationYPos = position.y - 100
     if collided:
           velocity += get_last_slide_collision().get_normal().rotated(deg_to_rad(-90)) * 200
           play_jump_animation()

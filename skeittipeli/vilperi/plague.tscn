@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bi0tabkk3crns"]
+
+[ext_resource type="PackedScene" uid="uid://hvhi65w3st55" path="res://vilperi/plague.glb" id="1_pe5jy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ncngj"]
+albedo_color = Color(0.10410618, 0.07056715, 0.020136517, 1)
+
+[node name="plague" unique_id=1952050771 instance=ExtResource("1_pe5jy")]
+
+[node name="Plane" parent="." index="0" unique_id=1056058057]
+material_override = SubResource("StandardMaterial3D_ncngj")

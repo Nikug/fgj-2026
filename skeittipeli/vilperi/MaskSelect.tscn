@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://d1hvu5rpc4je3"]
 
 [ext_resource type="PackedScene" uid="uid://kn1f2aa51bhd" path="res://vilperi/interiorpack/SmallBookShelf1.glb" id="1_iyejq"]
-[ext_resource type="PackedScene" uid="uid://drcmsnia5meyg" path="res://vilperi/hockey-recalc.glb" id="2_6ldvh"]
+[ext_resource type="PackedScene" uid="uid://bg8y6r02xkd2r" path="res://vilperi/hockey.tscn" id="2_ut0w4"]
 [ext_resource type="Script" uid="uid://cb0qco0d6djkn" path="res://vilperi/select_mask.gd" id="2_wdep1"]
-[ext_resource type="PackedScene" uid="uid://hvhi65w3st55" path="res://vilperi/plague-fixed.glb" id="3_iyejq"]
+[ext_resource type="PackedScene" uid="uid://bi0tabkk3crns" path="res://vilperi/plague.tscn" id="3_ut0w4"]
 [ext_resource type="Script" uid="uid://botmcfj7in7o3" path="res://vilperi/trianglebutton.gd" id="4_ive5y"]
-[ext_resource type="PackedScene" uid="uid://cgw4n300t54ng" path="res://vilperi/mannekiini-cloth-fbx.fbx" id="5_jhdm5"]
-[ext_resource type="PackedScene" uid="uid://c6ijl4x07jamh" path="res://vilperi/mannekiini.glb" id="8_ut0w4"]
+[ext_resource type="PackedScene" uid="uid://cadgx06fhga06" path="res://vilperi/mannekiini_cloth.tscn" id="5_ihgd4"]
+[ext_resource type="PackedScene" uid="uid://ct4sjkonvp4ud" path="res://vilperi/mannekiini-head.tscn" id="5_ut0w4"]
 [ext_resource type="AudioStream" uid="uid://wgpjh665b133" path="res://sounds/masks on.wav" id="6_igvdf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyejq"]
@@ -20,25 +20,25 @@ albedo_color = Color(0.50490326, 0.48678517, 0.29832342, 1)
 transform = Transform3D(13.897388, 0, 0, 0, 10.569618, 0, 0, 0, 9.638941, 0, 10.58124, -0.88230705)
 
 [node name="Mask 2" type="Node3D" parent="." unique_id=1255594539]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03115654, 20.789064, -0.9376731)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03115654, 22.139584, -0.9376731)
 
-[node name="hockey-recalc" parent="Mask 2" unique_id=437278958 instance=ExtResource("2_6ldvh")]
-transform = Transform3D(-1, 7.5497894e-08, 1.3076618e-07, 0, 0.8660253, -0.49999997, -1.509958e-07, -0.49999997, -0.8660253, 0, 0.83177567, 0.3554201)
+[node name="hockey" parent="Mask 2" unique_id=377675199 instance=ExtResource("2_ut0w4")]
+transform = Transform3D(-0.9810114, 0.03934563, -0.18991756, 0.1403222, 0.8199598, -0.5549556, 0.13388966, -0.57106733, -0.80991083, 0, -0.50699615, 0.54755044)
 
 [node name="Mask 1" type="Node3D" parent="." unique_id=1177450355]
 transform = Transform3D(0.45330316, 0.31815118, -1.9217958, 1.8540112e-09, 1.9731445, 0.326652, 1.9479526, -0.07403615, 0.4472162, -5.7974186, 20.915531, -0.24693775)
 
-[node name="plague-fixed" parent="Mask 1" unique_id=115821933 instance=ExtResource("3_iyejq")]
-transform = Transform3D(0.577692, 0.24293013, -0.4972492, -0.26382986, 0.7527567, 0.061246604, 0.48648283, 0.11975941, 0.6236924, -0.35097545, 0.030479431, 0.26291132)
+[node name="plague" parent="Mask 1" unique_id=1952050771 instance=ExtResource("3_ut0w4")]
+transform = Transform3D(0.60681087, 0.21262135, -0.7658789, -0.377061, 0.9252393, -0.041885223, 0.6997176, 0.31419975, 0.6416179, -0.054600358, -0.044840813, 0.1096406)
 
 [node name="Mask 3" type="Node3D" parent="." unique_id=543760744]
-transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 5.1884646, 22.69824, 1.1052141)
+transform = Transform3D(4.4965153, 0.0075010206, -0.17690262, 0, 4.49596, 0.1906376, 0.17706157, -0.19048998, 4.492479, 5.1884646, 22.530931, 1.2001002)
 
-[node name="mannekiini3" parent="Mask 3" unique_id=613325267 instance=ExtResource("8_ut0w4")]
-transform = Transform3D(-0.6748165, 0, -0.015504885, 0, 0.68, 0, 0.01573804, 0, -0.66481924, 0.011740208, 0.20473957, -0.26313028)
+[node name="mannekiini" parent="Mask 3" unique_id=910637502 instance=ExtResource("5_ut0w4")]
+transform = Transform3D(-0.6958474, 0, -0.07613399, 0, 0.7, 0, 0.07613399, 0, -0.6958474, 0, -0.63076305, -0.3398469)
 
-[node name="mannekiini-cloth-fbx" parent="Mask 3" unique_id=1953108469 instance=ExtResource("5_jhdm5")]
-transform = Transform3D(-0.59871125, 0, -0.0393047, 0, 0.6, 0, 0.0393047, 0, -0.59871125, 0.02282846, 0.20414352, -0.24410447)
+[node name="mannekiini-cloth-fbx2" parent="Mask 3" unique_id=1953108469 instance=ExtResource("5_ihgd4")]
+transform = Transform3D(-0.79417837, -0.0042332173, -0.04783224, -0.002010534, 0.8032879, -0.04479197, 0.04311776, -0.040514424, -0.8831019, 0.014783621, -0.22154427, -0.2857671)
 
 [node name="SpotlightMask2" type="SpotLight3D" parent="." unique_id=687525317]
 transform = Transform3D(1, 0, 0, 0, 0.58118606, 0.8137708, 0, -0.8137708, 0.58118606, -0.19647932, 27.531326, 3.7514782)
@@ -101,7 +101,7 @@ material_override = SubResource("StandardMaterial3D_iyejq")
 mesh = SubResource("PlaneMesh_igvdf")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1598504997]
-transform = Transform3D(1, 0, 0, 0, 0.84021664, 0.5422509, 0, -0.5422509, 0.84021664, 0.12157726, 24.0476, 2.4158201)
+transform = Transform3D(1, 0, 0, 0, 0.84021664, 0.5422509, 0, -0.5422509, 0.84021664, -0.10161805, 23.66182, 2.5670886)
 current = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1929283667]
@@ -111,12 +111,13 @@ light_indirect_energy = 0.5
 light_volumetric_fog_energy = 0.5
 omni_range = 102.933
 
-[node name="mannekiini" parent="." unique_id=1977751437 instance=ExtResource("8_ut0w4")]
-transform = Transform3D(0.07298273, 0, -2.9991121, 0, 3, 0, 2.9991121, 0, 0.07298273, -4.094009, 18.890257, -0.6082103)
-
-[node name="mannekiini2" parent="." unique_id=870457870 instance=ExtResource("8_ut0w4")]
-transform = Transform3D(-2.9664493, 0, 0.44741482, 0, 3, 0, -0.44741482, 0, -2.9664493, 4.320913, 18.890257, -0.6082103)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=77762406]
 stream = ExtResource("6_igvdf")
 volume_db = -10.0
 autoplay = true
+
+[node name="mannekiini3" parent="." unique_id=617146521 instance=ExtResource("5_ut0w4")]
+transform = Transform3D(-2.9076478, 0, -0.31813127, 0, 2.9250002, 0, 0.31813127, 0, -2.9076478, 3.4709558, 15.218084, -0.16901314)
+
+[node name="mannekiini4" parent="." unique_id=1814255670 instance=ExtResource("5_ut0w4")]
+transform = Transform3D(-0.32589415, 0, -2.906788, 0, 2.925, 0, 2.906788, 0, -0.32589415, -3.9851537, 15.129213, -0.5737077)

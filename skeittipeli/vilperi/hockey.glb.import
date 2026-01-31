@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://hvhi65w3st55"
-path="res://.godot/imported/plague-fixed.glb-e56ca1db6b5ec358c1b03b78cc407f60.scn"
+uid="uid://drcmsnia5meyg"
+path="res://.godot/imported/hockey.glb-1e27f06a3039b2da09cac3e1f3b985b1.scn"
 
 [deps]
 
-source_file="res://vilperi/plague-fixed.glb"
-dest_files=["res://.godot/imported/plague-fixed.glb-e56ca1db6b5ec358c1b03b78cc407f60.scn"]
+source_file="res://vilperi/hockey.glb"
+dest_files=["res://.godot/imported/hockey.glb-1e27f06a3039b2da09cac3e1f3b985b1.scn"]
 
 [params]
 
