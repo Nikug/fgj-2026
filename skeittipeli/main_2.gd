@@ -27,3 +27,8 @@ func end_game():
 func _on_score_timer_timeout():
     score += 1
     $Hud.update_score(score)
+
+
+func _on_pelaaja_full_rotation():
+    score += 10
+    $Hud.update_score(score)

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal full_rotation
+
 @export var speed: float = 200.0
 @export var jump_velocity: float = -150.0
 @export var double_jump_velocity: float = -100
@@ -22,6 +24,7 @@ var animation_locked: bool = false
 var direction: Vector2 = Vector2.ZERO
 var was_in_air: bool = false
 var death_script
+var total_rotation: float = 0.0
 
 
 func _ready():
@@ -45,6 +48,7 @@ func _physics_process(delta: float):
   else:
     has_double_jumped = false
     was_in_air = false
+    total_rotation = 0.0
 
 
 
@@ -66,11 +70,11 @@ func _physics_process(delta: float):
   var accel := strafe_accel * delta
   accel = max(0, min(accel, speed_limit - velocity.length()))
 
-
-
   rotation += current_rotation_speed
-
-
+  total_rotation += current_rotation_speed
+  if not is_on_floor() and abs(total_rotation) > 2 * PI:
+    total_rotation = 0
+    full_rotation.emit()
 
   var collided := move_and_slide()
   if collided :
