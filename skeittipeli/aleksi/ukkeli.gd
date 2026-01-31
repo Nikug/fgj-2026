@@ -78,7 +78,7 @@ func _physics_process(delta: float):
 		velocity = velocity.slide(slide_direction)
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump"):
-		if is_on_floor():
+		if collided:
 			velocity += get_last_slide_collision().get_normal().rotated(deg_to_rad(-90)) * 200
 			print(velocity)
 			# Normal jump from floor
