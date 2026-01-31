@@ -7,7 +7,7 @@
 script = ExtResource("1_yh8r4")
 resolution = 60
 segment_width = 700.0
-segment_height = 300.0
+segment_height = 600.0
 noise_strength = 5.0
 decline_rate = 0.5
 

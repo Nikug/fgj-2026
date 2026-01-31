@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" path="res://ground_but_more.tscn" id="1_dmrlw"]
 [ext_resource type="Script" uid="uid://4xvkb7seu1nb" path="res://main_camera.gd" id="2_1mhn8"]
 [ext_resource type="PackedScene" path="res://HUD.tscn" id="2_dmrlw"]
+[ext_resource type="Script" path="res://main_camera.gd" id="2_1mhn8"]
+[ext_resource type="PackedScene" uid="uid://bc5mgw3foeonk" path="res://HUD.tscn" id="2_dmrlw"]
 [ext_resource type="Script" path="res://start_area.gd" id="2_elgsa"]
 [ext_resource type="PackedScene" uid="uid://dfl2phnrimpu5" path="res://aleksi/Pelaaja.tscn" id="2_sck4r"]
 [ext_resource type="PackedScene" uid="uid://cbl45dc4304xk" path="res://maija/background.tscn" id="3_0rof8"]
@@ -60,4 +62,5 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_w8cd7")
 
+[connection signal="full_rotation" from="Pelaaja" to="." method="_on_pelaaja_full_rotation"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]

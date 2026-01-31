@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://og1xhie7hti"]
+
+[ext_resource type="Texture2D" uid="uid://bqvocrpom0bku" path="res://images/FreePack 2.png" id="1_o6vay"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8hla"]
+atlas = ExtResource("1_o6vay")
+region = Rect2(397.3333, 164.33334, 106, 75.33334)
+
+[node name="Sprite2D" type="Sprite2D" unique_id=189190344]
+z_index = 2
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_l8hla")
