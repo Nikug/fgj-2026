@@ -40,4 +40,17 @@ autowrap_mode = 2
 wait_time = 2.0
 one_shot = true
 
+[node name="Button" type="Button" parent="." unique_id=507465357]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -132.0
+offset_top = 10.0
+offset_right = -24.0
+offset_bottom = 68.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 36
+text = "Menu"
+
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
