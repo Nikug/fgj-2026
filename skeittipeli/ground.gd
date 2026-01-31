@@ -24,9 +24,9 @@ func generate_segment() -> PackedVector2Array:
   new_segment.append(Vector2.ZERO)
 
   for i in range(1, resolution):
-	var x: float = i * segment_width / resolution
-	var y: float = fast_noise_lite.get_noise_2d(x, 0) * noise_strength
-	new_segment.append(Vector2(x, y))
+    var x: float = i * segment_width / resolution
+    var y: float = fast_noise_lite.get_noise_2d(x, 0) * noise_strength
+    new_segment.append(Vector2(x, y))
 
   new_segment.append(Vector2(segment_width, 0))
   new_segment.append(Vector2(segment_width, segment_height))
