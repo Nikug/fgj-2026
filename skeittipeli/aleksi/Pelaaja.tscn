@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://dfl2phnrimpu5"]
 
 [ext_resource type="Script" uid="uid://basjt46bxstk8" path="res://aleksi/ukkeli.gd" id="1_uwxwb"]
-[ext_resource type="Script" path="res://aleksi/ukkeli_keho.gd" id="2_0hb6c"]
+[ext_resource type="Script" uid="uid://2wtpx6vrkc3x" path="res://aleksi/ukkeli_keho.gd" id="2_0hb6c"]
 [ext_resource type="Texture2D" uid="uid://cu3j24k3p1ol0" path="res://maija/stuff/Sprite-0001-Sheet.png" id="3_c7nej"]
 [ext_resource type="Texture2D" uid="uid://crinur22nsvca" path="res://maija/stuff/Sprite-0002-Sheet.png" id="3_p07sf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6vvs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uwxwb"]
-radius = 6.6666665
+radius = 160.13882
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uwxwb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uwxwb"]
-radius = 0.3333335
-height = 2.0
+radius = 9.0
+height = 32.666668
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e4c05"]
 atlas = ExtResource("3_p07sf")
@@ -74,10 +74,14 @@ animations = [{
 [node name="Pelaaja" type="CharacterBody2D" unique_id=1365664806]
 material = SubResource("ShaderMaterial_q6vvs")
 scale = Vector2(3, 3)
+floor_stop_on_slope = false
+floor_max_angle = 0.0
+floor_snap_length = 23.5
 script = ExtResource("1_uwxwb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=530049375]
 z_index = 1
+position = Vector2(0.33333334, 0.33333334)
 scale = Vector2(0.05, 0.05)
 shape = SubResource("CircleShape2D_uwxwb")
 
@@ -89,6 +93,7 @@ texture = SubResource("PlaceholderTexture2D_uwxwb")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=65087918]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1127667497]
+position = Vector2(1, -17.333334)
 script = ExtResource("2_0hb6c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1451176735]

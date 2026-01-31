@@ -16,6 +16,8 @@ script = ExtResource("2_1mhn8")
 
 [node name="Pelaaja" parent="." unique_id=1365664806 instance=ExtResource("2_sck4r")]
 position = Vector2(2, -140)
+floor_block_on_wall = false
+floor_snap_length = 25.1
 
 [node name="world" type="Node2D" parent="." unique_id=305966094]
 

@@ -8,14 +8,20 @@ b = Vector2(-5000, 0)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p2b40"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2b40"]
+size = Vector2(92, 93)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_80jc1"]
+
 [node name="Aleksi" type="Node2D" unique_id=1709037900]
 
 [node name="Pelaaja" parent="." unique_id=1365664806 instance=ExtResource("1_p2b40")]
 modulate = Color(1, 0.23137255, 0.56078434, 1)
-position = Vector2(189, 53)
+position = Vector2(93, -120)
 scale = Vector2(100, 100)
-floor_snap_length = 9.0
-world_speed = 300.0
+floor_block_on_wall = false
+floor_max_angle = 0.0
+floor_snap_length = 8.4
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=453492022]
 position = Vector2(190.00003, 171.00003)
@@ -32,4 +38,30 @@ position = Vector2(1.1309814, -3.836763)
 scale = Vector2(8000, 4)
 texture = SubResource("PlaceholderTexture2D_p2b40")
 
-[node name="Pelaaja2" parent="." unique_id=1764612125 instance=ExtResource("1_p2b40")]
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1566603755]
+position = Vector2(91, 693)
+rotation = -0.63743556
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1462938235]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_p2b40")
+debug_color = Color(0.32039618, 0.61694854, 0.2979505, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=678865783]
+scale = Vector2(100, 100)
+texture = SubResource("PlaceholderTexture2D_80jc1")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=530180678]
+position = Vector2(-1407, 1060)
+rotation = 0.09037614
+disable_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1288339912]
+position = Vector2(0.909179, -10.157438)
+shape = SubResource("SegmentShape2D_p2b40")
+debug_color = Color(0.3912148, 0.6104286, 0, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=65124687]
+position = Vector2(1.1309814, -3.836763)
+scale = Vector2(8000, 4)
+texture = SubResource("PlaceholderTexture2D_p2b40")
