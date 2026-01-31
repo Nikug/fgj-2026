@@ -28,7 +28,6 @@ func play_skate_animation():
     ghost_mask_sprite.play("skate")
 
 func play_fall_animation():
-    print("ukkeli_keho fall")
     animated_sprite_2.play("fall")
     plague_mask_sprite.play("fall")
     hockey_mask_sprite.play("fall")
