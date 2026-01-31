@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dfl2phnrimpu5"]
 
 [ext_resource type="Script" uid="uid://basjt46bxstk8" path="res://aleksi/ukkeli.gd" id="1_uwxwb"]
-[ext_resource type="Script" uid="uid://2wtpx6vrkc3x" path="res://aleksi/ukkeli_keho.gd" id="2_0hb6c"]
+[ext_resource type="Script" path="res://aleksi/ukkeli_keho.gd" id="2_0hb6c"]
+[ext_resource type="Texture2D" uid="uid://c71c2ebtygum1" path="res://maija/encounters/skater/skater.png" id="3_c7nej"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6vvs"]
 
@@ -14,7 +15,97 @@ radius = 6.6666665
 radius = 0.3333335
 height = 2.0
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0hb6c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p07sf"]
+atlas = ExtResource("3_c7nej")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qvlx"]
+atlas = ExtResource("3_c7nej")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4c05"]
+atlas = ExtResource("3_c7nej")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7nej"]
+atlas = ExtResource("3_c7nej")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5vps"]
+atlas = ExtResource("3_c7nej")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7jm1"]
+atlas = ExtResource("3_c7nej")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aej6v"]
+atlas = ExtResource("3_c7nej")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t25oh"]
+atlas = ExtResource("3_c7nej")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbff6"]
+atlas = ExtResource("3_c7nej")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhpit"]
+atlas = ExtResource("3_c7nej")
+region = Rect2(384, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjmc6"]
+atlas = ExtResource("3_c7nej")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fha01"]
+atlas = ExtResource("3_c7nej")
+region = Rect2(512, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5vps"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p07sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qvlx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4c05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7nej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5vps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7jm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aej6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t25oh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbff6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhpit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjmc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fha01")
+}],
+"loop": false,
+"name": &"skate",
+"speed": 20.0
+}]
 
 [node name="Pelaaja" type="CharacterBody2D" unique_id=1365664806]
 material = SubResource("ShaderMaterial_q6vvs")
@@ -40,7 +131,10 @@ script = ExtResource("2_0hb6c")
 position = Vector2(0, -1.3333334)
 shape = SubResource("CapsuleShape2D_uwxwb")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1166244320]
-position = Vector2(0, -1.3333334)
-scale = Vector2(0.5, 2)
-texture = SubResource("PlaceholderTexture2D_0hb6c")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=859234429]
+texture_filter = 1
+texture_repeat = 2
+sprite_frames = SubResource("SpriteFrames_x5vps")
+animation = &"skate"
+frame = 11
+frame_progress = 1.0
