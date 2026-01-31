@@ -15,7 +15,7 @@ var segment_width: float = 0.0
 # don't touch
 var start = start_point
 var slope: float = 15.0
-var noisiness: float = 1.0
+var noisiness: float = 25.0
 var previous_height: float = 0.0
 # can touch now again
 
