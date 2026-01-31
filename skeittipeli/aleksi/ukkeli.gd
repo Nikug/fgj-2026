@@ -23,6 +23,7 @@ var current_rotation_speed: float = 0.0
 
 func _ready():
 	animated_sprite_2.play("skate")
+	animated_sprite_2.animation_finished.connect(_on_animation_finished)
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -76,9 +77,15 @@ func jump():
 	animation_locked = true
 	
 func double_jump():
+	animated_sprite_2.play("fall")
+	
 	velocity.y = double_jump_velocity
 	animation_locked = true
 	has_double_jumped = true
 
 func land():
 	animation_locked = true
+
+func _on_animation_finished():
+	if animated_sprite_2.animation == "fall":
+		animated_sprite_2.play("skate")
