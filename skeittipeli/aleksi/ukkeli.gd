@@ -47,6 +47,8 @@ func _ready():
   animated_sprite_2.animation_finished.connect(_on_animation_finished)
   if mask.selectedMask == 0:
     print("plague")
+    plague_mask_sprite.visible = true
+    hockey_mask_sprite.visible = false
   elif mask.selectedMask == 1:
     print("hockey")
     ground_accel = 100
@@ -58,6 +60,8 @@ func _ready():
     rotation_multiplier = 2
     rotation_correction_speed = 2
     min_left_velocity = -400
+    plague_mask_sprite.visible = false
+    hockey_mask_sprite.visible = true
   elif mask.selectedMask == 2:
     print("ghost")
     ground_accel = 10
