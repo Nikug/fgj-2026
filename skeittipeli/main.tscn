@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://cfo7l5r2cmf5j"]
 
 [ext_resource type="Script" uid="uid://bfslm88qnjtny" path="res://maija/menu/menu.gd" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://dy1lpye8q7wp" path="res://maija/menu/Untitled design(3).png" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bqoggvmsweobj" path="res://maija/encounters/skater/skater.tscn" id="3_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://djcw08pmciowj" path="res://maija/encounters/duck/duck.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://px57bwxu11fh" path="res://maija/encounters/pigeon/pigeon.tscn" id="4_lquwl"]
 
 [node name="MainMenu" type="Control" unique_id=1003690342]
@@ -16,11 +14,6 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
-
-[node name="UntitledDesign(3)" type="Sprite2D" parent="." unique_id=624947718]
-position = Vector2(12.222313, 2.3750496)
-scale = Vector2(0.7178242, 0.7178241)
-texture = ExtResource("2_0xm2m")
 
 [node name="Control" type="VBoxContainer" parent="." unique_id=1729900925]
 layout_mode = 1
@@ -52,16 +45,12 @@ layout_mode = 2
 text = "Exit"
 
 [node name="Skater" parent="." unique_id=1249804418 instance=ExtResource("3_1bvp3")]
-position = Vector2(-217, 152)
+position = Vector2(342, -7)
 scale = Vector2(8.953125, 8.953125)
 
 [node name="Pigeon" parent="." unique_id=1640569677 instance=ExtResource("4_lquwl")]
-position = Vector2(-453, 213)
+position = Vector2(-301, 1)
 scale = Vector2(4.53125, 4.53125)
-
-[node name="Duck" parent="." unique_id=719617349 instance=ExtResource("3_h2yge")]
-position = Vector2(389, 203)
-scale = Vector2(6.78125, 6.78125)
 
 [connection signal="pressed" from="Control/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="Control/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
