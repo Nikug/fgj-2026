@@ -73,7 +73,6 @@ func _ready():
 
 func _physics_process(delta: float):
   # Add the gravity.
-      
   if not is_on_floor():
     velocity.y += gravity * delta
     was_in_air = true
@@ -82,8 +81,6 @@ func _physics_process(delta: float):
     was_in_air = false
     total_rotation = 0.0
     land()
-
-
 
 
   # Get the input direction and handle the movement/deceleration.
@@ -125,7 +122,7 @@ func _physics_process(delta: float):
         # Normal jump from floor
         #jump()
     elif is_on_wall():
-        velocity += get_wall_normal().rotated(-0.75*PI) * 400        
+        velocity += get_wall_normal().rotated(-0.75 * PI) * 400
     else:
         velocity.x -= 600
 
@@ -166,7 +163,6 @@ func _on_area_2d_player_fell():
   fell.emit()
 
 func play_skate_animation():
-    print("ukkeli skate")
     if (isDead):
         return
     animated_sprite_2.play("skate")
@@ -174,13 +170,11 @@ func play_skate_animation():
     hockey_mask_sprite.play("skate")
 
 func play_fall_animation():
-    print("ukkeli fall")
     animated_sprite_2.play("fall")
     plague_mask_sprite.play("fall")
     hockey_mask_sprite.play("fall")
 
 func play_jump_animation():
-    print("ukkeli jump")
     if (isDead):
         return
     animated_sprite_2.play("jump")

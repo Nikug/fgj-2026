@@ -166,7 +166,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0btbr")
 }],
-"loop": true,
+"loop": false,
 "name": &"fall",
 "speed": 8.0
 }, {
@@ -183,7 +183,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6j5gq")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 8.0
 }, {
@@ -271,7 +271,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4u5um")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 8.0
 }, {
@@ -320,14 +320,14 @@ texture_filter = 1
 texture_repeat = 2
 position = Vector2(-1, 2.0000002)
 sprite_frames = SubResource("SpriteFrames_e4c05")
-animation = &"fall"
+animation = &"skate"
 
 [node name="plague_mask" type="AnimatedSprite2D" parent="Area2D" unique_id=2022715554]
 visible = false
 texture_filter = 1
 position = Vector2(-1, 2)
 sprite_frames = SubResource("SpriteFrames_duqdd")
-animation = &"fall"
+animation = &"skate"
 
 [node name="hockey_mask" type="AnimatedSprite2D" parent="Area2D" unique_id=1292978360]
 texture_filter = 1

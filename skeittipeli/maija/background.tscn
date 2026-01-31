@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cbl45dc4304xk"]
 
 [ext_resource type="Texture2D" uid="uid://l10n77p0r1fa" path="res://maija/stuff/sky_base.png" id="1_oc507"]
-[ext_resource type="Texture2D" uid="uid://ditiyrnixemoc" path="res://maija/stuff/mountain_base.png" id="2_p0nsd"]
+[ext_resource type="Texture2D" uid="uid://da1dlu0frx4u5" path="res://maija/stuff/mountain-Sheet.png" id="3_6gfh6"]
 [ext_resource type="Texture2D" uid="uid://3ql3oolqqt5y" path="res://maija/stuff/cloud_1.png" id="3_p0nsd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6gfh6"]
@@ -35,8 +35,8 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t0nfn"]
-atlas = ExtResource("2_p0nsd")
-region = Rect2(0, 0, 2048, 512)
+atlas = ExtResource("3_6gfh6")
+region = Rect2(0, 0, 1024, 512)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7bt82"]
 animations = [{
@@ -79,7 +79,7 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_axdj1")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1398768022]
-repeat_size = Vector2(4094, 0)
+repeat_size = Vector2(2048, 0)
 autoscroll = Vector2(2, 0)
 repeat_times = 10
 follow_viewport = false
@@ -88,11 +88,13 @@ ignore_camera_scroll = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Parallax2D2" unique_id=1021995762]
 self_modulate = Color(0.5449743, 0.54497427, 0.54497427, 1)
 texture_filter = 1
+position = Vector2(0, -197)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_7bt82")
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1754541799]
-repeat_size = Vector2(3070, 0)
+scroll_offset = Vector2(3, -77)
+repeat_size = Vector2(1536, 0)
 autoscroll = Vector2(6, 0)
 repeat_times = 10
 follow_viewport = false
@@ -101,6 +103,6 @@ ignore_camera_scroll = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Parallax2D3" unique_id=769083366]
 self_modulate = Color(0.92099476, 0.9209946, 0.9209946, 1)
 texture_filter = 1
-position = Vector2(300.00006, 197)
+position = Vector2(300.00006, 49.000015)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_7bt82")
