@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cn54bc7uawq6g"]
+[gd_scene format=3 uid="uid://d1hvu5rpc4je3"]
 
 [ext_resource type="PackedScene" uid="uid://kn1f2aa51bhd" path="res://vilperi/interiorpack/SmallBookShelf1.glb" id="1_iyejq"]
 [ext_resource type="PackedScene" uid="uid://drcmsnia5meyg" path="res://vilperi/hockey-recalc.glb" id="2_6ldvh"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://botmcfj7in7o3" path="res://vilperi/trianglebutton.gd" id="4_ive5y"]
 [ext_resource type="PackedScene" uid="uid://cgw4n300t54ng" path="res://vilperi/mannekiini-cloth-fbx.fbx" id="5_jhdm5"]
 [ext_resource type="PackedScene" uid="uid://c6ijl4x07jamh" path="res://vilperi/mannekiini.glb" id="8_ut0w4"]
+[ext_resource type="AudioStream" uid="uid://wgpjh665b133" path="res://sounds/masks on.wav" id="6_igvdf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyejq"]
 albedo_color = Color(0.50490326, 0.48678517, 0.29832342, 1)
@@ -115,3 +116,7 @@ transform = Transform3D(0.07298273, 0, -2.9991121, 0, 3, 0, 2.9991121, 0, 0.0729
 
 [node name="mannekiini2" parent="." unique_id=870457870 instance=ExtResource("8_ut0w4")]
 transform = Transform3D(-2.9664493, 0, 0.44741482, 0, 3, 0, -0.44741482, 0, -2.9664493, 4.320913, 18.890257, -0.6082103)
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=77762406]
+stream = ExtResource("6_igvdf")
+volume_db = -10.0
+autoplay = true

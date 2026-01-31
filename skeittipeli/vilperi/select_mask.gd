@@ -52,7 +52,7 @@ func _process(_delta: float) -> void:
     if Input.is_action_just_pressed("right"):
         _on_next_pressed()
     if Input.is_action_just_pressed("ui_accept"):
-        get_tree().change_scene_to_file("res://vilperi/cutscene.tscn")
+        goNext()
         
 func _physics_process(delta: float) -> void:
     if is_moving_camera:
@@ -86,7 +86,7 @@ func _on_next_pressed() -> void:
     update_mask_display()
 
 func _on_start_pressed() -> void:
-    get_tree().change_scene_to_file("res://vilperi/cutscene.tscn")
+    goNext()
 
 
 func update_mask_display() -> void:
@@ -109,3 +109,7 @@ func set_model_visibility(index: int, is_visible: bool) -> void:
         masks[index].show()
     else:
         masks[index].hide()
+
+func goNext():
+    mask.selectedMask = current_mask_index
+    get_tree().change_scene_to_file("res://vilperi/cutscene.tscn")

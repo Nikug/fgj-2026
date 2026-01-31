@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=60
 config/icon="res://icon.svg"
 
+[autoload]
+
+mask="*uid://coe0abv2rrr5m"
+
 [display]
 
 window/stretch/mode="canvas_items"
