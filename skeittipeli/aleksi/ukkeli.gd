@@ -47,7 +47,6 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 		
 	direction = Input.get_vector("left", "right", "up", "down")
-	print(rotation)
 	if direction.x != 0:
 		current_rotation_speed += direction.x * rotation_correction_speed
 	else:
