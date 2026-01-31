@@ -17,6 +17,9 @@ signal fell
 @onready var animated_sprite: Sprite2D = $Sprite2D
 @onready var player_collider: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var animated_sprite_2: AnimatedSprite2D = $Area2D/skater
+@onready var plague_mask_sprite: AnimatedSprite2D = $Area2D/plague_mask
+@onready var hockey_mask_sprite: AnimatedSprite2D = $Area2D/hockey_mask
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -31,7 +34,7 @@ var total_rotation: float = 0.0
 
 
 func _ready():
-  animated_sprite_2.play("skate")
+  play_skate_animation()
   animated_sprite_2.animation_finished.connect(_on_animation_finished)
 
 var current_movement_speed: float = 0.0
@@ -97,7 +100,7 @@ func _physics_process(delta: float):
   if Input.is_action_just_pressed("jump"):
     if collided:
           velocity += get_last_slide_collision().get_normal().rotated(deg_to_rad(-90)) * 200
-          animated_sprite_2.play("jump")
+          play_jump_animation()
         # Normal jump from floor
         #jump()
     else:
@@ -114,10 +117,10 @@ func update_facing_direction():
 func jump():
   velocity.y = jump_velocity
   animation_locked = true
-  animated_sprite_2.play("jump")
+  play_jump_animation()
 
 func double_jump():
-  animated_sprite_2.play("fall")
+  play_fall_animation()
 
   velocity.y = double_jump_velocity
   animation_locked = true
@@ -125,13 +128,28 @@ func double_jump():
 
 func land():
   animation_locked = true
-  animated_sprite_2.play("skate")
+  play_skate_animation()
 
 func _on_animation_finished():
   if animated_sprite_2.animation == "fall":
-    animated_sprite_2.play("skate")
+    play_skate_animation()
 
 
 func _on_area_2d_player_fell():
   isDead = true
   fell.emit()
+
+func play_skate_animation():
+    animated_sprite_2.play("skate")
+    plague_mask_sprite.play("skate")
+    hockey_mask_sprite.play("skate")
+
+func play_fall_animation():
+    animated_sprite_2.play("fall")
+    plague_mask_sprite.play("fall")
+    hockey_mask_sprite.play("fall")
+
+func play_jump_animation():
+    animated_sprite_2.play("jump")
+    plague_mask_sprite.play("jump")
+    hockey_mask_sprite.play("jump")
