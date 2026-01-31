@@ -35,6 +35,8 @@ func _process(_delta: float) -> void:
 		_on_prev_pressed()
 	if Input.is_action_just_pressed("right"):
 		_on_next_pressed()
+	if Input.is_action_just_pressed("ui_accept"):
+		get_tree().change_scene_to_file("res://vilperi/cutscene.tscn")
 
 func _on_prev_pressed() -> void:
 	current_mask_index = (current_mask_index - 1 + masks.size()) % masks.size()
