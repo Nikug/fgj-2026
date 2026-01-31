@@ -52,11 +52,11 @@ layout_mode = 2
 text = "Exit"
 
 [node name="Skater" parent="." unique_id=1249804418 instance=ExtResource("3_1bvp3")]
-position = Vector2(-412, 210)
-scale = Vector2(3.15625, 3.15625)
+position = Vector2(-217, 152)
+scale = Vector2(8.953125, 8.953125)
 
 [node name="Pigeon" parent="." unique_id=1640569677 instance=ExtResource("4_lquwl")]
-position = Vector2(-235, 241)
+position = Vector2(-453, 213)
 scale = Vector2(4.53125, 4.53125)
 
 [node name="Duck" parent="." unique_id=719617349 instance=ExtResource("3_h2yge")]
