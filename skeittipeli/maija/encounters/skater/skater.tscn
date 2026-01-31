@@ -1,8 +1,25 @@
 [gd_scene format=3 uid="uid://bqoggvmsweobj"]
 
+[ext_resource type="Texture2D" uid="uid://crinur22nsvca" path="res://maija/stuff/Sprite-0002-Sheet.png" id="1_0widp"]
 [ext_resource type="Texture2D" uid="uid://c71c2ebtygum1" path="res://maija/encounters/skater/skater.png" id="1_iwoni"]
 [ext_resource type="Texture2D" uid="uid://cu3j24k3p1ol0" path="res://maija/stuff/Sprite-0001-Sheet.png" id="2_0widp"]
 [ext_resource type="Script" uid="uid://ebafol8635lb" path="res://maija/encounters/skater/skater.gd" id="2_2xhej"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgcci"]
+atlas = ExtResource("1_0widp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8843f"]
+atlas = ExtResource("1_0widp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0q8p"]
+atlas = ExtResource("1_0widp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqonh"]
+atlas = ExtResource("1_0widp")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0widp"]
 atlas = ExtResource("1_iwoni")
@@ -64,6 +81,23 @@ region = Rect2(32, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_sgcci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8843f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0q8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqonh")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0widp")
 }, {
 "duration": 1.0,
@@ -123,6 +157,6 @@ animations = [{
 [node name="Skater" type="AnimatedSprite2D" unique_id=1249804418]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_nx172")
-animation = &"wiggle"
-frame_progress = 0.02545085
+animation = &"fall"
+frame_progress = 0.80864495
 script = ExtResource("2_2xhej")
