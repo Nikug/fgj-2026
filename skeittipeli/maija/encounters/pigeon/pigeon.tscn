@@ -72,9 +72,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qn0bp")
 }],
-"loop": true,
+"loop": false,
 "name": &"die",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -94,6 +94,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qpc01"]
+radius = 12.0415945
+
 [node name="Pigeon" type="AnimatedSprite2D" unique_id=1640569677]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_m1it6")
@@ -104,3 +107,11 @@ script = ExtResource("2_l5blv")
 
 [node name="PigeonCall" type="AudioStreamPlayer2D" parent="." unique_id=1306348833]
 stream = ExtResource("3_l5blv")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1931621492]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=790143791]
+position = Vector2(0, -12)
+shape = SubResource("CircleShape2D_qpc01")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
