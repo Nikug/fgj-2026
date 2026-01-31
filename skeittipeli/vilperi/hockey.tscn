@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bg8y6r02xkd2r"]
+
+[ext_resource type="PackedScene" uid="uid://drcmsnia5meyg" path="res://vilperi/hockey.glb" id="1_grann"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xr5fn"]
+albedo_color = Color(0.82209635, 0.8194634, 0.83694804, 1)
+metallic = 0.33
+
+[node name="hockey" unique_id=377675199 instance=ExtResource("1_grann")]
+
+[node name="Plane" parent="." index="1" unique_id=1981281925]
+material_override = SubResource("StandardMaterial3D_xr5fn")
