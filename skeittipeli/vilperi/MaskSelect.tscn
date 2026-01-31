@@ -1,12 +1,8 @@
-[gd_scene format=3 uid="uid://dtbskwn3u6n7e"]
+[gd_scene format=3 uid="uid://cn54bc7uawq6g"]
 
 [ext_resource type="PackedScene" uid="uid://kn1f2aa51bhd" path="res://vilperi/interiorpack/SmallBookShelf1.glb" id="1_iyejq"]
-[ext_resource type="Material" uid="uid://dbh16s23gyd51" path="res://vilperi/GreenMaskMaterial.tres" id="2_6ldvh"]
+[ext_resource type="PackedScene" uid="uid://bbcirll4ysga4" path="res://vilperi/hockey-mask.blend" id="2_iyejq"]
 [ext_resource type="Script" uid="uid://cb0qco0d6djkn" path="res://vilperi/select_mask.gd" id="2_wdep1"]
-[ext_resource type="Material" uid="uid://didqm1gqt5rg4" path="res://vilperi/RedMaskMaterial.tres" id="3_ive5y"]
-[ext_resource type="Material" uid="uid://bsppthvnnosy8" path="res://vilperi/BlueMaskMaterial.tres" id="4_iyejq"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_76r5c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyejq"]
 albedo_color = Color(0.50490326, 0.48678517, 0.29832342, 1)
@@ -14,55 +10,54 @@ albedo_color = Color(0.50490326, 0.48678517, 0.29832342, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_igvdf"]
 
 [node name="MaskSelect" type="Node3D" unique_id=477699177]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 0)
 
 [node name="SmallBookShelf12" parent="." unique_id=238512810 instance=ExtResource("1_iyejq")]
-transform = Transform3D(13.897388, 0, 0, 0, 10.569618, 0, 0, 0, 9.638941, 0, -7.245439, -0.88230705)
+transform = Transform3D(13.897388, 0, 0, 0, 10.569618, 0, 0, 0, 9.638941, 0, 10.58124, -0.88230705)
 
 [node name="Mask 1" type="Node3D" parent="." unique_id=1255594539]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2298045, 2.9623845, -0.9376731)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2298045, 20.789064, -0.9376731)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Mask 1" unique_id=1294310257]
-transform = Transform3D(1.5505726, 0.07669463, 0.12068334, -0.1514012, 0.7717732, -0.061228808, -0.103520274, 0.020029012, 1.8971972, 0, -0.012996674, 0)
-mesh = SubResource("BoxMesh_76r5c")
-surface_material_override/0 = ExtResource("2_6ldvh")
+[node name="hockey-mask" parent="Mask 1" unique_id=1554034132 instance=ExtResource("2_iyejq")]
+transform = Transform3D(-0.9969171, -0.042040445, -0.06624516, 0, 0.8443277, -0.5358268, 0.07845902, -0.53417486, -0.8417252, 0, 0.8835621, 0.4480797)
 
 [node name="Mask 2" type="Node3D" parent="." unique_id=1177450355]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005620122, 3.0398118, -0.9376731)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005620122, 20.866491, -0.9376731)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Mask 2" unique_id=379419515]
-transform = Transform3D(1.4538801, -0.28369564, 0, 0.5661134, 0.7285809, 0, 0, 0, 1.9015429, 0, 0, 0)
-mesh = SubResource("BoxMesh_76r5c")
-surface_material_override/0 = ExtResource("3_ive5y")
+[node name="hockey-mask" parent="Mask 2" unique_id=413626338 instance=ExtResource("2_iyejq")]
+transform = Transform3D(-0.99691737, -0.042040452, -0.06624516, 0, 0.84432787, -0.5358268, 0.07845904, -0.534175, -0.8417252, 0, 0.884, 0.448)
 
 [node name="Mask 3" type="Node3D" parent="." unique_id=543760744]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.867508, 3.0603673, -0.9376731)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.867508, 20.887047, -0.9376731)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Mask 3" unique_id=1118756013]
-transform = Transform3D(1.558845, -0.032686576, 0, 0.06522587, 0.7811817, 0, 0, 0, 1.9015429, 0, -0.18166256, 0)
-mesh = SubResource("BoxMesh_76r5c")
-surface_material_override/0 = ExtResource("4_iyejq")
-
-[node name="Camera" type="Camera3D" parent="." unique_id=2016843645]
-transform = Transform3D(1, 0, 0, 0, 0.8103588, 0.585934, 0, -0.585934, 0.8103588, 0, 5.171834, 1.7523639)
+[node name="hockey-mask" parent="Mask 3" unique_id=13995381 instance=ExtResource("2_iyejq")]
+transform = Transform3D(-0.99691737, -0.042040456, -0.06624516, 0, 0.8443279, -0.5358268, 0.07845904, -0.53417504, -0.8417252, 0, 0.884, 0.448)
 
 [node name="SpotlightMask2" type="SpotLight3D" parent="." unique_id=687525317]
-transform = Transform3D(1, 0, 0, 0, -0.025252182, 0.9996811, 0, -0.9996811, -0.025252182, -0.19647932, 6.8043227, -1.0981385)
-light_energy = 8.444
-light_indirect_energy = 1.222
+transform = Transform3D(1, 0, 0, 0, 0.58118606, 0.8137708, 0, -0.8137708, 0.58118606, -0.19647932, 27.531326, 3.7514782)
+light_color = Color(0.8441773, 0.7346659, 0.60351694, 1)
+light_energy = 10.0
+light_indirect_energy = 10.0
+light_volumetric_fog_energy = 10.0
 light_size = 0.03
+spot_range = 13.309
 
 [node name="SpotlightMask3" type="SpotLight3D" parent="." unique_id=328011646]
-transform = Transform3D(1, 0, 0, 0, -0.025252182, 0.9996811, 0, -0.9996811, -0.025252182, 4.817897, 6.8043227, -1.0981385)
-light_energy = 8.444
-light_indirect_energy = 1.222
+transform = Transform3D(1, 0, 0, 0, 0.58118606, 0.8137708, 0, -0.8137708, 0.58118606, 4.817897, 27.531326, 3.7514782)
+light_color = Color(0.8441773, 0.7346659, 0.60351694, 1)
+light_energy = 10.0
+light_indirect_energy = 10.0
+light_volumetric_fog_energy = 10.0
 light_size = 0.03
+spot_range = 13.309
 
 [node name="SpotlightMask1" type="SpotLight3D" parent="." unique_id=661049464]
-transform = Transform3D(1, 0, 0, 0, -0.025252182, 0.9996811, 0, -0.9996811, -0.025252182, -5.355647, 6.8043227, -1.0981385)
-light_energy = 8.444
-light_indirect_energy = 1.222
+transform = Transform3D(1, 0, 0, 0, 0.58118606, 0.8137708, 0, -0.8137708, 0.58118606, -5.355647, 27.531326, 3.7514782)
+light_color = Color(0.8441773, 0.7346659, 0.60351694, 1)
+light_energy = 10.0
+light_indirect_energy = 10.0
+light_volumetric_fog_energy = 10.0
 light_size = 0.03
+spot_range = 13.309
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=335783894]
 script = ExtResource("2_wdep1")
@@ -88,17 +83,21 @@ offset_right = 631.0
 offset_bottom = 581.0
 text = "Start"
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=874076325]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.625397, 9.957605)
-light_energy = 10.0
-light_indirect_energy = 10.0
-light_volumetric_fog_energy = 10.0
-light_size = 1.0
-omni_range = 125.642
-
 [node name="Node3D" type="Node3D" parent="." unique_id=1824363228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.82668, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=398320853]
 transform = Transform3D(6.2644246e-14, -4.3711402e-08, -59.8632, -32.78627, -4.3711402e-08, 0, -1.4331334e-06, 1.0000005, -2.6167036e-06, 0, 0, -2.853446)
 material_override = SubResource("StandardMaterial3D_iyejq")
 mesh = SubResource("PlaneMesh_igvdf")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1598504997]
+transform = Transform3D(1, 0, 0, 0, 0.84021664, 0.5422509, 0, -0.5422509, 0.84021664, 0.12157726, 24.0476, 2.4158201)
+current = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1929283667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33.80798, 25.581108)
+light_energy = 0.5
+light_indirect_energy = 0.5
+light_volumetric_fog_energy = 0.5
+omni_range = 102.933
