@@ -19,6 +19,8 @@ signal full_rotation
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+# Minimum leftward velocity (always applied)
+@export var min_left_velocity: float = -200.0
 var has_double_jumped: bool = false
 var animation_locked: bool = false
 var direction: Vector2 = Vector2.ZERO
@@ -38,7 +40,7 @@ const GROUND_FRICTION: float = 0.8
 const AIR_ACCEL: float = 30
 const GROUND_SPEED_LIMIT: float = 80
 const AIR_SPEED_LIMIT: float = 80
-const ROTATION_LIMIT: float = 500
+const ROTATION_LIMIT: float = 300
 const MAX_MOVEMENT_SPEED: float = 2000
 
 
@@ -51,6 +53,11 @@ func _physics_process(delta: float):
     has_double_jumped = false
     was_in_air = false
     total_rotation = 0.0
+
+
+  # Always apply minimum leftward velocity
+  if velocity.x > min_left_velocity:
+    velocity.x = min(velocity.x, min_left_velocity)
 
 
   # Get the input direction and handle the movement/deceleration.
@@ -85,13 +92,13 @@ func _physics_process(delta: float):
       velocity = velocity.slide(slide_direction)
     # Handle Jump.
   if Input.is_action_just_pressed("jump"):
-      if collided:
+    if collided:
           velocity += get_last_slide_collision().get_normal().rotated(deg_to_rad(-90)) * 200
         # Normal jump from floor
         #jump()
-      else:
+    else:
           velocity.x -= 600
-  velocity.x = max(-MAX_MOVEMENT_SPEED, velocity.x) if velocity.x <0 else min(MAX_MOVEMENT_SPEED, velocity.x)
+  velocity.x = max(-MAX_MOVEMENT_SPEED, velocity.x) if velocity.x < 0 else min(MAX_MOVEMENT_SPEED, velocity.x)
   update_facing_direction()
 
 func update_facing_direction():
