@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b6w2alc0h0tqj"]
+
+[ext_resource type="Texture2D" uid="uid://baqai83x12kdh" path="res://maija/stuff/grass_tile.png" id="1_oshvl"]
+
+[node name="Sprite2D" type="Sprite2D" unique_id=1515772238]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("1_oshvl")
+offset = Vector2(0, 8)

@@ -433,4 +433,7 @@ position = Vector2(-1, 2)
 sprite_frames = SubResource("SpriteFrames_3uea7")
 animation = &"skate"
 
+[node name="JumpCooldown" type="Timer" parent="." unique_id=1438056240]
+
 [connection signal="player_fell" from="Area2D" to="." method="_on_area_2d_player_fell"]
+[connection signal="timeout" from="JumpCooldown" to="." method="_on_jump_cooldown_timeout"]
