@@ -16,6 +16,7 @@ var is_finished = false
 @onready var image_rect = $TextureRect
 
 func _ready():
+	$TextureRect.stretch_mode = 0
 	# Load and display the first image
 	load_image()
 
@@ -56,7 +57,6 @@ func _process(delta):
 				image_rect.modulate.a = 1.0 - fade_progress
 
 func load_image():
-	$TextureRect.stretch_mode = 0
 	if current_image_index < images.size():
 		image_rect.texture = load(images[current_image_index])
 		image_rect.modulate.a = 0.0

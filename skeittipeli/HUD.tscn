@@ -9,9 +9,9 @@ script = ExtResource("1_k5de2")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -91.5
-offset_right = 91.5
-offset_bottom = 88.0
+offset_left = -26.0
+offset_right = 124.0
+offset_bottom = 70.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 48
 text = "69"
@@ -40,4 +40,28 @@ autowrap_mode = 2
 wait_time = 2.0
 one_shot = true
 
+[node name="Button" type="Button" parent="." unique_id=507465357]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -132.0
+offset_top = 10.0
+offset_right = -24.0
+offset_bottom = 68.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 36
+text = "Menu"
+
+[node name="Score" type="Label" parent="." unique_id=1361423043]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -151.0
+offset_right = -1.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 48
+text = "Score:"
+
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
