@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var death: GDScript
 @export var movement_speed : float  = 200
 @export var maxmovement_speed : float  = 200
+@export var current_rotation_speed: float = 0.0
 
 @onready var animated_sprite: Sprite2D = $Sprite2D
 @onready var player_collider: CollisionShape2D = $Area2D/CollisionShape2D
@@ -21,7 +22,7 @@ var animation_locked: bool = false
 var direction: Vector2 = Vector2.ZERO
 var was_in_air: bool = false
 var death_script
-var current_rotation_speed: float = 0.0
+
 
 func _ready():
 	animated_sprite_2.play("skate")

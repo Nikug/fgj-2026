@@ -19,6 +19,7 @@ func new_game():
     $Pelaaja.position = $StartPosition.position
     $Pelaaja.rotation = 0
     $Pelaaja.velocity = Vector2.ZERO
+    $Pelaaja.current_rotation_speed = 0
 
 func end_game():
     $Hud.show_game_over()
