@@ -74,19 +74,19 @@ func _physics_process(delta: float):
     total_rotation = 0
     full_rotation.emit()
 
-    var collided := move_and_slide()
-    if collided:
-        var slide_direction := get_last_slide_collision().get_normal()
-        velocity = velocity.slide(slide_direction)
-      # Handle Jump.
-    if Input.is_action_just_pressed("jump"):
-        if collided:
-            velocity += get_last_slide_collision().get_normal().rotated(deg_to_rad(-90)) * 200
-          # Normal jump from floor
-          #jump()
-        else:
-            velocity.x -= 600
-    update_facing_direction()
+  var collided := move_and_slide()
+  if collided:
+      var slide_direction := get_last_slide_collision().get_normal()
+      velocity = velocity.slide(slide_direction)
+    # Handle Jump.
+  if Input.is_action_just_pressed("jump"):
+      if collided:
+          velocity += get_last_slide_collision().get_normal().rotated(deg_to_rad(-90)) * 200
+        # Normal jump from floor
+        #jump()
+      else:
+          velocity.x -= 600
+  update_facing_direction()
 
 func update_facing_direction():
   if direction.x > 0:
