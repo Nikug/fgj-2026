@@ -46,14 +46,6 @@ func _physics_process(delta: float):
 		was_in_air = false
 	
 
-	# Handle Jump.
-	if Input.is_action_just_pressed("jump"):
-		if is_on_floor():
-			# Normal jump from floor
-			jump()
-		elif not has_double_jumped:
-			# Double jump in air
-			double_jump()
 		
 
 	# Get the input direction and handle the movement/deceleration.
@@ -77,13 +69,21 @@ func _physics_process(delta: float):
 	
 	rotation += current_rotation_speed
 	
-	velocity.x = - world_speed
 
 
 	var collided := move_and_slide()
 	if collided :
 		var  slide_direction := get_last_slide_collision().get_normal()
 		velocity = velocity.slide(slide_direction)
+	# Handle Jump.
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			velocity += get_last_slide_collision().get_normal().rotated(deg_to_rad(-90)) * 200
+			print(velocity)
+			# Normal jump from floor
+			#jump()
+		else:
+			velocity.x -= 600
 
 	update_facing_direction()
 		
