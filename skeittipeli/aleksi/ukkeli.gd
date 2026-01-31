@@ -9,8 +9,8 @@ signal full_rotation
 @export var rotation_multiplier: float = 0.002
 @export var world_speed: float = 200
 @export var death: GDScript
-@export var movement_speed : float  = 200
-@export var maxmovement_speed : float  = 200
+@export var movement_speed: float = 200
+@export var maxmovement_speed: float = 200
 @export var current_rotation_speed: float = 0.0
 
 @onready var animated_sprite: Sprite2D = $Sprite2D
@@ -31,13 +31,13 @@ func _ready():
   animated_sprite_2.play("skate")
   animated_sprite_2.animation_finished.connect(_on_animation_finished)
 
-var current_movement_speed : float = 0.0
+var current_movement_speed: float = 0.0
 
 const GROUND_ACCEL: float = 10
-const GROUND_FRICTION: float  =0.8
+const GROUND_FRICTION: float = 0.8
 const AIR_ACCEL: float = 10
-const GROUND_SPEED_LIMIT : float = 50
-const AIR_SPEED_LIMIT : float = 80
+const GROUND_SPEED_LIMIT: float = 50
+const AIR_SPEED_LIMIT: float = 80
 
 
 func _physics_process(delta: float):
@@ -49,8 +49,6 @@ func _physics_process(delta: float):
     has_double_jumped = false
     was_in_air = false
     total_rotation = 0.0
-
-
 
 
   # Get the input direction and handle the movement/deceleration.
@@ -76,21 +74,19 @@ func _physics_process(delta: float):
     total_rotation = 0
     full_rotation.emit()
 
-  var collided := move_and_slide()
-  if collided :
-    var  slide_direction := get_last_slide_collision().get_normal()
-    velocity = velocity.slide(slide_direction)
-  # Handle Jump.
-  if Input.is_action_just_pressed("jump"):
+    var collided := move_and_slide()
     if collided:
-      velocity += get_last_slide_collision().get_normal().rotated(deg_to_rad(-90)) * 200
-      print(velocity)
-      # Normal jump from floor
-      #jump()
-    else:
-      velocity.x -= 600
-
-  update_facing_direction()
+        var slide_direction := get_last_slide_collision().get_normal()
+        velocity = velocity.slide(slide_direction)
+      # Handle Jump.
+    if Input.is_action_just_pressed("jump"):
+        if collided:
+            velocity += get_last_slide_collision().get_normal().rotated(deg_to_rad(-90)) * 200
+          # Normal jump from floor
+          #jump()
+        else:
+            velocity.x -= 600
+    update_facing_direction()
 
 func update_facing_direction():
   if direction.x > 0:
