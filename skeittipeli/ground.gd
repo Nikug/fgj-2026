@@ -15,7 +15,7 @@ extends Node2D
 func _ready() -> void:
   fast_noise_lite.set_seed(randi())
   fast_noise_lite.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
-  fast_noise_lite.fractal_ping_pong_strength = 0.9
+  fast_noise_lite.fractal_ping_pong_strength = 0.3
   fast_noise_lite.frequency = 0.5
 
 func set_segment(segment: PackedVector2Array) -> void:
@@ -43,6 +43,17 @@ func generate_segment(previous_height: float) -> Array:
   return [new_segment, previous_height, left_height]
 
 func get_width() -> float:
+<< << << < HEAD
+    return segment_width
+
+
+func get_center() -> Vector2:
+    return Vector2(segment_width / 2, segment_height / 2)
+
+
+func get_top_right_corner() -> Vector2:
+    return Vector2(segment_width, 0)
+== == == =
   return segment_width
 
 
@@ -52,3 +63,4 @@ func get_center() -> Vector2:
 
 func get_top_right_corner() -> Vector2:
   return Vector2(segment_width, 0)
+>> >> >> > 0b02db3754ef44a2c30e7be42b2b8106f2b31429
