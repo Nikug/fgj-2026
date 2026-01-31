@@ -13,8 +13,8 @@ size = Vector2(320, 63.333332)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uwxwb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uwxwb"]
-radius = 9.0
-height = 32.666668
+radius = 4.333334
+height = 8.666668
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e4c05"]
 atlas = ExtResource("3_p07sf")
@@ -78,10 +78,11 @@ floor_stop_on_slope = false
 floor_max_angle = 0.0
 floor_snap_length = 23.5
 script = ExtResource("1_uwxwb")
+current_rotation_speed = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=530049375]
 z_index = 1
-position = Vector2(0, -0.75)
+position = Vector2(0, -1.6666667)
 scale = Vector2(0.050000004, 0.050000004)
 shape = SubResource("RectangleShape2D_p07sf")
 
@@ -101,6 +102,7 @@ shape = SubResource("CapsuleShape2D_uwxwb")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=859234429]
 texture_filter = 1
 texture_repeat = 2
+position = Vector2(-1, 2.0000002)
 sprite_frames = SubResource("SpriteFrames_e4c05")
 animation = &"fall"
 frame = 3
