@@ -5,8 +5,8 @@ signal full_rotation
 @export var speed: float = 200.0
 @export var jump_velocity: float = -150.0
 @export var double_jump_velocity: float = -100
-@export var rotation_correction_speed: float = 0.002
-@export var rotation_multiplier: float = 0.002
+@export var rotation_correction_speed: float = 2
+@export var rotation_multiplier: float = 3
 @export var world_speed: float = 200
 @export var death: GDScript
 @export var movement_speed: float = 200
@@ -36,8 +36,9 @@ var current_movement_speed: float = 0.0
 const GROUND_ACCEL: float = 10
 const GROUND_FRICTION: float = 0.8
 const AIR_ACCEL: float = 10
-const GROUND_SPEED_LIMIT: float = 50
+const GROUND_SPEED_LIMIT: float = 80
 const AIR_SPEED_LIMIT: float = 80
+const ROTATION_LIMIT: float = 500
 
 
 func _physics_process(delta: float):
@@ -62,6 +63,8 @@ func _physics_process(delta: float):
       current_rotation_speed -= rotation_multiplier * abs(rotation)
     else:
       current_rotation_speed += rotation_multiplier * rotation
+
+  current_rotation_speed = min(ROTATION_LIMIT, current_rotation_speed * delta)
   var strafe_accel := GROUND_ACCEL if is_on_floor() else AIR_ACCEL
   var speed_limit := GROUND_SPEED_LIMIT if is_on_floor() else AIR_SPEED_LIMIT
 
@@ -74,6 +77,7 @@ func _physics_process(delta: float):
     total_rotation = 0
     full_rotation.emit()
 
+  velocity += accel * velocity.normalized()
   var collided := move_and_slide()
   if collided:
       var slide_direction := get_last_slide_collision().get_normal()
