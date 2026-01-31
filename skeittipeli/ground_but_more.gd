@@ -15,7 +15,7 @@ var segment_width: float = 0.0
 # don't touch
 var start = start_point
 var slope: float = 15.0
-var noisiness: float = 25.0
+var noisiness: float = 5.0
 var previous_height: float = 0.0
 # can touch now again
 
@@ -30,12 +30,12 @@ func _ready() -> void:
   fast_noise_lite.set_seed(randi())
   fast_noise_lite.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
   fast_noise_lite.fractal_octaves = 1
-  fast_noise_lite.frequency = 0.000005
+  fast_noise_lite.frequency = 0.00009
   fast_noise_lite.fractal_type = FastNoiseLite.FRACTAL_PING_PONG
-  fast_noise_lite.fractal_ping_pong_strength = 100
+  fast_noise_lite.fractal_ping_pong_strength = 11
   perlin_noise.set_seed(randi())
   perlin_noise.noise_type = FastNoiseLite.TYPE_PERLIN
-  perlin_noise.frequency = 0.0001
+  perlin_noise.frequency = 0.00018
   perlin_noise.fractal_octaves = 1
   perlin_noise.fractal_type = FastNoiseLite.FRACTAL_PING_PONG
 
