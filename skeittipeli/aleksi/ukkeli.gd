@@ -20,6 +20,7 @@ signal fell
 @onready var plague_mask_sprite: AnimatedSprite2D = $Area2D/plague_mask
 @onready var hockey_mask_sprite: AnimatedSprite2D = $Area2D/hockey_mask
 @onready var ghost_mask_sprite: AnimatedSprite2D = $Area2D/ghost_mask
+@onready var particles: CPUParticles2D = $CPUParticles2D
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -49,6 +50,7 @@ var levitationYPos
 
 
 func _ready():
+  particles.emitting = false
   play_skate_animation()
   animated_sprite_2.animation_finished.connect(_on_animation_finished)
   if mask.selectedMask == 0:
@@ -90,6 +92,14 @@ func _ready():
     ghost_mask_sprite.visible = true
     $JumpCooldown.wait_time = 3.0
 
+func _process(_delta: float):
+  if isDead:
+    particles.emitting = false
+    return
+  if is_on_floor() and not particles.emitting:
+    particles.emitting = true
+  else:
+    particles.emitting = false
 
 func _physics_process(delta: float):
   # Add the gravity.
