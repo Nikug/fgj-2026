@@ -16,7 +16,7 @@ signal fell
 
 @onready var animated_sprite: Sprite2D = $Sprite2D
 @onready var player_collider: CollisionShape2D = $Area2D/CollisionShape2D
-@onready var animated_sprite_2: AnimatedSprite2D = $Area2D/AnimatedSprite2D
+@onready var animated_sprite_2: AnimatedSprite2D = $Area2D/skater
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
