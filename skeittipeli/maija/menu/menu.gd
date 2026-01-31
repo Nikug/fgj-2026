@@ -8,11 +8,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("enter"):
-		get_tree().change_scene_to_file("res://main2.tscn")
+		get_tree().change_scene_to_file("res://vilperi/MaskSelect.tscn")
 
 
 func _on_start_game_button_pressed():
-	get_tree().change_scene_to_file("res://vilperi/Cutscene.tscn")
+	get_tree().change_scene_to_file("res://vilperi/MaskSelect.tscn")
 
 
 func _on_exit_game_button_pressed():
