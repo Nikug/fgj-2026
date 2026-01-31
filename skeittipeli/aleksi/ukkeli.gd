@@ -140,16 +140,23 @@ func _on_area_2d_player_fell():
   fell.emit()
 
 func play_skate_animation():
+    print("ukkeli skate")
+    if (isDead):
+        return
     animated_sprite_2.play("skate")
     plague_mask_sprite.play("skate")
     hockey_mask_sprite.play("skate")
 
 func play_fall_animation():
+    print("ukkeli fall")
     animated_sprite_2.play("fall")
     plague_mask_sprite.play("fall")
     hockey_mask_sprite.play("fall")
 
 func play_jump_animation():
+    print("ukkeli jump")
+    if (isDead):
+        return
     animated_sprite_2.play("jump")
     plague_mask_sprite.play("jump")
     hockey_mask_sprite.play("jump")

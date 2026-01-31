@@ -1,5 +1,10 @@
 extends Area2D
 
+
+@onready var animated_sprite_2: AnimatedSprite2D = $skater
+@onready var plague_mask_sprite: AnimatedSprite2D = $plague_mask
+@onready var hockey_mask_sprite: AnimatedSprite2D = $hockey_mask
+
 signal player_fell
 
 var isDead: bool = false
@@ -12,4 +17,21 @@ func _physics_process(delta: float) -> void:
     for body in get_overlapping_bodies():
         if not isDead and body is not CharacterBody2D:
             isDead = true
+            play_fall_animation()
             player_fell.emit()
+
+func play_skate_animation():
+    animated_sprite_2.play("skate")
+    plague_mask_sprite.play("skate")
+    hockey_mask_sprite.play("skate")
+
+func play_fall_animation():
+    print("ukkeli_keho fall")
+    animated_sprite_2.play("fall")
+    plague_mask_sprite.play("fall")
+    hockey_mask_sprite.play("fall")
+
+func play_jump_animation():
+    animated_sprite_2.play("jump")
+    plague_mask_sprite.play("jump")
+    hockey_mask_sprite.play("jump")
