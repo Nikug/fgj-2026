@@ -20,6 +20,7 @@ func new_game():
     $Hud.update_score(score)
     $Hud.show_message("Time to skeit")
     $ScoreTimer.start()
+    $Pelaaja.min_speed_cooldown.start(5)
     $Pelaaja.position = $StartPosition.position
     $Pelaaja.rotation = 0.001
     $Pelaaja.velocity = Vector2.ZERO
@@ -36,7 +37,7 @@ func _on_score_timer_timeout():
 
 
 func _on_pelaaja_full_rotation():
-    score += 10
+    score += 50
     $Hud.update_score(score)
 
 func _on_pigeon_destroyed():
