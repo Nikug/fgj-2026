@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bgisivcqd3nmv" path="res://maija/stuff/secret_mask_jump.png" id="13_mftk4"]
 [ext_resource type="Texture2D" uid="uid://dgcs461bfyg0i" path="res://maija/stuff/secret_mask_skate.png" id="14_6j5gq"]
 [ext_resource type="Texture2D" uid="uid://c62sos1iggoq8" path="res://maija/stuff/ground_particle.png" id="15_ie1i2"]
+[ext_resource type="AudioStream" uid="uid://bdcp0n3cpv32x" path="res://sounds/splot.wav" id="19_vuij3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6vvs"]
 
@@ -520,11 +521,6 @@ region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_llo7v"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e2hbr")
@@ -638,14 +634,19 @@ visible = false
 texture_filter = 1
 position = Vector2(-1, 2)
 sprite_frames = SubResource("SpriteFrames_3uea7")
-animation = &"fall"
+animation = &"skate"
 
 [node name="ghost_mask" type="AnimatedSprite2D" parent="Area2D" unique_id=601638968]
 visible = false
 texture_filter = 1
 position = Vector2(-1, 2)
 sprite_frames = SubResource("SpriteFrames_llo7v")
-animation = &"fall"
+animation = &"skate"
+
+[node name="splotsound" type="AudioStreamPlayer2D" parent="Area2D" unique_id=304168531]
+position = Vector2(-1, 17.333334)
+stream = ExtResource("19_vuij3")
+volume_db = -6.648
 
 [node name="JumpCooldown" type="Timer" parent="." unique_id=1438056240]
 

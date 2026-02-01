@@ -6,6 +6,7 @@ extends Area2D
 @onready var hockey_mask_sprite: AnimatedSprite2D = $hockey_mask
 @onready var ghost_mask_sprite: AnimatedSprite2D = $ghost_mask
 @onready var secret_mask_sprite: AnimatedSprite2D = $secret_mask
+@onready var sound_player: AudioStreamPlayer2D = $splotsound
 
 signal player_fell
 
@@ -20,6 +21,7 @@ func _physics_process(delta: float) -> void:
         if not isDead and body is not CharacterBody2D:
             isDead = true
             play_fall_animation()
+            sound_player.play()
             player_fell.emit()
 
 func play_skate_animation():

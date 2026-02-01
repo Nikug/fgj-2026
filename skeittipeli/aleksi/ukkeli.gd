@@ -37,7 +37,7 @@ var was_in_air: bool = false
 var isDead: bool = false
 var total_rotation: float = 0.0
 
-var current_min_speed : float = 0.0
+var current_min_speed: float = 0.0
 
 var ground_accel: float = 30
 var ground_friction: float = 0.8
@@ -140,7 +140,7 @@ func _physics_process(delta: float):
     position.y = levitationYPos
   var time_left := min_speed_cooldown.time_left
 
-  current_min_speed = min_left_velocity * ( 1.0 if time_left  <= 0 else ((5 - time_left) / 5))
+  current_min_speed = min_left_velocity * (1.0 if time_left <= 0 else ((5 - time_left) / 5))
 
 
   # Get the input direction and handle the movement/deceleration.
@@ -244,12 +244,14 @@ func play_skate_animation():
     plague_mask_sprite.play("skate")
     hockey_mask_sprite.play("skate")
     ghost_mask_sprite.play("skate")
+    secret_mask_sprite.play("skate")
 
 func play_fall_animation():
     animated_sprite_2.play("fall")
     plague_mask_sprite.play("fall")
     hockey_mask_sprite.play("fall")
     ghost_mask_sprite.play("fall")
+    secret_mask_sprite.play("fall")
 
 func play_jump_animation():
     if (isDead):
@@ -258,6 +260,7 @@ func play_jump_animation():
     plague_mask_sprite.play("jump")
     hockey_mask_sprite.play("jump")
     ghost_mask_sprite.play("jump")
+    secret_mask_sprite.play("jump")
 
 
 func _on_jump_cooldown_timeout():
