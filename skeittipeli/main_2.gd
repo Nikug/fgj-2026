@@ -8,7 +8,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-    if Input.is_action_just_pressed("r"):
+      if Input.is_action_just_pressed("r"):
+        $Pelaaja.jump_cooldown.stop()
         $DeathTimer.stop()
         $Pelaaja.cancelDie()
         $Hud.cancel_game_over()
@@ -39,6 +40,10 @@ func _on_pelaaja_full_rotation():
     $Hud.update_score(score)
 
 func _on_pigeon_destroyed():
+    score += 10
+    $Hud.update_score(score)
+
+func _on_rock_destroyed():
     score += 10
     $Hud.update_score(score)
 

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://drx0w1r8y641m"]
+
+[ext_resource type="Script" uid="uid://ds24l1wem2wst" path="res://natur/rock.gd" id="1_rtabd"]
+[ext_resource type="PackedScene" uid="uid://og1xhie7hti" path="res://natur/rock.tscn" id="2_e6pcp"]
+[ext_resource type="Texture2D" uid="uid://bqvocrpom0bku" path="res://images/FreePack 2.png" id="2_jolbp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6pcp"]
+atlas = ExtResource("2_jolbp")
+region = Rect2(394.66663, 169, 111.333374, 76.66669)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jolbp"]
+radius = 48.0
+
+[node name="Rock2" type="Node2D" unique_id=1146278457]
+script = ExtResource("1_rtabd")
+
+[node name="Sprite2D" parent="." unique_id=189190344 instance=ExtResource("2_e6pcp")]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=241691883]
+position = Vector2(3, -24)
+emitting = false
+amount = 25
+texture = SubResource("AtlasTexture_e6pcp")
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 31.47
+direction = Vector2(0, -1)
+initial_velocity_max = 323.81
+angular_velocity_min = -384.0
+angular_velocity_max = 329.14
+linear_accel_max = 34.29
+scale_amount_min = 0.0
+scale_amount_max = 0.5
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1310480918]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1084556635]
+position = Vector2(1, -7.5)
+shape = SubResource("CircleShape2D_jolbp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
