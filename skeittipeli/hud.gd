@@ -16,6 +16,11 @@ func show_message(text):
     $Message.show()
     $MessageTimer.start()
 
+func show_add_score(text):
+    $AddScoreLabel.text = text
+    $AddScoreLabel.show()
+    $AddScoreTimer.start()
+
 func _on_message_timer_timeout():
     $Message.hide()
 
@@ -30,3 +35,7 @@ func _on_button_pressed():
 
 func cancel_game_over():
     $Message.hide()
+
+
+func _on_add_score_timer_timeout():
+    $AddScoreLabel.hide()

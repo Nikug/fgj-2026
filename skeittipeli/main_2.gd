@@ -38,14 +38,17 @@ func _on_score_timer_timeout():
 
 func _on_pelaaja_full_rotation():
     score += 50
+    $Hud.show_add_score("Epic flip! +50")
     $Hud.update_score(score)
 
 func _on_pigeon_destroyed():
     score += 10
+    $Hud.show_add_score("Pigeon slain! +10")
     $Hud.update_score(score)
 
 func _on_rock_destroyed():
     score += 10
+    $Hud.show_add_score("Rock n' Stone! +10")
     $Hud.update_score(score)
 
 

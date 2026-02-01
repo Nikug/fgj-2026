@@ -74,5 +74,26 @@ text = "Score:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AddScoreLabel" type="Label" parent="." unique_id=559578292]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -25.0
+offset_top = 74.0
+offset_right = 28.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_efote")
+theme_override_font_sizes/font_size = 48
+text = "+10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AddScoreTimer" type="Timer" parent="." unique_id=1582162150]
+wait_time = 1.5
+
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="AddScoreTimer" to="." method="_on_add_score_timer_timeout"]
