@@ -1,6 +1,6 @@
 extends Node;
 
-@export var current_mask_index: int = 1
+@export var current_mask_index: int = 2
 
 @export var masks: Array[Node3D] = []
 @export var spotlights: Array[Node3D] = []
