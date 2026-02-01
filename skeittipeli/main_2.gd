@@ -43,6 +43,10 @@ func _on_pigeon_destroyed():
     score += 10
     $Hud.update_score(score)
 
+func _on_rock_destroyed():
+    score += 10
+    $Hud.update_score(score)
+
 
 func _on_pelaaja_fell():
     end_game()

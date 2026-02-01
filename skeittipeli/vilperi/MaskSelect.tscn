@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cn54bc7uawq6g"]
+[gd_scene format=3 uid="uid://d1hvu5rpc4je3"]
 
 [ext_resource type="PackedScene" uid="uid://kn1f2aa51bhd" path="res://vilperi/interiorpack/SmallBookShelf1.glb" id="1_iyejq"]
 [ext_resource type="PackedScene" uid="uid://bg8y6r02xkd2r" path="res://vilperi/hockey.tscn" id="2_ut0w4"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cadgx06fhga06" path="res://vilperi/mannekiini_cloth.tscn" id="5_ihgd4"]
 [ext_resource type="PackedScene" uid="uid://ct4sjkonvp4ud" path="res://vilperi/mannekiini-head.tscn" id="5_ut0w4"]
 [ext_resource type="AudioStream" uid="uid://wgpjh665b133" path="res://sounds/masks on.wav" id="6_igvdf"]
+[ext_resource type="PackedScene" uid="uid://yupy58gbd0pl" path="res://vilperi/mannekiini-head-secret.tscn" id="9_ihgd4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyejq"]
 albedo_color = Color(0.50490326, 0.48678517, 0.29832342, 1)
@@ -67,6 +68,15 @@ light_volumetric_fog_energy = 10.0
 light_size = 0.03
 spot_range = 13.309
 
+[node name="SpotlightMask0" type="SpotLight3D" parent="." unique_id=333070409]
+transform = Transform3D(1, 0, 0, 0, 0.58118606, 0.8137708, 0, -0.8137708, 0.58118606, -6.2262244, 13.756018, 0.7156203)
+light_color = Color(0.8441773, 0.7346659, 0.60351694, 1)
+light_energy = 10.0
+light_indirect_energy = 10.0
+light_volumetric_fog_energy = 10.0
+light_size = 0.03
+spot_range = 3.889
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=335783894]
 script = ExtResource("2_wdep1")
 
@@ -121,3 +131,6 @@ transform = Transform3D(-2.9076478, 0, -0.31813127, 0, 2.9250002, 0, 0.31813127,
 
 [node name="mannekiini4" parent="." unique_id=1814255670 instance=ExtResource("5_ut0w4")]
 transform = Transform3D(-0.32589415, 0, -2.906788, 0, 2.925, 0, 2.906788, 0, -0.32589415, -3.9851537, 15.129213, -0.5737077)
+
+[node name="Mask 0" parent="." unique_id=2013739685 instance=ExtResource("9_ihgd4")]
+transform = Transform3D(-0.99996024, 0, 0.008918556, 0, 1, 0, -0.008918556, 0, -0.99996024, -6.167773, 10.732947, -0.2252562)

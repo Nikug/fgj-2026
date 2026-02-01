@@ -16,7 +16,7 @@ extends Node2D
 @onready var grass: Node2D = $grass
 @onready var tree: PackedScene = preload("res://natur/tree.tscn")
 @onready var spruce: PackedScene = preload("res://natur/spruce.tscn")
-@onready var rock: PackedScene = preload("res://natur/rock.tscn")
+@onready var rock: PackedScene = preload("res://natur/rock2.tscn")
 @onready var pulu: PackedScene = preload("res://maija/encounters/pigeon/pigeon.tscn")
 
 var main: Node2D
@@ -73,7 +73,14 @@ func _generate_foliage(new_position: Vector2) -> void:
   elif (foliage_index == 1):
     sprte = spruce.instantiate()
   elif (foliage_index == 2):
-    sprte = rock.instantiate()
+    var instance = rock.instantiate()
+    instance.main = main
+    instance.position = new_position
+    var sprite = instance.get_node("Sprite2D")
+    sprite.scale = Vector2(foliage_scale, foliage_scale)
+    sprite.flip_h = mirror
+    add_child(instance)
+    return
 
   sprte.position = new_position
   sprte.scale = Vector2(foliage_scale, foliage_scale)
