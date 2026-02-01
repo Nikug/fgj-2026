@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bkb5403vbqnq"]
+
+[ext_resource type="Texture2D" uid="uid://c3j8er0l03cnm" path="res://maija/stuff/cutscene1-Sheet.png" id="1_cc2o6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oamn1"]
+atlas = ExtResource("1_cc2o6")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfljj"]
+atlas = ExtResource("1_cc2o6")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ncxyc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oamn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfljj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Cutscene2" type="Node2D" unique_id=790034000]
+
+[node name="coffee" type="AnimatedSprite2D" parent="." unique_id=2104689950]
+texture_filter = 1
+position = Vector2(574, 318)
+scale = Vector2(9.039999, 9.039999)
+sprite_frames = SubResource("SpriteFrames_ncxyc")

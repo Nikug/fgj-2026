@@ -25,7 +25,7 @@ func _process(delta):
         get_tree().change_scene_to_file("res://main2.tscn")
 
     time_elapsed += delta
-    
+
     match state:
         # Fade picture in
         "fade_in":
@@ -36,13 +36,13 @@ func _process(delta):
             else:
                 var fade_progress = time_elapsed / fade_duration
                 image_rect.modulate.a = fade_progress
-        
+
         # Hold picture completely visible
         "hold":
             if time_elapsed >= hold_duration:
                 state = "fade_out"
                 time_elapsed = 0.0
-        
+
         # Fade picture out
         "fade_out":
             # Fade out complete
@@ -51,7 +51,7 @@ func _process(delta):
                 load_image()
                 state = "fade_in"
                 time_elapsed = 0.0
-            
+
             # Update fade out
             else:
                 var fade_progress = time_elapsed / fade_duration

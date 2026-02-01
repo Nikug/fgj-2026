@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b7gx083d5rd3y"]
 
 [ext_resource type="Script" uid="uid://dfrnlxotbx7fg" path="res://vilperi/cutscene.gd" id="1_hkn5j"]
+[ext_resource type="Texture2D" uid="uid://mjmhpvneh4gh" path="res://maija/stuff/coffee.tres" id="2_1klp1"]
 
 [node name="Cutscene" type="Control" unique_id=2049386023]
 layout_mode = 3
@@ -8,6 +9,8 @@ anchors_preset = 0
 script = ExtResource("1_hkn5j")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1729301352]
+texture_filter = 1
 custom_minimum_size = Vector2(1152, 648)
 layout_mode = 1
-stretch_mode = 3
+texture = ExtResource("2_1klp1")
+stretch_mode = 2
