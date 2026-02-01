@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://qusov0cugiqs"]
+
+[ext_resource type="Texture2D" uid="uid://dedorybw7swvj" path="res://maija/stuff/mask_1.png" id="1_4dho0"]
+
+[node name="Node2D" type="CanvasLayer" unique_id=1755229634]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2078569436]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4dho0")
