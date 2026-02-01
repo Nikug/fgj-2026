@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bkb5403vbqnq"]
 
 [ext_resource type="Texture2D" uid="uid://c3j8er0l03cnm" path="res://maija/stuff/cutscene1-Sheet.png" id="1_cc2o6"]
-[ext_resource type="Script" uid="uid://biocnt80ce2cn" path="res://cutscene_2.gd" id="1_mfljj"]
+[ext_resource type="Script" path="res://cutscene_2.gd" id="1_mfljj"]
 [ext_resource type="Texture2D" uid="uid://dxag072h7gtus" path="res://maija/stuff/cutscene2-Sheet.png" id="2_oamn1"]
+[ext_resource type="AudioStream" uid="uid://ccih7h1glkvso" path="res://maija/encounters/pigeon/pigeon_call.wav" id="4_ncxyc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oamn1"]
 atlas = ExtResource("1_cc2o6")
@@ -105,3 +106,7 @@ position = Vector2(574, 318)
 scale = Vector2(9.039999, 9.039999)
 sprite_frames = SubResource("SpriteFrames_q18ei")
 frame_progress = 0.599513
+
+[node name="PigeonCall" type="AudioStreamPlayer2D" parent="." unique_id=91263497]
+stream = ExtResource("4_ncxyc")
+volume_db = 1.0

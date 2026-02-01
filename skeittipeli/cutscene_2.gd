@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var pigeon_call_audio_player = $PigeonCall
 @onready var coffee: AnimatedSprite2D = $coffee
 @onready var pigeon: AnimatedSprite2D = $pigeon
 
@@ -48,6 +49,7 @@ func _process(delta):
                     finish_cutscene()
                 else:
                   pigeon.play()
+                  pigeon_call_audio_player.play()
                   current_sprite = pigeon
                   state = "fade_in"
                   time_elapsed = 0.0
