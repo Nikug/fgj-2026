@@ -8,7 +8,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-    if Input.is_action_just_pressed("r"):
+      if Input.is_action_just_pressed("r"):
+        $Pelaaja.jump_cooldown.stop()
         $DeathTimer.stop()
         $Pelaaja.cancelDie()
         $Hud.cancel_game_over()
