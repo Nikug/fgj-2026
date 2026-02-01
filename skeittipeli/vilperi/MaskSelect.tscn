@@ -1,14 +1,14 @@
-[gd_scene format=3 uid="uid://d1hvu5rpc4je3"]
+[gd_scene format=3 uid="uid://cn54bc7uawq6g"]
 
 [ext_resource type="PackedScene" uid="uid://kn1f2aa51bhd" path="res://vilperi/interiorpack/SmallBookShelf1.glb" id="1_iyejq"]
-[ext_resource type="PackedScene" uid="uid://bg8y6r02xkd2r" path="res://vilperi/hockey.tscn" id="2_ut0w4"]
+[ext_resource type="PackedScene" path="res://vilperi/hockey.tscn" id="2_ut0w4"]
 [ext_resource type="Script" uid="uid://cb0qco0d6djkn" path="res://vilperi/select_mask.gd" id="2_wdep1"]
-[ext_resource type="PackedScene" uid="uid://bi0tabkk3crns" path="res://vilperi/plague.tscn" id="3_ut0w4"]
-[ext_resource type="Script" uid="uid://botmcfj7in7o3" path="res://vilperi/trianglebutton.gd" id="4_ive5y"]
-[ext_resource type="PackedScene" uid="uid://cadgx06fhga06" path="res://vilperi/mannekiini_cloth.tscn" id="5_ihgd4"]
-[ext_resource type="PackedScene" uid="uid://ct4sjkonvp4ud" path="res://vilperi/mannekiini-head.tscn" id="5_ut0w4"]
+[ext_resource type="PackedScene" path="res://vilperi/plague.tscn" id="3_ut0w4"]
+[ext_resource type="Script" uid="uid://dbf68w5p2k64b" path="res://vilperi/trianglebutton.gd" id="4_ive5y"]
+[ext_resource type="PackedScene" path="res://vilperi/mannekiini_cloth.tscn" id="5_ihgd4"]
+[ext_resource type="PackedScene" path="res://vilperi/mannekiini-head.tscn" id="5_ut0w4"]
 [ext_resource type="AudioStream" uid="uid://wgpjh665b133" path="res://sounds/masks on.wav" id="6_igvdf"]
-[ext_resource type="PackedScene" uid="uid://yupy58gbd0pl" path="res://vilperi/mannekiini-head-secret.tscn" id="9_ihgd4"]
+[ext_resource type="PackedScene" path="res://vilperi/mannekiini-head-secret.tscn" id="9_ihgd4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyejq"]
 albedo_color = Color(0.50490326, 0.48678517, 0.29832342, 1)
