@@ -18,6 +18,7 @@ Skeittipeli - A skateboarding game created for the Finnish Game Jam 2026.
 
 ## About
 
+
 Skeittipeli is a 3D skateboarding game built with Godot Engine 4.6 featuring physics-based gameplay.
 
 ---
