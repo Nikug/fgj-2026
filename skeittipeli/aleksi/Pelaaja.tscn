@@ -520,11 +520,6 @@ region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_llo7v"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e2hbr")
@@ -638,14 +633,14 @@ visible = false
 texture_filter = 1
 position = Vector2(-1, 2)
 sprite_frames = SubResource("SpriteFrames_3uea7")
-animation = &"fall"
+animation = &"skate"
 
 [node name="ghost_mask" type="AnimatedSprite2D" parent="Area2D" unique_id=601638968]
 visible = false
 texture_filter = 1
 position = Vector2(-1, 2)
 sprite_frames = SubResource("SpriteFrames_llo7v")
-animation = &"fall"
+animation = &"skate"
 
 [node name="JumpCooldown" type="Timer" parent="." unique_id=1438056240]
 
