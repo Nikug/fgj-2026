@@ -28,12 +28,14 @@ var is_moving_camera: bool = false
 
 func _ready() -> void:
     masks = [
+        $"../Mask 0",
         $"../Mask 1",
         $"../Mask 2",
         $"../Mask 3"
     ]
 
     spotlights = [
+        $"../SpotlightMask0",
         $"../SpotlightMask1",
         $"../SpotlightMask2",
         $"../SpotlightMask3"
@@ -124,7 +126,7 @@ func update_mask_display() -> void:
     update_spotlight_visibility()
 
 func update_button_visibility() -> void:
-    prevButton.visible = current_mask_index > 0
+    prevButton.visible = current_mask_index > 1
     nextButton.visible = current_mask_index < masks.size() - 1
 
 func update_spotlight_visibility() -> void:
