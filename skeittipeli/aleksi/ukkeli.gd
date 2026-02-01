@@ -14,6 +14,7 @@ signal fell
 @export var maxmovement_speed: float = 200
 @export var current_rotation_speed: float = 0.0
 
+@onready var jump_cooldown: Timer = $JumpCooldown
 @onready var animated_sprite: Sprite2D = $Sprite2D
 @onready var player_collider: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var animated_sprite_2: AnimatedSprite2D = $Area2D/skater
@@ -60,7 +61,7 @@ func _ready():
     ghost_mask_sprite.visible = false
     rotation_multiplier = 3
     rotation_correction_speed = 3
-    $JumpCooldown.wait_time = rng.randf_range(1.0, 3.0)
+    jump_cooldown.wait_time = rng.randf_range(1.0, 3.0)
   elif mask.selectedMask == 1:
     #_print("hockey")
     ground_accel = 100
@@ -75,7 +76,7 @@ func _ready():
     plague_mask_sprite.visible = false
     hockey_mask_sprite.visible = true
     ghost_mask_sprite.visible = false
-    $JumpCooldown.wait_time = 1
+    jump_cooldown.wait_time = 1
   elif mask.selectedMask == 2:
     #_print("ghost")
     ground_accel = 10
@@ -90,7 +91,7 @@ func _ready():
     plague_mask_sprite.visible = false
     hockey_mask_sprite.visible = false
     ghost_mask_sprite.visible = true
-    $JumpCooldown.wait_time = 3.0
+    jump_cooldown.wait_time = 3.0
 
 func _process(_delta: float):
   if isDead:
@@ -112,7 +113,7 @@ func _physics_process(delta: float):
     total_rotation = 0.0
     land()
 
-  if mask.selectedMask == 2 and not $JumpCooldown.is_stopped() and $JumpCooldown.time_left > $JumpCooldown.wait_time / 2:
+  if mask.selectedMask == 2 and not jump_cooldown.is_stopped() and jump_cooldown.time_left > jump_cooldown.wait_time / 2 and not isDead:
     position.y = levitationYPos
 
 
@@ -148,8 +149,8 @@ func _physics_process(delta: float):
       var slide_direction := get_last_slide_collision().get_normal()
       velocity = velocity.slide(slide_direction)
     # Handle Jump.
-  if Input.is_action_just_pressed("jump") and $JumpCooldown.is_stopped():
-    $JumpCooldown.start()
+  if Input.is_action_just_pressed("jump") and jump_cooldown.is_stopped():
+    jump_cooldown.start()
     if mask.selectedMask == 2:
       levitationYPos = position.y - 100
     if collided:
@@ -232,4 +233,4 @@ func play_jump_animation():
 
 
 func _on_jump_cooldown_timeout():
-    $JumpCooldown.stop()
+    jump_cooldown.stop()
