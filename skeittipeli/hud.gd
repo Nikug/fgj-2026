@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+var aboutToDie: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,10 +22,12 @@ func _on_message_timer_timeout():
     $Message.hide()
 
 func show_game_over():
+    aboutToDie = true
     show_message("You fell!")
     await $MessageTimer.timeout
 
-    get_tree().change_scene_to_file("res://vilperi/MaskSelect.tscn")
+    if aboutToDie:
+        get_tree().change_scene_to_file("res://vilperi/MaskSelect.tscn")
 
 func update_score(score):
     $ScoreLabel.text = str(score)
@@ -32,3 +35,9 @@ func update_score(score):
 
 func _on_button_pressed():
     get_tree().change_scene_to_file("res://vilperi/MaskSelect.tscn")
+
+func cancel_game_over():
+    if aboutToDie:
+        aboutToDie = false
+        $MessageTimer.stop()
+        $Message.hide()

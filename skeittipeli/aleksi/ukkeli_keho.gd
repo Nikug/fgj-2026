@@ -38,3 +38,6 @@ func play_jump_animation():
     plague_mask_sprite.play("jump")
     hockey_mask_sprite.play("jump")
     ghost_mask_sprite.play("jump")
+
+func cancelDie():
+    isDead = false

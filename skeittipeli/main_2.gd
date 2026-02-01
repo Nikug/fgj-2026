@@ -9,12 +9,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
     if Input.is_action_just_pressed("r"):
+        $Pelaaja.cancelDie()
+        $Hud.cancel_game_over()
         new_game()
 
 func new_game():
     score = 0
     $Hud.update_score(score)
-    $Hud.show_message("Time to skate")
+    $Hud.show_message("Time to skeit")
     $ScoreTimer.start()
     $Pelaaja.position = $StartPosition.position
     $Pelaaja.rotation = 0.001

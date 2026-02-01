@@ -202,6 +202,10 @@ func _on_area_2d_player_fell():
   velocity = Vector2.ZERO
   rotation = 0.0
   position.y += 32
+
+func cancelDie():
+  isDead = false
+  $Area2D.cancelDie()
   
 
 func play_skate_animation():

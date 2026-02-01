@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d1hvu5rpc4je3"]
+[gd_scene format=3 uid="uid://cn54bc7uawq6g"]
 
 [ext_resource type="PackedScene" uid="uid://kn1f2aa51bhd" path="res://vilperi/interiorpack/SmallBookShelf1.glb" id="1_iyejq"]
 [ext_resource type="PackedScene" uid="uid://bg8y6r02xkd2r" path="res://vilperi/hockey.tscn" id="2_ut0w4"]
