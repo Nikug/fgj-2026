@@ -6,6 +6,10 @@ extends Node2D
 signal rock_destroyed
 var main: Node2D
 
+func _process(_delta: float) -> void:
+  if Input.is_action_just_pressed("r"):
+    sprite.visible = true
+
 func _ready() -> void:
   self.connect("rock_destroyed", main._on_rock_destroyed)
 
