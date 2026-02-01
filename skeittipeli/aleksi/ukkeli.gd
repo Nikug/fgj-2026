@@ -21,6 +21,7 @@ signal fell
 @onready var plague_mask_sprite: AnimatedSprite2D = $Area2D/plague_mask
 @onready var hockey_mask_sprite: AnimatedSprite2D = $Area2D/hockey_mask
 @onready var ghost_mask_sprite: AnimatedSprite2D = $Area2D/ghost_mask
+@onready var secret_mask_sprite: AnimatedSprite2D = $Area2D/secret_mask
 @onready var particles: CPUParticles2D = $CPUParticles2D
 
 
@@ -59,6 +60,7 @@ func _ready():
     plague_mask_sprite.visible = true
     hockey_mask_sprite.visible = false
     ghost_mask_sprite.visible = false
+    secret_mask_sprite.visible = false
     rotation_multiplier = 3
     rotation_correction_speed = 3
     jump_cooldown.wait_time = rng.randf_range(1.0, 3.0)
@@ -76,6 +78,7 @@ func _ready():
     plague_mask_sprite.visible = false
     hockey_mask_sprite.visible = true
     ghost_mask_sprite.visible = false
+    secret_mask_sprite.visible = false
     jump_cooldown.wait_time = 1
   elif mask.selectedMask == 3:
     #_print("ghost")
@@ -91,6 +94,7 @@ func _ready():
     plague_mask_sprite.visible = false
     hockey_mask_sprite.visible = false
     ghost_mask_sprite.visible = true
+    secret_mask_sprite.visible = false
     jump_cooldown.wait_time = 3.0
   elif mask.selectedMask == 0:
     gravity += 1000
@@ -103,9 +107,10 @@ func _ready():
     rotation_multiplier = 6
     rotation_correction_speed = 6
     min_left_velocity = -1000
-    plague_mask_sprite.visible = true
+    plague_mask_sprite.visible = false
     hockey_mask_sprite.visible = false
     ghost_mask_sprite.visible = false
+    secret_mask_sprite.visible = true
     jump_cooldown.wait_time = 0.5
 
 

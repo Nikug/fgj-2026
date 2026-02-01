@@ -11,9 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://berd8jnx622yk" path="res://maija/stuff/plague_mask_skate.png" id="8_xhpit"]
 [ext_resource type="Texture2D" uid="uid://4wekh1re55uc" path="res://maija/stuff/hockey_mask_fall.png" id="9_jjmc6"]
 [ext_resource type="Texture2D" uid="uid://cdpvw2lbyuu31" path="res://maija/stuff/hockey_mask_skate.png" id="11_fha01"]
-[ext_resource type="Texture2D" uid="uid://4756hjuo1ja6" path="res://maija/stuff/ghost_mask_fall.png" id="12_jjmc6"]
-[ext_resource type="Texture2D" uid="uid://1mle541gi0hq" path="res://maija/stuff/ghost_mask_skate.png" id="12_xhpit"]
-[ext_resource type="Texture2D" uid="uid://doeytccw747s" path="res://maija/stuff/ghost_mask_jump.png" id="13_fha01"]
+[ext_resource type="Texture2D" uid="uid://b5tv6k6o0mea1" path="res://maija/stuff/secret_mask_fall .png" id="12_ie1i2"]
+[ext_resource type="Texture2D" uid="uid://bgisivcqd3nmv" path="res://maija/stuff/secret_mask_jump.png" id="13_mftk4"]
+[ext_resource type="Texture2D" uid="uid://dgcs461bfyg0i" path="res://maija/stuff/secret_mask_skate.png" id="14_6j5gq"]
 [ext_resource type="Texture2D" uid="uid://c62sos1iggoq8" path="res://maija/stuff/ground_particle.png" id="15_ie1i2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6vvs"]
@@ -354,61 +354,67 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3uea7"]
-atlas = ExtResource("12_jjmc6")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_12ai6"]
-atlas = ExtResource("12_jjmc6")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qsv0c"]
-atlas = ExtResource("12_jjmc6")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pe2iu"]
-atlas = ExtResource("12_jjmc6")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pnji7"]
-atlas = ExtResource("12_jjmc6")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fs5a6"]
-atlas = ExtResource("12_jjmc6")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i5fnj"]
-atlas = ExtResource("12_jjmc6")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xsfco"]
-atlas = ExtResource("13_fha01")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_au4qx"]
-atlas = ExtResource("13_fha01")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4iakr"]
-atlas = ExtResource("13_fha01")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cwc82"]
-atlas = ExtResource("13_fha01")
-region = Rect2(96, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_oljo2"]
-atlas = ExtResource("12_xhpit")
+atlas = ExtResource("12_ie1i2")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2m4xp"]
-atlas = ExtResource("12_xhpit")
+atlas = ExtResource("12_ie1i2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uea7"]
+atlas = ExtResource("12_ie1i2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12ai6"]
+atlas = ExtResource("12_ie1i2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsv0c"]
+atlas = ExtResource("12_ie1i2")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe2iu"]
+atlas = ExtResource("12_ie1i2")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsfco"]
+atlas = ExtResource("12_ie1i2")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_au4qx"]
+atlas = ExtResource("13_mftk4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4iakr"]
+atlas = ExtResource("13_mftk4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwc82"]
+atlas = ExtResource("13_mftk4")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnji7"]
+atlas = ExtResource("13_mftk4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs5a6"]
+atlas = ExtResource("14_6j5gq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5fnj"]
+atlas = ExtResource("14_6j5gq")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3uea7"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oljo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m4xp")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3uea7")
 }, {
@@ -422,22 +428,13 @@ animations = [{
 "texture": SubResource("AtlasTexture_pe2iu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pnji7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fs5a6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i5fnj")
+"texture": SubResource("AtlasTexture_xsfco")
 }],
 "loop": false,
 "name": &"fall",
 "speed": 8.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xsfco")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_au4qx")
 }, {
@@ -446,6 +443,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cwc82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnji7")
 }],
 "loop": false,
 "name": &"jump",
@@ -453,10 +453,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oljo2")
+"texture": SubResource("AtlasTexture_fs5a6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2m4xp")
+"texture": SubResource("AtlasTexture_i5fnj")
 }],
 "loop": true,
 "name": &"skate",
@@ -521,6 +521,12 @@ texture_filter = 1
 position = Vector2(-1, 2)
 sprite_frames = SubResource("SpriteFrames_3uea7")
 animation = &"fall"
+
+[node name="secret_mask" type="AnimatedSprite2D" parent="Area2D" unique_id=757751674]
+texture_filter = 1
+position = Vector2(-1, 2)
+sprite_frames = SubResource("SpriteFrames_3uea7")
+animation = &"skate"
 
 [node name="JumpCooldown" type="Timer" parent="." unique_id=1438056240]
 

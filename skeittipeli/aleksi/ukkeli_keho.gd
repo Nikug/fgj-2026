@@ -5,6 +5,7 @@ extends Area2D
 @onready var plague_mask_sprite: AnimatedSprite2D = $plague_mask
 @onready var hockey_mask_sprite: AnimatedSprite2D = $hockey_mask
 @onready var ghost_mask_sprite: AnimatedSprite2D = $ghost_mask
+@onready var secret_mask_sprite: AnimatedSprite2D = $secret_mask
 
 signal player_fell
 
@@ -26,18 +27,21 @@ func play_skate_animation():
     plague_mask_sprite.play("skate")
     hockey_mask_sprite.play("skate")
     ghost_mask_sprite.play("skate")
+    secret_mask_sprite.play("skate")
 
 func play_fall_animation():
     animated_sprite_2.play("fall")
     plague_mask_sprite.play("fall")
     hockey_mask_sprite.play("fall")
     ghost_mask_sprite.play("fall")
+    secret_mask_sprite.play("fall")
 
 func play_jump_animation():
     animated_sprite_2.play("jump")
     plague_mask_sprite.play("jump")
     hockey_mask_sprite.play("jump")
     ghost_mask_sprite.play("jump")
+    secret_mask_sprite.play("jump")
 
 func cancelDie():
     isDead = false
