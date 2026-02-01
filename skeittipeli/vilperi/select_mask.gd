@@ -141,4 +141,4 @@ func set_model_visibility(index: int, is_visible: bool) -> void:
 
 func goNext():
     mask.selectedMask = current_mask_index
-    get_tree().change_scene_to_file("res://vilperi/cutscene.tscn")
+    get_tree().change_scene_to_file("res://cutscene2.tscn")
