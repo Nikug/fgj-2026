@@ -9,6 +9,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
     if Input.is_action_just_pressed("r"):
+        $DeathTimer.stop()
         $Pelaaja.cancelDie()
         $Hud.cancel_game_over()
         new_game()
@@ -26,6 +27,7 @@ func new_game():
 func end_game():
     $ScoreTimer.stop()
     $Hud.show_game_over()
+    $DeathTimer.start()
 
 func _on_score_timer_timeout():
     score += 1
@@ -43,3 +45,7 @@ func _on_pigeon_destroyed():
 
 func _on_pelaaja_fell():
     end_game()
+
+
+func _on_death_timer_timeout():
+    get_tree().change_scene_to_file("res://vilperi/MaskSelect.tscn")
