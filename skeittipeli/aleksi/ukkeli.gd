@@ -135,7 +135,6 @@ func _physics_process(delta: float):
     has_double_jumped = false
     was_in_air = false
     total_rotation = 0.0
-    land()
 
   if mask.selectedMask == 3 and not jump_cooldown.is_stopped() and jump_cooldown.time_left > jump_cooldown.wait_time / 2 and not isDead:
     position.y = levitationYPos
@@ -173,6 +172,7 @@ func _physics_process(delta: float):
   velocity += accel * velocity.normalized()
   var collided := move_and_slide()
   if collided:
+      land()
       var slide_direction := get_last_slide_collision().get_normal()
       velocity = velocity.slide(slide_direction)
     # Handle Jump.
@@ -180,9 +180,10 @@ func _physics_process(delta: float):
     jump_cooldown.start()
     if mask.selectedMask == 3:
       levitationYPos = position.y - 100
+
+    play_jump_animation()
     if collided:
           velocity += get_last_slide_collision().get_normal().rotated(deg_to_rad(-90)) * 200
-          play_jump_animation()
         # Normal jump from floor
         #jump()
     elif is_on_wall():
