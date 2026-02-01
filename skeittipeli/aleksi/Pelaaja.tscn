@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://4wekh1re55uc" path="res://maija/stuff/hockey_mask_fall.png" id="9_jjmc6"]
 [ext_resource type="Texture2D" uid="uid://cdpvw2lbyuu31" path="res://maija/stuff/hockey_mask_skate.png" id="11_fha01"]
 [ext_resource type="Texture2D" uid="uid://b5tv6k6o0mea1" path="res://maija/stuff/secret_mask_fall .png" id="12_ie1i2"]
+[ext_resource type="Texture2D" uid="uid://4756hjuo1ja6" path="res://maija/stuff/ghost_mask_fall.png" id="12_jjmc6"]
+[ext_resource type="Texture2D" uid="uid://1mle541gi0hq" path="res://maija/stuff/ghost_mask_skate.png" id="12_xhpit"]
+[ext_resource type="Texture2D" uid="uid://doeytccw747s" path="res://maija/stuff/ghost_mask_jump.png" id="13_fha01"]
 [ext_resource type="Texture2D" uid="uid://bgisivcqd3nmv" path="res://maija/stuff/secret_mask_jump.png" id="13_mftk4"]
 [ext_resource type="Texture2D" uid="uid://dgcs461bfyg0i" path="res://maija/stuff/secret_mask_skate.png" id="14_6j5gq"]
 [ext_resource type="Texture2D" uid="uid://c62sos1iggoq8" path="res://maija/stuff/ground_particle.png" id="15_ie1i2"]
@@ -463,6 +466,120 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2hbr"]
+atlas = ExtResource("12_jjmc6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1xx3"]
+atlas = ExtResource("12_jjmc6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwwx2"]
+atlas = ExtResource("12_jjmc6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8w6y"]
+atlas = ExtResource("12_jjmc6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i3uq"]
+atlas = ExtResource("12_jjmc6")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b15mr"]
+atlas = ExtResource("12_jjmc6")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mdpn"]
+atlas = ExtResource("12_jjmc6")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhdob"]
+atlas = ExtResource("13_fha01")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23oqu"]
+atlas = ExtResource("13_fha01")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf3pm"]
+atlas = ExtResource("13_fha01")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4roq"]
+atlas = ExtResource("13_fha01")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpx2q"]
+atlas = ExtResource("12_xhpit")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt87f"]
+atlas = ExtResource("12_xhpit")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_llo7v"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2hbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1xx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwwx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8w6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i3uq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b15mr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mdpn")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhdob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23oqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf3pm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4roq")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpx2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt87f")
+}],
+"loop": true,
+"name": &"skate",
+"speed": 5.0
+}]
+
 [sub_resource type="Curve" id="Curve_ie1i2"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.43684214, 0), 0.0, 0.0, 0, 0]
 point_count = 2
@@ -516,17 +633,19 @@ position = Vector2(-1, 2)
 sprite_frames = SubResource("SpriteFrames_hxqoi")
 animation = &"fall"
 
-[node name="ghost_mask" type="AnimatedSprite2D" parent="Area2D" unique_id=1384865819]
+[node name="secret_mask" type="AnimatedSprite2D" parent="Area2D" unique_id=757751674]
+visible = false
 texture_filter = 1
 position = Vector2(-1, 2)
 sprite_frames = SubResource("SpriteFrames_3uea7")
 animation = &"fall"
 
-[node name="secret_mask" type="AnimatedSprite2D" parent="Area2D" unique_id=757751674]
+[node name="ghost_mask" type="AnimatedSprite2D" parent="Area2D" unique_id=601638968]
+visible = false
 texture_filter = 1
 position = Vector2(-1, 2)
-sprite_frames = SubResource("SpriteFrames_3uea7")
-animation = &"skate"
+sprite_frames = SubResource("SpriteFrames_llo7v")
+animation = &"fall"
 
 [node name="JumpCooldown" type="Timer" parent="." unique_id=1438056240]
 
