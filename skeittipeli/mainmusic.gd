@@ -14,17 +14,18 @@ func _ready() -> void:
     secret_music.loop_mode = AudioStreamWAV.LOOP_FORWARD
     secret_music.loop_begin = 0
     secret_music.loop_end = secret_music.get_length() * secret_music.mix_rate
-    self.stream = intro_music
+    if mask.selectedMask == 0:
+        self.stream = secret_music
+    else:
+        self.stream = intro_music
     self.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
   if playing_intro and ! self.playing:
-    print("playing")
     playing_intro = false
 
-    print(mask.selectedMask)
     if (mask.selectedMask == 0):
         self.stream = secret_music
     else:
