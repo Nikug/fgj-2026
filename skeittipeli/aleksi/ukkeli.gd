@@ -54,7 +54,7 @@ func _ready():
   particles.emitting = false
   play_skate_animation()
   animated_sprite_2.animation_finished.connect(_on_animation_finished)
-  if mask.selectedMask == 0:
+  if mask.selectedMask == 1:
     #_print("plague")
     plague_mask_sprite.visible = true
     hockey_mask_sprite.visible = false
@@ -62,7 +62,7 @@ func _ready():
     rotation_multiplier = 3
     rotation_correction_speed = 3
     jump_cooldown.wait_time = rng.randf_range(1.0, 3.0)
-  elif mask.selectedMask == 1:
+  elif mask.selectedMask == 2:
     #_print("hockey")
     ground_accel = 100
     air_accel = 100
@@ -77,7 +77,7 @@ func _ready():
     hockey_mask_sprite.visible = true
     ghost_mask_sprite.visible = false
     jump_cooldown.wait_time = 1
-  elif mask.selectedMask == 2:
+  elif mask.selectedMask == 3:
     #_print("ghost")
     ground_accel = 10
     air_accel = 10
@@ -92,6 +92,22 @@ func _ready():
     hockey_mask_sprite.visible = false
     ghost_mask_sprite.visible = true
     jump_cooldown.wait_time = 3.0
+  elif mask.selectedMask == 0:
+    gravity += 1000
+    ground_accel = 1000
+    air_accel = 1000
+    ground_speed_limit = 1000
+    air_speed_limit = 1000
+    rotation_limit = 500
+    max_movement_speed = 5000
+    rotation_multiplier = 6
+    rotation_correction_speed = 6
+    min_left_velocity = -1000
+    plague_mask_sprite.visible = true
+    hockey_mask_sprite.visible = false
+    ghost_mask_sprite.visible = false
+    jump_cooldown.wait_time = 0.5
+
 
 func _process(_delta: float):
   if isDead:
@@ -113,7 +129,7 @@ func _physics_process(delta: float):
     total_rotation = 0.0
     land()
 
-  if mask.selectedMask == 2 and not jump_cooldown.is_stopped() and jump_cooldown.time_left > jump_cooldown.wait_time / 2 and not isDead:
+  if mask.selectedMask == 3 and not jump_cooldown.is_stopped() and jump_cooldown.time_left > jump_cooldown.wait_time / 2 and not isDead:
     position.y = levitationYPos
 
 
@@ -151,7 +167,7 @@ func _physics_process(delta: float):
     # Handle Jump.
   if Input.is_action_just_pressed("jump") and jump_cooldown.is_stopped():
     jump_cooldown.start()
-    if mask.selectedMask == 2:
+    if mask.selectedMask == 3:
       levitationYPos = position.y - 100
     if collided:
           velocity += get_last_slide_collision().get_normal().rotated(deg_to_rad(-90)) * 200

@@ -2,14 +2,45 @@
 
 [ext_resource type="Script" uid="uid://cin57pn3hf5af" path="res://main_2.gd" id="1_8ce7h"]
 [ext_resource type="PackedScene" uid="uid://mw1j3jcttid1" path="res://ground_but_more.tscn" id="1_dmrlw"]
-[ext_resource type="Script" path="res://main_camera.gd" id="2_1mhn8"]
+[ext_resource type="Script" uid="uid://4xvkb7seu1nb" path="res://main_camera.gd" id="2_1mhn8"]
 [ext_resource type="PackedScene" uid="uid://bc5mgw3foeonk" path="res://HUD.tscn" id="2_dmrlw"]
-[ext_resource type="Script" path="res://start_area.gd" id="2_elgsa"]
+[ext_resource type="Script" uid="uid://bm0158ukpqke6" path="res://start_area.gd" id="2_elgsa"]
 [ext_resource type="PackedScene" uid="uid://dfl2phnrimpu5" path="res://aleksi/Pelaaja.tscn" id="2_sck4r"]
 [ext_resource type="PackedScene" uid="uid://cbl45dc4304xk" path="res://maija/background.tscn" id="3_0rof8"]
 [ext_resource type="Texture2D" uid="uid://cjd3etjlwy1kk" path="res://images/cobblestone_3.png" id="3_3yxjw"]
+[ext_resource type="Texture2D" uid="uid://bd7b2xg2gg4wt" path="res://maija/stuff/cabin.png" id="7_hi5em"]
+[ext_resource type="Script" uid="uid://c37jslsofgpew" path="res://house.gd" id="8_bbj40"]
 [ext_resource type="Texture2D" uid="uid://dedorybw7swvj" path="res://maija/stuff/mask_1.png" id="9_w8cd7"]
-[ext_resource type="Script" path="res://mainmusic.gd" id="10_l8hla"]
+[ext_resource type="Script" uid="uid://ddahg3hb7qr3j" path="res://mainmusic.gd" id="10_l8hla"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbj40"]
+atlas = ExtResource("7_hi5em")
+region = Rect2(0, 0, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fcfw"]
+atlas = ExtResource("7_hi5em")
+region = Rect2(64, 0, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw2xv"]
+atlas = ExtResource("7_hi5em")
+region = Rect2(128, 0, 64, 65)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0v28x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbj40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fcfw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pw2xv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Main2" type="Node2D" unique_id=955015153]
 script = ExtResource("1_8ce7h")
@@ -21,7 +52,7 @@ follow_speed = 30.0
 [node name="Background" parent="Camera2D" unique_id=279925762 instance=ExtResource("3_0rof8")]
 
 [node name="Pelaaja" parent="." unique_id=1365664806 instance=ExtResource("2_sck4r")]
-position = Vector2(2, -140)
+position = Vector2(-243, -408.00003)
 floor_block_on_wall = false
 floor_snap_length = 25.1
 
@@ -42,6 +73,19 @@ polygon = PackedVector2Array(300, 0, -300, 0, -442, 560, 395, 566)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world/StartArea/Polygon2D/StaticBody2D" unique_id=475658082]
 polygon = PackedVector2Array(-300, 0, 300, 0, 300, 400, -300, 400)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="world/StartArea" unique_id=1581694468]
+texture_filter = 1
+position = Vector2(17, -340)
+scale = Vector2(10.484375, 10.484375)
+sprite_frames = SubResource("SpriteFrames_0v28x")
+frame_progress = 0.20956847
+script = ExtResource("8_bbj40")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="world/StartArea" unique_id=1436238451]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world/StartArea/StaticBody2D" unique_id=745718776]
+polygon = PackedVector2Array(96, -472, -142, -236, -148, -190, -217, -192, -271, -8, 301, -10, 296, -272)
+
 [node name="GroundButMore" parent="world" unique_id=1891045757 instance=ExtResource("1_dmrlw")]
 position = Vector2(-1000, 0)
 
@@ -61,7 +105,7 @@ texture = ExtResource("9_w8cd7")
 [node name="ScoreTimer" type="Timer" parent="." unique_id=1667938202]
 
 [node name="StartPosition" type="Marker2D" parent="." unique_id=868371806]
-position = Vector2(0, -100)
+position = Vector2(22, -458)
 
 [node name="mainmusic" type="AudioStreamPlayer" parent="." unique_id=1090154996]
 volume_db = -12.0
