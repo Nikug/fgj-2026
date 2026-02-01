@@ -1,0 +1,18 @@
+[gd_resource type="AnimatedTexture" format=3 uid="uid://mjmhpvneh4gh"]
+
+[ext_resource type="Texture2D" uid="uid://c3j8er0l03cnm" path="res://maija/stuff/cutscene1-Sheet.png" id="1_02min"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a42e5"]
+atlas = ExtResource("1_02min")
+region = Rect2(0, 0, 128.06253, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usj6d"]
+atlas = ExtResource("1_02min")
+region = Rect2(127.98976, 0, 128.01024, 64)
+
+[resource]
+frames = 2
+frame_0/texture = SubResource("AtlasTexture_a42e5")
+frame_0/duration = 0.2
+frame_1/texture = SubResource("AtlasTexture_usj6d")
+frame_1/duration = 0.2
