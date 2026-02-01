@@ -10,7 +10,7 @@ func _ready() -> void:
   self.connect("rock_destroyed", main._on_rock_destroyed)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-  if body is CharacterBody2D and mask.selectedMask == 1:
+  if body is CharacterBody2D and mask.selectedMask == 2:
     particles.emitting = true
     sprite.visible = false
     rock_destroyed.emit()

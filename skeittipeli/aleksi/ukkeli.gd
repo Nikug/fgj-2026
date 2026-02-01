@@ -15,6 +15,7 @@ signal fell
 @export var current_rotation_speed: float = 0.0
 
 @onready var jump_cooldown: Timer = $JumpCooldown
+@onready var min_speed_cooldown: Timer = $MinSpeed
 @onready var animated_sprite: Sprite2D = $Sprite2D
 @onready var player_collider: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var animated_sprite_2: AnimatedSprite2D = $Area2D/skater
@@ -35,6 +36,8 @@ var direction: Vector2 = Vector2.ZERO
 var was_in_air: bool = false
 var isDead: bool = false
 var total_rotation: float = 0.0
+
+var current_min_speed : float = 0.0
 
 var ground_accel: float = 30
 var ground_friction: float = 0.8
@@ -136,6 +139,9 @@ func _physics_process(delta: float):
 
   if mask.selectedMask == 3 and not jump_cooldown.is_stopped() and jump_cooldown.time_left > jump_cooldown.wait_time / 2 and not isDead:
     position.y = levitationYPos
+  var time_left := min_speed_cooldown.time_left
+
+  current_min_speed = min_left_velocity * ( 1.0 if time_left  <= 0 else ((5 - time_left) / 5))
 
 
   # Get the input direction and handle the movement/deceleration.
@@ -185,7 +191,7 @@ func _physics_process(delta: float):
         velocity.x -= 600
 
   # Always apply minimum leftward velocity
-  velocity.x = min(min_left_velocity, max(-max_movement_speed, velocity.x))
+  velocity.x = min(current_min_speed, max(-max_movement_speed, velocity.x))
   # Unless dead
   if isDead: velocity = Vector2.ZERO
 
