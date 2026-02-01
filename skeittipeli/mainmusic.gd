@@ -8,13 +8,12 @@ var playing_intro = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    
-    if (mask.selectedMask == 0):
-        main_music = secret_music
-    
     main_music.loop_mode = AudioStreamWAV.LOOP_FORWARD
     main_music.loop_begin = 0
     main_music.loop_end = main_music.get_length() * main_music.mix_rate
+    secret_music.loop_mode = AudioStreamWAV.LOOP_FORWARD
+    secret_music.loop_begin = 0
+    secret_music.loop_end = secret_music.get_length() * secret_music.mix_rate
     self.stream = intro_music
     self.play()
 
@@ -24,5 +23,10 @@ func _process(_delta: float) -> void:
   if playing_intro and ! self.playing:
     print("playing")
     playing_intro = false
-    self.stream = main_music
+
+    print(mask.selectedMask)
+    if (mask.selectedMask == 0):
+        self.stream = secret_music
+    else:
+        self.stream = main_music
     self.play()
